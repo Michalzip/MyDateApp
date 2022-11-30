@@ -25,7 +25,7 @@ builder.Services.AddDbContext<AppDbContext>(options => {
         options.UseSqlServer(connectionString);
 
 
-//s
+
     }
 
     catch (Exception e)
