@@ -6,7 +6,7 @@ using App.Db;
 using App.Services;
 using App.AuthRepository;
 using System;
-
+using App.Interfaces;
 namespace App.Controllers;
 
 public class HomeController : Controller

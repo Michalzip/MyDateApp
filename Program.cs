@@ -10,6 +10,7 @@ using App.Db;
 using App.Controllers;
 using App.Services;
 using App.AuthRepository;
+using App.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -42,8 +43,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFramework
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IAuthRepo, AuthRepo>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRegister, UserRegisterModel>();
 builder.Services.AddScoped<AuthRepo>();
-//builder.Services.AddScoped<HashPassword>();
+builder.Services.AddScoped<HashPassword>();
 
 var app = builder.Build();
 
