@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
+using App.Interfaces;
 namespace App.Models
 {
-    public class UserRegisterModel
+    public class UserRegisterModel: IUserRegister
     {
         [Required]
         [EmailAddress(ErrorMessage = "The Email field is not a valid e-mail address.")]
@@ -27,6 +28,9 @@ namespace App.Models
 
 
         }
+
+       
     }
+
 }
 

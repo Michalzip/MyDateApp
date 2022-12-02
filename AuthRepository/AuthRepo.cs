@@ -5,30 +5,31 @@ using App.Models;
 using Microsoft.AspNetCore.Identity;
 using App.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using App.Interfaces;
 namespace App.AuthRepository
 {
 	public class AuthRepo:IAuthRepo
 	{
-        private readonly UserManager<ApplicationUser> _userManager;
+      
         private readonly ILogger<HomeController> _logger;
         private IUserService _userService;
 
         public AuthRepo(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager,IUserService userService)
 		{
-            _userManager = userManager;
+           
             _logger = logger;
             _userService = userService;
 
         }
 
-        public async Task Register(UserRegisterModel model)
+        public async Task Register(IUserRegister model)
         {
 
-            var userData = _userService.SetUser(model);
             try
             {
 
-               await _userManager.CreateAsync(userData);
+                ApplicationUser userData = _userService.CreateUser(model);
+                await _userService.SaveUser(userData);
             }
             catch (Exception e)
             {
@@ -36,5 +37,7 @@ namespace App.AuthRepository
             }
         }
     }
+
+
 }
 

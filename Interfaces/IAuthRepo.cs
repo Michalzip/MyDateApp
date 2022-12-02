@@ -1,12 +1,12 @@
 ﻿using System;
 using App.Models;
 
-namespace App.AuthRepository
+namespace App.Interfaces
 {
    
         public interface IAuthRepo
         {
-            Task Register(UserRegisterModel model);
+            Task Register(IUserRegister model);
        
         }
     
