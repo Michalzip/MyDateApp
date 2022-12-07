@@ -6,6 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Db\" />
@@ -19,8 +22,12 @@
     <None Remove="AuthRepository\" />
     <None Remove="DataAnnotationsExtensions" />
     <None Remove="Interfaces\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.0" />
@@ -35,10 +42,13 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="DataAnnotationsExtensions" Version="5.0.1.27" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Db\" />
     <Folder Include="AuthRepository\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

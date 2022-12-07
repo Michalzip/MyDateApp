@@ -38,8 +38,6 @@ public class HomeController : Controller
 
       await  _authRepo.SignInUser(model);
        
-    
-            
 
     }
 

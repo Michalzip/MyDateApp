@@ -11,7 +11,12 @@ using App.Controllers;
 using App.AuthRepository;
 using App.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +52,25 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => { options.SignIn.Re
     options.SignIn.RequireConfirmedPhoneNumber = false;
 })
     .AddEntityFrameworkStores<AppDbContext>();
+
+
+//builder.Services.AddAuthentication()
+//    .AddIdentityServerJwt();
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -86,6 +110,7 @@ builder.Services.AddScoped<IAuthRepo, AuthRepo>();
 //builder.Services.AddScoped<ILogin, AuthRepo>();
 
 builder.Services.AddScoped<AuthRepo>();
+builder.Services.AddScoped<TokenService>();
 
 //builder.Services.AddScoped<ILogin,Userr>();
 
