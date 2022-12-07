@@ -61,7 +61,7 @@ namespace App.AuthRepository
 
             try
             {
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+        
                 var user = await _userManager.FindByEmailAsync(userSignInForm.Email);
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, userSignInForm.Password, isPersistent: false, lockoutOnFailure: false);
                 var token = _token.createToken(user);
