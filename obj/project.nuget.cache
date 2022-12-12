@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HyZeuAxgWJ09f1sMtTuuJqlYLDdznog1iNIZZnJvOzN1/LApQpQ+UhvU4OyJNVaIos1wYYXVZRoe/WwV11jv/w==",
+  "dgSpecHash": "pt/JkLz472Z6lkd+pzuQrJqmFFeJ3n9ozNpSJnX8ga2jKpNl4snfDYrNxHTyQVOe/+0blG+TPvndJh8ccm+M2w==",
   "success": true,
-  "projectFilePath": "/Users/michal/Projects/App/App/App.csproj",
+  "projectFilePath": "/Users/michal/Desktop/folder bez nazwy/MyDateApp/App.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

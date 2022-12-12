@@ -5,11 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using App.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using App.Interfaces;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
 using App.Services;
+
 namespace App.AuthRepository
 {
 	public class AuthRepo:IAuthRepo
@@ -18,18 +15,16 @@ namespace App.AuthRepository
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IConfiguration _config;
         public readonly TokenService _token;
-        public AuthRepo(IConfiguration config,ILogger<HomeController> logger,  UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,TokenService token)
+
+        public AuthRepo(ILogger<HomeController> logger,  UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, TokenService token)
 		{
             
            
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
-            _config = config;
             _token = token;
-
 
         }
 
@@ -52,7 +47,7 @@ namespace App.AuthRepository
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"User is not created. Excepction :{e}");
+                _logger.LogInformation($"Please Enter correct data :{e}");
             }
         }
 
@@ -61,21 +56,15 @@ namespace App.AuthRepository
 
             try
             {
-        
                 var user = await _userManager.FindByEmailAsync(userSignInForm.Email);
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, userSignInForm.Password, isPersistent: false, lockoutOnFailure: false);
                 var token = _token.createToken(user);
 
-              
-
-       
-
-
-
+                Console.WriteLine("token : " + token);
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"User failed authorizate :{e}");
+                _logger.LogInformation($"Invalid Email or password :{e}");
             }
           
         }

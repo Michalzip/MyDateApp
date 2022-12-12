@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using App.Services;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,12 +26,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
+
 builder.Services.AddDbContext<AppDbContext>(options => {
     var connectionString = builder.Configuration.GetConnectionString("connectionString");
     try
     {
 
         options.UseSqlServer(connectionString);
+
 
 
 
@@ -53,9 +57,6 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => { options.SignIn.Re
 })
     .AddEntityFrameworkStores<AppDbContext>();
 
-
-//builder.Services.AddAuthentication()
-//    .AddIdentityServerJwt();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
@@ -107,12 +108,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddScoped<IAuthRepo, AuthRepo>();
-//builder.Services.AddScoped<ILogin, AuthRepo>();
-
 builder.Services.AddScoped<AuthRepo>();
 builder.Services.AddScoped<TokenService>();
 
-//builder.Services.AddScoped<ILogin,Userr>();
+
 
 
 

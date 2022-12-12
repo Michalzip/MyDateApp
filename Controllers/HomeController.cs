@@ -8,6 +8,7 @@ using App.AuthRepository;
 using System;
 using App.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace App.Controllers;
 
@@ -39,6 +40,13 @@ public class HomeController : Controller
       await  _authRepo.SignInUser(model);
        
 
+    }
+
+    [HttpGet("GetUser")]
+    [Authorize]
+    public async Task GetUser(){
+
+        Ok("Hello I am User");
     }
 
 }
