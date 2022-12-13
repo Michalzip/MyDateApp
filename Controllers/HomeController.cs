@@ -47,6 +47,7 @@ public class HomeController : Controller
     public async Task GetUser(){
 
         Ok("Hello I am User");
+
     }
 
 }

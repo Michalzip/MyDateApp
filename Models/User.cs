@@ -73,7 +73,7 @@ namespace App.Models
 
     public class UserSignUpHiddenProperty : IUserSignUp
     {
-        public string? PasswordSolc { get; set; }
+        //public string? PasswordSolc { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 

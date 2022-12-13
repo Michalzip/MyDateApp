@@ -34,11 +34,15 @@ namespace App.AuthRepository
 
             try
             {
-                
+                //??
                 var user = new ApplicationUser
                 {
                     UserName = userSignUpForm.userName,
                     Email = userSignUpForm.Email,
+                    firstName = userSignUpForm.firstName,
+                    lastName = userSignUpForm.lastName,
+                    CreatedAt = DateTime.Now
+
                 };
 
                     await _userManager.CreateAsync(user, userSignUpForm.Password);
