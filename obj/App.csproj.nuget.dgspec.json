@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/michal/Desktop/folder bez nazwy/MyDateApp/App.csproj": {}
+    "/Users/michal/Desktop/App/MyDateApp/App.csproj": {}
   },
   "projects": {
-    "/Users/michal/Desktop/folder bez nazwy/MyDateApp/App.csproj": {
+    "/Users/michal/Desktop/App/MyDateApp/App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/michal/Desktop/folder bez nazwy/MyDateApp/App.csproj",
+        "projectUniqueName": "/Users/michal/Desktop/App/MyDateApp/App.csproj",
         "projectName": "App",
-        "projectPath": "/Users/michal/Desktop/folder bez nazwy/MyDateApp/App.csproj",
+        "projectPath": "/Users/michal/Desktop/App/MyDateApp/App.csproj",
         "packagesPath": "/Users/michal/.nuget/packages/",
-        "outputPath": "/Users/michal/Desktop/folder bez nazwy/MyDateApp/obj/",
+        "outputPath": "/Users/michal/Desktop/App/MyDateApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/michal/.nuget/NuGet/NuGet.Config"
