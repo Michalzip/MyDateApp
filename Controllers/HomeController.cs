@@ -26,7 +26,7 @@ public class HomeController : Controller
 
 
     [HttpPost("Register")]
-    public async Task Register(UserRegisterModel model)
+    public async Task Register(UserSignUp model)
     {
 
         await _authRepo.SaveUser(model);
@@ -34,7 +34,7 @@ public class HomeController : Controller
     }
 
     [HttpPost("Login")]
-    public async Task Login(UserLoginModel model)
+    public async Task Login(UserSignIn model)
     {
 
       await  _authRepo.SignInUser(model);

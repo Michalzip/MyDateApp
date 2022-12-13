@@ -29,7 +29,7 @@ namespace App.AuthRepository
         }
 
       
-        public async Task SaveUser(UserRegisterModel userSignUpForm)
+        public async Task SaveUser(UserSignUp userSignUpForm)
         {
 
             try
@@ -37,7 +37,7 @@ namespace App.AuthRepository
                 
                 var user = new ApplicationUser
                 {
-                    UserName = userSignUpForm.Name,
+                    UserName = userSignUpForm.userName,
                     Email = userSignUpForm.Email,
                 };
 
@@ -51,7 +51,7 @@ namespace App.AuthRepository
             }
         }
 
-        public async Task SignInUser(UserLoginModel userSignInForm)
+        public async Task SignInUser(UserSignIn userSignInForm)
         {
 
             try

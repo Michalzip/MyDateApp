@@ -4,55 +4,84 @@ using DataAnnotationsExtensions;
 using App.Interfaces;
 namespace App.Models
 {
-    public class UserRegisterModel
+
+
+
+
+    public class UserDTO 
     {
+
+        public UserSignUp? userBasicData;
+
+        [Display(Name = "AvatarImage")]
+        public string? AvatarImage { get; set; }
+
+        public UserHiddenProperty? userHiddenProperty;
+    }
+
+
+
+    public class UserSignUp 
+    {
+
+
         [Required]
-        //[EmailAddress(ErrorMessage = "The Email field is not a valid e-mail address.")]
+        [Display(Name = "firstName")]
+        public string? firstName { get; set; }
+
+        [Required]
+        [Display(Name = "lastName")]
+        public string? lastName { get; set; }
+
+
+        [Required]
+        [Display(Name = "userName")]
+        public string? userName { get; set; }
+
+
+        [Required]
         [Display(Name = "Email")]
         public string? Email { get; set; }
 
 
         [Required]
-        //[StringLength(15,MinimumLength= 3)]
-        [Display(Name = "Name")]
-        public string? Name { get; set; }
-
-        [Required]
-       // [StringLength(120, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string? Password
-        {
-            get; set;
+        public string? Password { get; set; }
+
+
+        public UserSignUpHiddenProperty? userHiddenData;
 
 
 
-        }
-
-       
     }
 
 
-    public class UserLoginModel
+    public class UserSignIn{
+     
+     [Required]
+     [Display(Name = "Email")]
+     public string? Email { get; set; }
+     
+
+     [Required]
+     [Display(Name = "Password")]
+     public string? Password { get; set; }
+     
+    }
+
+
+
+    public class UserSignUpHiddenProperty : IUserSignUp
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string? Email { get; set; }
-
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string? Password
-        {
-            get; set;
-
-
-
-        }
-
-
+        public string? PasswordSolc { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
+
+    public class UserHiddenProperty: IUpdateTime
+    {
+        public DateTime? UpdatedAt { get; set; }
+    }
+
 
 }
 

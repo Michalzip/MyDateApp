@@ -6,12 +6,12 @@ namespace App.Interfaces
 
         public interface SaveUser
     {
-        Task SaveUser(UserRegisterModel model);
+        Task SaveUser(UserSignUp model);
     }
 
     public interface SignInUser
     {
-        Task SignInUser(UserLoginModel model);
+        Task SignInUser(UserSignIn model);
     }
 
     public interface IAuthRepo: SaveUser, SignInUser

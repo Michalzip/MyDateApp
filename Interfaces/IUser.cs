@@ -3,28 +3,27 @@ namespace App.Interfaces
 {
 
 
-    public interface ILogin
+   public interface ICreateTime{
+        
+    public DateTime CreatedAt {get; set; }
+   }
+
+
+ public interface IUpdateTime{
+
+       public DateTime? UpdatedAt {get; set; }
+
+   }
+
+public interface ICreateSalt
     {
-        public string? Email { get; set; }
-        public string? Password { get; set; }
 
     }
 
-    public interface  IRegister
-    {
-        public string? Email { get; set; }
-        public string? Name { get; set; }
-        public string? Password
-        {
-            get; set;
-        }
-    }
-    public interface IUser : IRegister, ILogin
+
+  public interface IUserSignUp:ICreateTime,ICreateSalt
     {
 
-
-
     }
-
 }
 

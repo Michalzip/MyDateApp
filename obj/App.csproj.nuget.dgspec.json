@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/michal/Desktop/App/MyDateApp/App.csproj": {}
+    "/Users/michal/Desktop/apka/MyDateApp/App.csproj": {}
   },
   "projects": {
-    "/Users/michal/Desktop/App/MyDateApp/App.csproj": {
+    "/Users/michal/Desktop/apka/MyDateApp/App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/michal/Desktop/App/MyDateApp/App.csproj",
+        "projectUniqueName": "/Users/michal/Desktop/apka/MyDateApp/App.csproj",
         "projectName": "App",
-        "projectPath": "/Users/michal/Desktop/App/MyDateApp/App.csproj",
+        "projectPath": "/Users/michal/Desktop/apka/MyDateApp/App.csproj",
         "packagesPath": "/Users/michal/.nuget/packages/",
-        "outputPath": "/Users/michal/Desktop/App/MyDateApp/obj/",
+        "outputPath": "/Users/michal/Desktop/apka/MyDateApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/michal/.nuget/NuGet/NuGet.Config"
@@ -106,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.403/RuntimeIdentifierGraph.json"
         }
       }
     }
