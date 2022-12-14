@@ -9,8 +9,8 @@ using System;
 using App.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
-
 namespace App.Controllers;
+
 
 public class HomeController : Controller
 {
@@ -44,9 +44,25 @@ public class HomeController : Controller
 
     [HttpGet("GetUser")]
     [Authorize]
-    public async Task GetUser(){
+    public async Task GetUser()
+    {
 
-        Ok("Hello I am User");
+
+    }
+
+    // [Authorize]
+    //[GoogleScopedAuthorize(DriveService.ScopeConstants.DriveReadonly)]
+    public async Task<IActionResult> Index(){
+
+        return View();
+
+    }
+
+
+    public async Task<IActionResult> Privacy()
+    {
+
+        return View();
 
     }
 

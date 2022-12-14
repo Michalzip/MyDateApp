@@ -1,11 +1,37 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|Default">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/AuthRepository/AuthRepo.cs" relfile="AuthRepository/AuthRepo.cs" line="64" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="AuthRepository/AuthRepo.cs" />
-      <File FileName="Program.cs" Line="81" Column="42" />
+      <File FileName="AuthRepository/AuthRepo.cs" Line="74" Column="1" />
+      <File FileName="Program.cs" Line="237" Column="11" />
+      <File FileName="Controllers/HomeController.cs" Line="20" Column="1" />
+      <File FileName="Models/User.cs" />
+      <File FileName="Interfaces/IAuthRepo.cs" />
+      <File FileName="App.csproj" />
+      <File FileName="obj/Debug/net6.0/App.AssemblyInfo.cs" />
+      <File FileName="Interfaces/IUser.cs" />
+      <File FileName="appsettings.json" Line="23" Column="26" />
+      <File FileName="Migrations/20221213121838_createMigrate.cs" />
+      <File FileName="Migrations/AppDbContextModelSnapshot.cs" />
+      <File FileName="Services/TokenService.cs" />
+      <File FileName="secret.json" Line="5" Column="18" />
+      <File FileName=".gitignore" />
+      <File FileName="Models/ErrorViewModel.cs" />
+      <File FileName="Models/UserApplication.cs" />
+      <File FileName="global.json" Line="1" Column="1" />
+      <File FileName="Views/Home/home.proto" Line="2" Column="1" />
+      <File FileName="Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/Privacy.cshtml" Line="1" Column="12" />
+      <File FileName="Views/Home/Index.cshtml" Line="10" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +39,19 @@
           <Node name="App" expanded="True">
             <Node name="App" expanded="True">
               <Node name="AuthRepository" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Db" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
