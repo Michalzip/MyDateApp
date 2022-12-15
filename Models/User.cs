@@ -6,37 +6,46 @@ namespace App.Models
 {
 
 
-
-
-    public class UserDTO 
+    public class UserDto
     {
 
-        public UserSignUp? userBasicData;
+        [Required]
+        [Display(Name = "firstName")]
+        public string? FirstName { get; set; }
 
-        [Display(Name = "AvatarImage")]
-        public string? AvatarImage { get; set; }
+        [Required]
+        [Display(Name = "lastName")]
+        public string? LastName { get; set; }
 
-        public UserHiddenProperty? userHiddenProperty;
+        [Required]
+        [Display(Name = "userName")]
+        public string? UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Email")]
+        public string? Email { get; set; }
+
+
     }
 
 
 
-    public class UserSignUp 
+    public class UserDetailDto
     {
 
 
         [Required]
         [Display(Name = "firstName")]
-        public string? firstName { get; set; }
+        public string? FirstName { get; set; }
 
         [Required]
         [Display(Name = "lastName")]
-        public string? lastName { get; set; }
+        public string? LastName { get; set; }
 
 
         [Required]
         [Display(Name = "userName")]
-        public string? userName { get; set; }
+        public string? UserName { get; set; }
 
 
         [Required]
@@ -48,39 +57,42 @@ namespace App.Models
         [Display(Name = "Password")]
         public string? Password { get; set; }
 
+        public UserProfileAvatar? UserAvatar;
 
-        public UserSignUpHiddenProperty? userHiddenData;
-
-
+        public UserDataTime? UserDataTime;
 
     }
 
 
-    public class UserSignIn{
-     
-     [Required]
-     [Display(Name = "Email")]
-     public string? Email { get; set; }
-     
-
-     [Required]
-     [Display(Name = "Password")]
-     public string? Password { get; set; }
-     
-    }
-
-
-
-    public class UserSignUpHiddenProperty : IUserSignUp
+    public class UserAuthModel
     {
-        //public string? PasswordSolc { get; set; }
+
+        [Required]
+        [Display(Name = "Email")]
+        public string? Email { get; set; }
+
+        [Required]
+        [Display(Name = "Password")]
+        public string? Password { get; set; }
+
+    }
+
+
+    public class UserDataTime : IUserDataTime
+    {
         public DateTime CreatedAt { get; set; }
-    }
 
-    public class UserHiddenProperty: IUpdateTime
-    {
         public DateTime? UpdatedAt { get; set; }
     }
+
+    public class UserProfileAvatar : IUserAvatar
+    {
+
+        public string? UserAvatar { get; set; }
+
+    }
+
+
 
 
 }

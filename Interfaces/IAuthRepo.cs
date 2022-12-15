@@ -4,20 +4,20 @@ using App.Models;
 namespace App.Interfaces
 {
 
-        public interface SaveUser
+    public interface SaveUser
     {
-        Task SaveUser(UserSignUp model);
+        Task SaveUser(UserDetailDto model);
     }
 
     public interface SignInUser
     {
-        Task SignInUser(UserSignIn model);
+        Task SignInUser(UserAuthModel model);
     }
 
-    public interface IAuthRepo: SaveUser, SignInUser
+    public interface IAuthRepo : SaveUser, SignInUser
     {
-           
-      }
-    
+
+    }
+
 }
 

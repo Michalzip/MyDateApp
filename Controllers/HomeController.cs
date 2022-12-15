@@ -1,13 +1,7 @@
-﻿using System.Diagnostics;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using App.Models;
-using Microsoft.AspNetCore.Identity;
-using App.Db;
-
-using App.AuthRepository;
-using System;
 using App.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 namespace App.Controllers;
 
@@ -19,26 +13,26 @@ public class HomeController : Controller
 
     public HomeController(IAuthRepo authRepo)
     {
-        
+
         _authRepo = authRepo;
 
     }
 
 
     [HttpPost("Register")]
-    public async Task Register(UserSignUp model)
+    public async Task Register(UserDetailDto model)
     {
 
         await _authRepo.SaveUser(model);
-        
+
     }
 
     [HttpPost("Login")]
-    public async Task Login(UserSignIn model)
+    public async Task Login(UserAuthModel model)
     {
 
-      await  _authRepo.SignInUser(model);
-       
+        await _authRepo.SignInUser(model);
+
 
     }
 
@@ -50,9 +44,8 @@ public class HomeController : Controller
 
     }
 
-    // [Authorize]
-    //[GoogleScopedAuthorize(DriveService.ScopeConstants.DriveReadonly)]
-    public async Task<IActionResult> Index(){
+    public async Task<IActionResult> Index()
+    {
 
         return View();
 

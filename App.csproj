@@ -27,6 +27,7 @@
     <None Remove="Services\" />
     <None Remove="Microsoft.AspNetCore.Authentication.Google" />
     <None Remove="Views\Redirect\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0" />
@@ -54,6 +55,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Views\Redirect\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Home.cshtml" />

@@ -3,27 +3,31 @@ namespace App.Interfaces
 {
 
 
-   public interface ICreateTime{
-        
-    public DateTime CreatedAt {get; set; }
-   }
+    public interface ICreateTime
+    {
+
+        public DateTime CreatedAt { get; set; }
+    }
 
 
- public interface IUpdateTime{
+    public interface IUpdateTime
+    {
 
-       public DateTime? UpdatedAt {get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-   }
+    }
 
-public interface ICreateSalt
+
+    public interface IUserDataTime : ICreateTime, IUpdateTime
     {
 
     }
 
 
-  public interface IUserSignUp:ICreateTime,ICreateSalt
-    {
 
+    public interface IUserAvatar
+    {
+        public string? UserAvatar { get; set; }
     }
 }
 

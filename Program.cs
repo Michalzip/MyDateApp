@@ -1,18 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.SqlServer;
+﻿
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using App.Models;
-using Swashbuckle.AspNetCore.Swagger;
-using System;
 using App.Db;
-using App.Controllers;
 using App.AuthRepository;
 using App.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -51,7 +43,7 @@ builder.Services.AddSwaggerGen(c =>
                     {
                         {
                             $"https://www.googleapis.com/auth/cloud-platform.read-only",
-                            "Acces User "
+                            "User"
                         }
 
                     }
@@ -75,12 +67,14 @@ builder.Services.AddSwaggerGen(c =>
 
 });
 builder.Services.AddAuthorization();
-builder.Host.ConfigureAppConfiguration((config => {
+builder.Host.ConfigureAppConfiguration((config =>
+{
 
     config.AddJsonFile("secret.json");
 
 }));
-builder.Services.AddDbContext<AppDbContext>(options => {
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
     var connectionString = builder.Configuration.GetConnectionString("connectionString");
     try
     {
@@ -104,7 +98,9 @@ builder.Services.AddDbContext<AppDbContext>(options => {
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => { options.SignIn.RequireConfirmedAccount = false;
+builder.Services.AddIdentityCore<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
     options.SignIn.RequireConfirmedEmail = false;
     options.SignIn.RequireConfirmedPhoneNumber = false;
 })
@@ -123,9 +119,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
-}).AddGoogle(googleOptions => {
+}).AddGoogle(googleOptions =>
+{
 
-   
+
     googleOptions.ClientId = builder.Configuration["Google:ClientId"];
     googleOptions.ClientSecret = builder.Configuration["Google:ClientSecret"];
 });
@@ -136,7 +133,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.Configure<IdentityOptions>(options =>
 {
 
-    
+
     // Password settings.
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
@@ -194,8 +191,8 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-  
- 
+
+
 }
 app.UseSwagger();
 
@@ -229,6 +226,6 @@ app.UseSwaggerUI(options =>
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    
+
 app.Run();
 
