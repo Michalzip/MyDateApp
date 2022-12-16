@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using App.Models;
+using App.DTOs;
 using App.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 namespace App.Controllers;
@@ -20,7 +20,7 @@ public class HomeController : Controller
 
 
     [HttpPost("Register")]
-    public async Task Register(UserDetailDto model)
+    public async Task Register(RegisterDto model)
     {
 
         await _authRepo.SaveUser(model);
@@ -28,7 +28,7 @@ public class HomeController : Controller
     }
 
     [HttpPost("Login")]
-    public async Task Login(UserAuthModel model)
+    public async Task Login(LoginDto model)
     {
 
         await _authRepo.SignInUser(model);

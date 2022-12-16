@@ -3,7 +3,7 @@ using App.Db;
 using App.Models;
 using Microsoft.AspNetCore.Identity;
 using App.Controllers;
-using Microsoft.AspNetCore.Mvc;
+using App.DTOs;
 using App.Interfaces;
 using App.Services;
 
@@ -29,7 +29,7 @@ namespace App.AuthRepository
         }
 
 
-        public async Task SaveUser(UserDetailDto userDetail)
+        public async Task SaveUser(RegisterDto model)
         {
 
             try
@@ -37,15 +37,15 @@ namespace App.AuthRepository
 
                 var user = new ApplicationUser
                 {
-                    UserName = userDetail.UserName,
-                    Email = userDetail.Email,
-                    FirstName = userDetail.FirstName,
-                    LastName = userDetail.LastName,
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     CreatedAt = DateTime.Now
 
                 };
 
-                await _userManager.CreateAsync(user, userDetail.Password);
+                await _userManager.CreateAsync(user, model.Password);
             }
 
             catch (Exception e)
@@ -54,13 +54,13 @@ namespace App.AuthRepository
             }
         }
 
-        public async Task SignInUser(UserAuthModel userAuth)
+        public async Task SignInUser(LoginDto model)
         {
 
             try
             {
-                var user = await _userManager.FindByEmailAsync(userAuth.Email);
-                var result = await _signInManager.PasswordSignInAsync(user.UserName, userAuth.Password, isPersistent: false, lockoutOnFailure: false);
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
                 var token = await _token.CreateToken(user);
 
                 Console.WriteLine("token : " + token);

@@ -1,4 +1,5 @@
 ﻿using System;
+using App.DTOs;
 using App.Models;
 
 namespace App.Interfaces
@@ -6,12 +7,12 @@ namespace App.Interfaces
 
     public interface SaveUser
     {
-        Task SaveUser(UserDetailDto model);
+        Task SaveUser(RegisterDto model);
     }
 
     public interface SignInUser
     {
-        Task SignInUser(UserAuthModel model);
+        Task SignInUser(LoginDto model);
     }
 
     public interface IAuthRepo : SaveUser, SignInUser
