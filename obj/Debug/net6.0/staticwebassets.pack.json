@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/projectbundle/App.bundle.scp.css",
-      "PackagePath": "staticwebassets/App.bundle.scp.css"
-    },
-    {
       "Id": "/Users/michal/Desktop/apka/MyDateApp/wwwroot/.DS_Store",
       "PackagePath": "staticwebassets/.DS_Store"
     },

@@ -296,8 +296,6 @@
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.csproj.CoreCompileInputs.cache
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.MvcApplicationPartsAssemblyInfo.cs
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.MvcApplicationPartsAssemblyInfo.cache
-/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.RazorAssemblyInfo.cache
-/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.RazorAssemblyInfo.cs
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.dll
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/refint/App.dll
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.pdb
@@ -375,14 +373,16 @@
 /Users/michal/Desktop/apka/MyDateApp/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/staticwebassets.build.json
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/staticwebassets.development.json
-/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/bundle/App.styles.css
-/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/projectbundle/App.bundle.scp.css
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.csproj.CopyComplete
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.genruntimeconfig.cache
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/ref/App.dll
 /Users/michal/Desktop/apka/MyDateApp/bin/Debug/net6.0/secret.json
 /Users/michal/Desktop/apka/MyDateApp/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.Google.dll
+/Users/michal/Desktop/apka/MyDateApp/bin/Debug/net6.0/AutoMapper.dll
+/Users/michal/Desktop/apka/MyDateApp/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.RazorAssemblyInfo.cache
+/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/App.RazorAssemblyInfo.cs
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/staticwebassets/msbuild.App.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/staticwebassets/msbuild.build.App.props
 /Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.App.props

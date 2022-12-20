@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kFrbmqJ6Ok8+ONlhyKUAfX2j+IZknmgOLiFvwyIlrWo=",
+  "Hash": "R0VEwDEwiHtOA8lXG1DKDPrUlwQR9LjOODeiGcyujBQ=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -1035,40 +1035,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/michal/.nuget/packages/microsoft.aspnetcore.identity.ui/7.0.0/staticwebassets/V5/lib/jquery/LICENSE.txt"
-    },
-    {
-      "Identity": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/bundle/App.styles.css",
-      "SourceId": "App",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/bundle/",
-      "BasePath": "_content/App",
-      "RelativePath": "App.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/bundle/App.styles.css"
-    },
-    {
-      "Identity": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/projectbundle/App.bundle.scp.css",
-      "SourceId": "App",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/projectbundle/",
-      "BasePath": "_content/App",
-      "RelativePath": "App.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/michal/Desktop/apka/MyDateApp/obj/Debug/net6.0/scopedcss/projectbundle/App.bundle.scp.css"
     },
     {
       "Identity": "/Users/michal/Desktop/apka/MyDateApp/wwwroot/.DS_Store",

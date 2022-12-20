@@ -25,8 +25,6 @@ namespace App.Services
 
         }
 
-
-
         public async Task<string> CreateToken(ApplicationUser user)
         {
 
@@ -36,11 +34,6 @@ namespace App.Services
             {
                 new Claim(ClaimTypes.NameIdentifier,user.UserName),
             };
-
-            //add role to user
-            var roles = await _userManager.GetRolesAsync(user);
-            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
-
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

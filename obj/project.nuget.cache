@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lkgjwVZ8M7Q9ZQBogrCiQBmWOqs3jO1MuhM7z5cT4wiLwAQLu6NFiUr6TLSxPqQhCVrePTpmY8C/IhhDGd1meA==",
+  "dgSpecHash": "vnJO/G/v6/k9LHGQ8W5f68ukK06smYrmeUzkUDfl0rtTZ5Z2fIlytaf0BR7Bw5ihlbSUJivZF6UMXpcFEEjhpw==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/apka/MyDateApp/App.csproj",
   "expectedPackageFiles": [
+    "/Users/michal/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/dataannotationsextensions/5.0.1.27/dataannotationsextensions.5.0.1.27.nupkg.sha512",
@@ -16,7 +18,7 @@
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.0/microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.identity.ui/7.0.0/microsoft.aspnetcore.identity.ui.7.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "/Users/michal/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.data.sqlclient/5.0.1/microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.0.1/microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore/7.0.0/microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

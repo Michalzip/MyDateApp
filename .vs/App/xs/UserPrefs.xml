@@ -1,58 +1,57 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Services/TokenService.cs" relfile="Services/TokenService.cs" line="31" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/TokenService.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="AuthRepository/AuthRepo.cs" Line="23" Column="1" />
-      <File FileName="Program.cs" Line="41" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="4" Column="22" />
-      <File FileName="Models/User.cs" Line="62" Column="43" />
-      <File FileName="Interfaces/IAuthRepo.cs" Line="24" Column="1" />
-      <File FileName="App.csproj" />
-      <File FileName="obj/Debug/net6.0/App.AssemblyInfo.cs" />
-      <File FileName="Interfaces/IUser.cs" Line="21" Column="5" />
-      <File FileName="appsettings.json" Line="18" Column="67" />
-      <File FileName="Services/TokenService.cs" Line="22" Column="30" />
-      <File FileName="secret.json" Line="12" Column="1" />
-      <File FileName=".gitignore" />
+      <File FileName="Db/DbContext.cs" />
+      <File FileName="DTOs/LoginDto.cs" />
       <File FileName="Models/ErrorViewModel.cs" />
-      <File FileName="Models/UserApplication.cs" Line="16" Column="1" />
-      <File FileName="global.json" />
-      <File FileName="Views/_ViewStart.cshtml" />
+      <File FileName="Interfaces/ITokenService.cs" Line="1" Column="1" />
+      <File FileName="Services/TokenService.cs" />
+      <File FileName="Repositories/AuthRepo.cs" Line="1" Column="1" />
+      <File FileName="DTOs/RegisterDto.cs" />
+      <File FileName="DTOs/UserDetailDto.cs" />
+      <File FileName="DTOs/UserDto.cs" />
+      <File FileName="Interfaces/IAuthRepo.cs" Line="1" Column="1" />
+      <File FileName="Models/UserApplication.cs" />
+      <File FileName="Controllers/AuthController.cs" Line="47" Column="29" />
+      <File FileName="Program.cs" Line="212" Column="1" />
+      <File FileName="secret.json" Line="5" Column="18" />
+      <File FileName="Views/Auth/LoginSuccess.cshtml" Line="1" Column="1" />
       <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="Views/Home/Privacy.cshtml" />
-      <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Properties/launchSettings.json" Line="21" Column="29" />
-      <File FileName="Db/DbContext.cs" Line="20" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="App" expanded="True">
             <Node name="App" expanded="True">
-              <Node name="AuthRepository" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Db" expanded="True" />
+              <Node name="DTOs" expanded="True" />
+              <Node name="Helpers" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="TokenService.cs" selected="True" />
-              </Node>
+              <Node name="Repositories" expanded="True" />
+              <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Auth" expanded="True" />
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Services/TokenService.cs" relfile="Services/TokenService.cs" line="31" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Models/UserApplication.cs" relfile="Models/UserApplication.cs" line="12" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Models/UserApplication.cs" relfile="Models/UserApplication.cs" line="13" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
