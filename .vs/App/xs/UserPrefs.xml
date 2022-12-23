@@ -1,13 +1,18 @@
-﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+﻿<Properties StartupConfiguration="Wiele projektów">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Server FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="42" column="1" />
-    </BreakpointStore>
+    <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="42" column="1" />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
+      <Items>
+        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="Default" />
+        <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="DTOs/LoginDto.cs" />
@@ -55,4 +60,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

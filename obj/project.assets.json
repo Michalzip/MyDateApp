@@ -4861,9 +4861,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michal/Desktop/apka/MyDateApp/App.csproj",
-      "projectName": "App",
-      "projectPath": "/Users/michal/Desktop/apka/MyDateApp/App.csproj",
+      "projectUniqueName": "/Users/michal/Desktop/apka/MyDateApp/Api.csproj",
+      "projectName": "Api",
+      "projectPath": "/Users/michal/Desktop/apka/MyDateApp/Api.csproj",
       "packagesPath": "/Users/michal/.nuget/packages/",
       "outputPath": "/Users/michal/Desktop/apka/MyDateApp/obj/",
       "projectStyle": "PackageReference",
