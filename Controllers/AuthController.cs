@@ -1,8 +1,4 @@
 ﻿
-using Microsoft.AspNetCore.Mvc;
-using App.DTOs;
-using App.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 namespace App.Controllers;
 
 
@@ -26,7 +22,7 @@ public class AuthController : Controller
         try
         {
             var user =  await _authRepo.Register(model);
-
+        
             return Ok(user);
         }
 
@@ -56,12 +52,8 @@ public class AuthController : Controller
 
     }
 
-    [HttpGet("GetUser")]
-    [Authorize]
-    public async Task GetUser()
-    {
-       
-    }
+
+
 
     public async Task<IActionResult> LoginSuccess()
     {

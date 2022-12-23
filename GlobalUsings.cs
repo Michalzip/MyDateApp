@@ -1,0 +1,14 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Data;
+global using System.Linq;
+global using System.Threading.Tasks;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using App.DTOs;
+global using App.Interfaces;
+global using  AutoMapper;
+global using  App.Models;
+global using System.Text;
+global using App.Services;
+global using App.AuthRepository;

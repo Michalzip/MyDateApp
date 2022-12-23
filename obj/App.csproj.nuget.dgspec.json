@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[5.0.1.27, )"
             },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[6.0.12, )"
@@ -56,7 +60,7 @@
             },
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -114,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

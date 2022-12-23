@@ -30,9 +30,11 @@
     <None Remove="Views\Auth\" />
     <None Remove="Data\" />
     <None Remove="Data\Migrations\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.Cookies" />
+    <None Remove="IdentityServer4.AspNetIdentity" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.0" />
@@ -51,6 +53,7 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.12" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />

@@ -1,10 +1,8 @@
-﻿using System;
-using App.Interfaces;
+﻿
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using App.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace App.Services
@@ -20,7 +18,9 @@ namespace App.Services
         public TokenService(IConfiguration config, UserManager<ApplicationUser> userManager)
         {
             _config = config;
+
             _userManager = userManager;
+
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
 
         }
@@ -29,10 +29,13 @@ namespace App.Services
         {
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier,user.UserName),
+                new Claim(ClaimTypes.Email,user.Email),
+                
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -45,7 +48,9 @@ namespace App.Services
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
+
             return tokenHandler.WriteToken(token);
 
 

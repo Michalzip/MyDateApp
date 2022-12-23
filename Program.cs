@@ -1,23 +1,14 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using App.Models;
 using App.Db;
-using App.AuthRepository;
-using App.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using App.Services;
 using Microsoft.OpenApi.Models;
-using static System.Net.WebRequestMethods;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -55,8 +46,6 @@ builder.Services.AddSwaggerGen(c =>
                     }
             }
         }
-
-
     });
 
 
@@ -73,6 +62,8 @@ builder.Services.AddSwaggerGen(c =>
                 });
 
 });
+
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddAuthorization();
 builder.Host.ConfigureAppConfiguration((config =>
@@ -84,34 +75,38 @@ builder.Host.ConfigureAppConfiguration((config =>
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("connectionString");
-    try
-    {
-        options.UseSqlServer(connectionString);
-    }
 
-    catch (Exception e)
-    {
-        Console.WriteLine("Excepction:" + e);
-    }
+    options.UseSqlServer(connectionString);
+
 });
+
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
+
+builder.Services.AddAuthorization(options =>
+{
+
+    options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
+
+});
 
 
 builder.Services.AddAuthentication(options =>
 {
 
 })
-                .AddCookie(options =>
+                .AddCookie("Cookies", options =>
                 {
+
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
                     options.SlidingExpiration = true;
                     options.LoginPath = "https://localhost:7189";
                 })
                 .AddJwtBearer(options =>
 {
+
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -129,6 +124,7 @@ builder.Services.AddAuthentication(options =>
 
 
 });
+
 
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -172,8 +168,6 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.RoutePrefix = string.Empty;
     options.OAuth2RedirectUrl("https://localhost:7189/Auth/LoginSuccess");
-    //options.OAuthUsePkce();
-    //options.OAuthUseBasicAuthenticationWithAccessCodeGrant();
 });
 
 
@@ -185,10 +179,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-
-
-
 
 
 

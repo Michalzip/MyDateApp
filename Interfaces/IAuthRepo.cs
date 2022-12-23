@@ -1,9 +1,4 @@
-﻿using System;
-using App.DTOs;
-using App.Models;
-using Microsoft.AspNetCore.Mvc;
-
-namespace App.Interfaces
+﻿namespace App.Interfaces
 {
 
  
