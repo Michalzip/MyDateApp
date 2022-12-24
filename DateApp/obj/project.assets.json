@@ -4861,11 +4861,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michal/Desktop/apka/MyDateApp/Api.csproj",
-      "projectName": "Api",
-      "projectPath": "/Users/michal/Desktop/apka/MyDateApp/Api.csproj",
+      "projectUniqueName": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
+      "projectName": "App",
+      "projectPath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
       "packagesPath": "/Users/michal/.nuget/packages/",
-      "outputPath": "/Users/michal/Desktop/apka/MyDateApp/obj/",
+      "outputPath": "/Users/michal/Desktop/apka/DateApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/michal/.nuget/NuGet/NuGet.Config"

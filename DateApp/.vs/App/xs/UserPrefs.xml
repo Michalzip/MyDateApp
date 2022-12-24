@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="Wiele projektów">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Server FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <Breakpoint file="/Users/michal/Desktop/apka/MyDateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="42" column="1" />
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
       <Items>
-        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="Default" />
+        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" />
         <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" ConfigurationId="Default" />
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="obj/Debug/net6.0/Api.AssemblyInfo.cs">
     <Files>
       <File FileName="DTOs/LoginDto.cs" />
       <File FileName="Interfaces/ITokenService.cs" />
@@ -23,37 +23,33 @@
       <File FileName="DTOs/UserDetailDto.cs" />
       <File FileName="DTOs/UserDto.cs" />
       <File FileName="Interfaces/IAuthRepo.cs" />
-      <File FileName="Controllers/AuthController.cs" Line="61" Column="28" />
-      <File FileName="Program.cs" Line="17" Column="42" />
+      <File FileName="Controllers/AuthController.cs" />
+      <File FileName="Program.cs" />
       <File FileName="secret.json" />
       <File FileName="Views/Auth/LoginSuccess.cshtml" />
       <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
-      <File FileName="global.json" Line="1" Column="1" />
+      <File FileName="appsettings.json" />
+      <File FileName="global.json" />
       <File FileName="Entities/UserRoleApplication.cs" />
-      <File FileName="Controllers/AdminController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/AdminController.cs" />
       <File FileName="Controllers/UserController.cs" />
-      <File FileName="Entities/UserApplication.cs" Line="7" Column="33" />
+      <File FileName="Entities/UserApplication.cs" />
       <File FileName="GlobalUsings.cs" />
       <File FileName="Data/DbContext.cs" />
       <File FileName="Helpers/AutoMapperProfiles.cs" />
+      <File FileName="../Server/Program.cs" />
+      <File FileName="../Server/Properties/launchSettings.json" />
+      <File FileName="obj/Debug/net6.0/Api.AssemblyInfo.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="App" expanded="True">
-            <Node name="App" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
+            <Node name="Api" expanded="True">
               <Node name="DTOs" expanded="True" />
-              <Node name="Entities" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Auth" expanded="True" />
-              </Node>
+            </Node>
+            <Node name="Server" expanded="True">
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>

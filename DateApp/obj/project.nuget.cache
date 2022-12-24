@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HxUCardxnww77tz97uwPycLveR+KVg4J6aGA+ixDJC0fS52pEmNUGtvoO9dxjVm4TdJf4HMTZ+0Nk7zVvEPh2A==",
+  "dgSpecHash": "ccg1/b9XZb0Xeme4cLrvsrskfWqf/fM8a1eleynh4zR8eUA+AOOcCqaIXfJrSwkdmU7w8oq8wDsTuDfPc2Kd5A==",
   "success": true,
-  "projectFilePath": "/Users/michal/Desktop/apka/MyDateApp/Api.csproj",
+  "projectFilePath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
