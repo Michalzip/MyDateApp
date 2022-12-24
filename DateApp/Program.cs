@@ -82,7 +82,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthorization(options =>
@@ -106,6 +106,8 @@ builder.Services.AddAuthentication(options =>
                 })
                 .AddJwtBearer(options =>
 {
+    options.Audience = options.Audience = "api1";
+    options.Authority = "https://localhost:7269";
 
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -178,6 +180,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
+app.UseIdentityServer();
 app.UseAuthorization();
 
 

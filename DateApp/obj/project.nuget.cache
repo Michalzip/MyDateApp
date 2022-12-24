@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ccg1/b9XZb0Xeme4cLrvsrskfWqf/fM8a1eleynh4zR8eUA+AOOcCqaIXfJrSwkdmU7w8oq8wDsTuDfPc2Kd5A==",
+  "dgSpecHash": "Uth75AtRM4eH/f3MRfUb8dS+vGNpF5JYHIHiyVLiRTCJYMPL1gYkYlJN58a8fDLBCJWYXyFXDsMCr7JuuiVUJQ==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,9 @@
     "/Users/michal/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/dataannotationsextensions/5.0.1.27/dataannotationsextensions.5.0.1.27.nupkg.sha512",
     "/Users/michal/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/michal/.nuget/packages/identitymodel/4.4.0/identitymodel.4.4.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/identityserver4/4.1.2/identityserver4.4.1.2.nupkg.sha512",
+    "/Users/michal/.nuget/packages/identityserver4.storage/4.1.2/identityserver4.storage.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.cookies/2.2.0/microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
@@ -74,6 +77,7 @@
     "/Users/michal/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/Users/michal/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "/Users/michal/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "/Users/michal/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
@@ -116,7 +120,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Pakiet „DataAnnotationsExtensions 5.0.1.27” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "DataAnnotationsExtensions",
       "targetGraphs": [
         "net6.0"
