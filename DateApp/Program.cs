@@ -5,7 +5,7 @@ using App.Db;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
-
+using Server.data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,7 +64,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddAuthorization();
 builder.Host.ConfigureAppConfiguration((config =>
 {
@@ -80,9 +80,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 });
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("connectionStringTwo");
+
+    options.UseSqlServer(connectionString);
+
+});
 
 
-//builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthorization(options =>
@@ -146,7 +153,9 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddScoped<IAuthRepo, AuthRepo>();
 builder.Services.AddScoped<AuthRepo>();
+builder.Services.AddScoped<IdentityService>();
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<AppDbContext>();
 
 
 var app = builder.Build();
@@ -180,7 +189,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
-app.UseIdentityServer();
 app.UseAuthorization();
 
 

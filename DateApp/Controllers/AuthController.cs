@@ -1,12 +1,15 @@
 ﻿
 namespace App.Controllers;
 
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Server;
 
 public class AuthController : Controller
 {
 
     private readonly IAuthRepo _authRepo;
-
+ 
 
     public AuthController(IAuthRepo authRepo)
     {
@@ -19,40 +22,23 @@ public class AuthController : Controller
     [HttpPost("Register")]
     public async Task<ActionResult> Register(RegisterDto model)
     {
-        try
-        {
-            var user =  await _authRepo.Register(model);
-        
-            return Ok(user);
-        }
 
-        catch(Exception message)
-        {
+        var user = await _authRepo.Register(model);
 
-            return Unauthorized(message);
-        }
+        return Ok(user);
 
     }
+
+
 
     [HttpPost("Login")]
     public async Task<ActionResult> Login(LoginDto model)
     {
-        try {
 
-            var user  = await _authRepo.Login(model);
+       var user =  await _authRepo.Login(model);
 
-            return Ok(user);
-        }
-
-        catch(Exception message) {
-
-            return Unauthorized(message);
-        }
-      
-
+        return Ok(user);
     }
-
-
 
 
     public async Task<IActionResult> LoginSuccess()

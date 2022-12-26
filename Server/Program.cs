@@ -1,13 +1,13 @@
-using IdentityServer4;
+
 using IdentityServer4.Test;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Server.data;
 using Microsoft.EntityFrameworkCore.SqlServer;
-using Microsoft.EntityFrameworkCore;
+
 using Microsoft.AspNetCore.Identity;
-using IdentityServer4.AspNetIdentity;
-using IdentityServer4.EntityFramework;
+using System;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,8 +39,13 @@ builder.Services.AddIdentityServer()
         sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)));
 
 
+
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseIdentityServer();
+
 app.Run();

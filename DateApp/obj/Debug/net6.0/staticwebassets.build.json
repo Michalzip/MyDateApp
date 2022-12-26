@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "+tb2uX1G8BPI2jQ8zaWd4Qj51Sxnna2uWBPWVcmCnnY=",
+  "Hash": "zXCPdHCsWk5mdZNMzpvN4/VHuR5s2puRhLkC/A2nItk=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/michal/Desktop/apka/Server/Server.csproj",
+      "Version": 2,
+      "Source": "Server",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "App/wwwroot",

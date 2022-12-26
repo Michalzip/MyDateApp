@@ -1,73 +1,57 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
+
 
 
 namespace App.AuthRepository
 {
     public class AuthRepo : IAuthRepo
     {
-
-
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         public readonly TokenService _token;
-        private readonly IMapper _mapper;
-        
+        private readonly IdentityService _identityService;
 
 
-        public AuthRepo(IMapper
-        mapper, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, TokenService token)
+        public AuthRepo(IdentityService identityService, TokenService token)
         {
 
-            _userManager = userManager;
-            _signInManager = signInManager;
             _token = token;
-            _mapper = mapper;
-         
+            _identityService = identityService;
         }
 
 
-        public async Task<ActionResult<UserDetailDto>> Register(RegisterDto model)
+        public async Task<IdentityUser> Register(RegisterDto model)
         {
 
-            
-            var user = _mapper.Map<ApplicationUser>(model);
-
-            await _userManager.CreateAsync(user, model.Password);
-
-            return new UserDetailDto
+            var user = new IdentityUser
             {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                UserName = user.UserName,
-                Email = user.Email,
-                Password = user.PasswordHash,
-                CreatedAt = user.CreatedAt
+                Email = model.Email,
+                UserName = model.UserName,
+                PasswordHash = model.Password,
             };
+
+
+             await _identityService.AddIdentityUser(user);
+
+            return user;
+
+
         }
 
 
 
-        public async Task<ActionResult<UserDto>> Login(LoginDto model)
+        public async Task<IdentityUser> Login(LoginDto model)
         {
 
-     
-                var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = new IdentityUser { Email = model.Email, PasswordHash = model.Password };
 
-                await _signInManager.PasswordSignInAsync(user.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
+           
+            await _identityService.AuthenticateIdentityUser(user);
 
-                return new UserDto
-                {
-                    UserName = user.UserName,
-                    Token = await _token.CreateToken(user)
-                };
-       
+            return user;
+
+    
+           
         }
-     
+
     }
 
 

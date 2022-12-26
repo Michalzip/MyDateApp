@@ -1,4 +1,5 @@
-﻿namespace App.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+namespace App.Controllers
 {
     [Authorize]
     public class UserController : Controller
@@ -12,6 +13,9 @@
         {
 
         }
+
+
+    
     }
 }
 

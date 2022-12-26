@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "App/1.0.0": {
         "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "DataAnnotationsExtensions": "5.0.1.27",
           "IdentityServer4": "4.1.2",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
@@ -21,6 +20,7 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "Server": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.IdentityModel.Tokens.Jwt": "6.25.1"
         },
@@ -28,26 +28,15 @@
           "App.dll": {}
         }
       },
-      "AutoMapper/12.0.0": {
+      "AutoMapper/10.0.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0"
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.7.0"
         },
         "runtime": {
-          "lib/netstandard2.1/AutoMapper.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.0.0"
-          }
-        }
-      },
-      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
-        "dependencies": {
-          "AutoMapper": "12.0.0",
-          "Microsoft.Extensions.Options": "7.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.0.0"
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.0.0"
           }
         }
       },
@@ -123,6 +112,31 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/IdentityServer4.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.1.2.0"
+          }
+        }
+      },
+      "IdentityServer4.EntityFramework/4.1.2": {
+        "dependencies": {
+          "IdentityServer4": "4.1.2",
+          "IdentityServer4.EntityFramework.Storage": "4.1.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/IdentityServer4.EntityFramework.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.1.2.0"
+          }
+        }
+      },
+      "IdentityServer4.EntityFramework.Storage/4.1.2": {
+        "dependencies": {
+          "AutoMapper": "10.0.0",
+          "IdentityServer4.Storage": "4.1.2",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdentityServer4.EntityFramework.Storage.dll": {
             "assemblyVersion": "4.1.2.0",
             "fileVersion": "4.1.2.0"
           }
@@ -866,6 +880,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.Emit/4.7.0": {},
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1028,6 +1043,17 @@
             "fileVersion": "5.0.20.51904"
           }
         }
+      },
+      "Server/1.0.0": {
+        "dependencies": {
+          "IdentityServer4": "4.1.2",
+          "IdentityServer4.EntityFramework": "4.1.2",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0"
+        },
+        "runtime": {
+          "Server.dll": {}
+        }
       }
     }
   },
@@ -1037,19 +1063,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AutoMapper/12.0.0": {
+    "AutoMapper/10.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
-      "path": "automapper/12.0.0",
-      "hashPath": "automapper.12.0.0.nupkg.sha512"
-    },
-    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XCJ4E3oKrbRl1qY9Mr+7uyC0xZj1+bqQjmQRWTiTKiVuuXTny+7YFWHi20tPjwkMukLbicN6yGlDy5PZ4wyi1w==",
-      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.0",
-      "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512"
+      "sha512": "sha512-T09NoqMZBqw0/JEauXulxnmmerl0Zj03e0r6VCcJ0LURWBIaYxZPPoiDv8bHf5Y4x2xcXJp4JPXoCaeOMJfHEA==",
+      "path": "automapper/10.0.0",
+      "hashPath": "automapper.10.0.0.nupkg.sha512"
     },
     "Azure.Core/1.24.0": {
       "type": "package",
@@ -1092,6 +1111,20 @@
       "sha512": "sha512-blaxxGuOA7v/w1q+fxn97wZ+x2ecG1ZD4mc/N/ZOXMNeFZZhqv+4LF26Gecyik3nWrJPmbMEtQbLmRsKG8k61w==",
       "path": "identityserver4/4.1.2",
       "hashPath": "identityserver4.4.1.2.nupkg.sha512"
+    },
+    "IdentityServer4.EntityFramework/4.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-us4Wt4XX5qgH9vdINAq8MU7QR/b52E0x8quVUYUDwNkRjkMyg587VkCOiCttLrhPU4njGjysRu1puEOF5J8Xww==",
+      "path": "identityserver4.entityframework/4.1.2",
+      "hashPath": "identityserver4.entityframework.4.1.2.nupkg.sha512"
+    },
+    "IdentityServer4.EntityFramework.Storage/4.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qfL/hHf985B4N7+itO6X1cSjGFQecJ7nze9ZShwteQE1TVFbxqNf7MpLvTVIgVeH0eHjIGKScazUZ5qsMCsIwA==",
+      "path": "identityserver4.entityframework.storage/4.1.2",
+      "hashPath": "identityserver4.entityframework.storage.4.1.2.nupkg.sha512"
     },
     "IdentityServer4.Storage/4.1.2": {
       "type": "package",
@@ -1674,6 +1707,13 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
     "System.Reflection.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1806,6 +1846,11 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

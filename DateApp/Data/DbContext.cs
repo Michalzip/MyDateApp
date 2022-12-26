@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Identity;
 
 namespace App.Db
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    public class AppDbContext : DbContext
     {
 
-        private readonly DbContextOptions _options;
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
         {
-            _options = options;
+
         }
     }
 }

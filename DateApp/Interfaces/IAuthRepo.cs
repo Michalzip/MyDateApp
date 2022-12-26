@@ -1,12 +1,14 @@
-﻿namespace App.Interfaces
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace App.Interfaces
 {
 
  
     public interface IAuthRepo
     {
 
-        Task<ActionResult<UserDetailDto>> Register(RegisterDto model);
-        Task<ActionResult<UserDto>> Login(LoginDto model);
+        Task<IdentityUser> Register(RegisterDto model);
+        Task<IdentityUser> Login(LoginDto model);
       
     }
 
