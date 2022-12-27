@@ -1,5 +1,4 @@
 ﻿using System;
-using App.Models;
 using AutoMapper;
 using App.DTOs;
 using System.Linq;

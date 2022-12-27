@@ -1,31 +1,19 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Server/IdentityService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/DbContext.cs">
     <Files>
+      <File FileName="Data/DbContext.cs" Line="37" Column="50" />
+      <File FileName="Entities/UserProfile.cs" Line="19" Column="2" />
+      <File FileName="Entities/UserComment.cs" Line="7" Column="29" />
+      <File FileName="DTOs/UserDetailDto.cs" Line="13" Column="1" />
+      <File FileName="Entities/UserLike.cs" Line="13" Column="1" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Entities/UserPost.cs" Line="6" Column="30" />
+      <File FileName="Controllers/AuthController.cs" Line="1" Column="1" />
+      <File FileName="DTOs/RegisterDto.cs" Line="1" Column="1" />
+      <File FileName="Repositories/AuthRepo.cs" Line="1" Column="1" />
+      <File FileName="Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/AdminController.cs" Line="1" Column="1" />
       <File FileName="DTOs/LoginDto.cs" Line="1" Column="1" />
-      <File FileName="Data/DbContext.cs" Line="9" Column="30" />
-      <File FileName="DTOs/UserDto.cs" Line="11" Column="1" />
-      <File FileName="DTOs/RegisterDto.cs" Line="11" Column="9" />
-      <File FileName="Interfaces/IAuthRepo.cs" Line="17" Column="1" />
-      <File FileName="Services/TokenService.cs" Line="18" Column="28" />
-      <File FileName="Controllers/AuthController.cs" Line="37" Column="15" />
-      <File FileName="Controllers/AdminController.cs" Line="18" Column="1" />
-      <File FileName="Controllers/UserController.cs" Line="18" Column="1" />
-      <File FileName="Program.cs" Line="68" Column="18" />
-      <File FileName="Entities/UserApplication.cs" Line="7" Column="18" />
-      <File FileName="Interfaces/ITokenService.cs" Line="15" Column="6" />
-      <File FileName="../Server/Data/DbContext.cs" Line="8" Column="35" />
-      <File FileName="GlobalUsings.cs" Line="15" Column="27" />
-      <File FileName="../Server/Program.cs" Line="48" Column="18" />
-      <File FileName="Api.csproj" />
-      <File FileName="secret.json" Line="1" Column="1" />
-      <File FileName="Helpers/AutoMapperProfiles.cs" Line="18" Column="4" />
-      <File FileName="DTOs/UserDetailDto.cs" Line="11" Column="48" />
-      <File FileName="../Server/Properties/launchSettings.json" />
-      <File FileName="Repositories/AuthRepo.cs" Line="57" Column="79" />
-      <File FileName="../Server/appsettings.json" Line="15" Column="2" />
-      <File FileName="appsettings.json" Line="19" Column="29" />
-      <File FileName="Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="../Server/IdentityService.cs" Line="45" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,21 +22,12 @@
             <Node name="Api" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
-              <Node name="DTOs" expanded="True" />
               <Node name="Entities" expanded="True" />
               <Node name="Helpers" expanded="True" />
               <Node name="Interfaces" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Repositories" expanded="True">
-                <Node name="AuthRepo.cs" selected="True" />
-              </Node>
+              <Node name="Repositories" expanded="True" />
               <Node name="Services" expanded="True" />
-            </Node>
-            <Node name="Server" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-              </Node>
-              <Node name="Data" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -56,15 +35,15 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="26" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="38" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michal/Desktop/apka/Server/IdentityService.cs" line="39" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/apka/Server/IdentityService.cs" line="36" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

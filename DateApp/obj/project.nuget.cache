@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+mOIrowWHk7NlLDt85NRNHUkNMFaBPJ/VBtKZqpCjBhdhpKJXikXxPfCAJOZJiCuJ+/K/Gr0S7+0Bgdt+8BArQ==",
+  "dgSpecHash": "zkAPUYXxreRyPeOudSccsu7QjlbTD8LxrGZTs3fM0Fb7hOpmqC/xZprSSfknkdfD4hV0SQwyJ8jZeGLXRdYrog==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
   "expectedPackageFiles": [
@@ -122,7 +122,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Pakiet „DataAnnotationsExtensions 5.0.1.27” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "DataAnnotationsExtensions",
       "targetGraphs": [
         "net6.0"

@@ -7,7 +7,6 @@ global using Microsoft.AspNetCore.Authorization;
 global using App.DTOs;
 global using App.Interfaces;
 global using  AutoMapper;
-global using  App.Models;
 global using System.Text;
 global using App.Services;
 global using Server;

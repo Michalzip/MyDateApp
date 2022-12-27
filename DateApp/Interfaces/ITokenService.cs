@@ -1,5 +1,4 @@
 ﻿
-using App.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace App.Interfaces

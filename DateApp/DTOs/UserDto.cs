@@ -1,15 +1,12 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-
 namespace App.DTOs
 {
-	public class UserDto
+	public class UserDetailDto
 	{
-
+       
         public string? UserName { get; set; }
-        public string? Token { get; set; }
-
-
+        public string? PhotoUrl { get; set; }
+     
     }
 }
 
