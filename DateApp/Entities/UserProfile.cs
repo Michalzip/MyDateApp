@@ -3,7 +3,7 @@ namespace Api.Entities
 {
 	public class UserProfile
 	{
-        public int UserId;
+        public string? UserId;
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? UserName { get; set; }

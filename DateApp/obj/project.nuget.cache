@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zkAPUYXxreRyPeOudSccsu7QjlbTD8LxrGZTs3fM0Fb7hOpmqC/xZprSSfknkdfD4hV0SQwyJ8jZeGLXRdYrog==",
+  "dgSpecHash": "Nf5K0Q6z3JsUyDeSy0yzmLa+AjjlWx8JtrKVAV0xOz4alFAHGYpQfTNDvV3NwpIYdE9yPexTfAcl0SnRqsLkXQ==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,9 @@
     "/Users/michal/.nuget/packages/identityserver4.entityframework/4.1.2/identityserver4.entityframework.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4.entityframework.storage/4.1.2/identityserver4.entityframework.storage.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4.storage/4.1.2/identityserver4.storage.4.1.2.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr/11.1.0/mediatr.11.1.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.0.0/mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.cookies/2.2.0/microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

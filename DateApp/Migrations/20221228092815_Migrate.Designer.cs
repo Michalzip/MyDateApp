@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221227132314_Migrate")]
+    [Migration("20221228092815_Migrate")]
     partial class Migrate
     {
         /// <inheritdoc />
@@ -33,11 +33,11 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdComment"));
 
-                    b.Property<int?>("CommentedByUserUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CommentedByUserUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("CommentedToUserUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CommentedToUserUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -62,11 +62,11 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserIdLike"));
 
-                    b.Property<int?>("LikedByUserUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("LikedByUserUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("LikedToUserUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("LikedToUserUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("UserIdLike");
 
@@ -88,8 +88,8 @@ namespace Api.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("FromUserUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("FromUserUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
@@ -106,11 +106,8 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
                 {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

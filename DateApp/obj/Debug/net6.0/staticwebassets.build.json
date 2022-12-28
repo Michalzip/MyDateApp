@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2nkIIgr8TVc7oEG68AUi9S+kk3Du8aigpIicvKmS7RU=",
+  "Hash": "zXCPdHCsWk5mdZNMzpvN4/VHuR5s2puRhLkC/A2nItk=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
@@ -11,11 +11,11 @@
       "Version": 2,
       "Source": "Server",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
-      "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
-      "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier"
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework"
     }
   ],
   "DiscoveryPatterns": [

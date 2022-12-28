@@ -11,3 +11,5 @@ global using System.Text;
 global using App.Services;
 global using Server;
 global using App.AuthRepository;
+global using MediatR;
+global using  Microsoft.AspNetCore.Identity;

@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using Server.data;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -134,7 +135,7 @@ builder.Services.AddAuthentication(options =>
 
 });
 
-
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
