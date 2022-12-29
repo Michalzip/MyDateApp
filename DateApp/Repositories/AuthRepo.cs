@@ -1,24 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
-
+using Api.Entities;
 
 
 namespace App.AuthRepository
 {
-    public class AuthRepo : IAuthRepo
+    public class AuthRepo :IAuthRepo
     {
-        public readonly TokenService _token;
-        private readonly IdentityService _identityService;
+  
 
-
-        public AuthRepo(IdentityService identityService, TokenService token)
-        {
-
-            _token = token;
-            _identityService = identityService;
-        }
-
-
-        public async Task<IdentityUser> Register(RegisterDto model)
+        public  IdentityUser SetUserFromRegister(RegisterDto model)
         {
 
             var user = new IdentityUser
@@ -28,34 +18,27 @@ namespace App.AuthRepository
                 PasswordHash = model.Password,
             };
 
-
-             await _identityService.AddIdentityUser(user);
-
             return user;
-
 
         }
 
-
-
-        public async Task<IdentityUser> Login(LoginDto model)
+        public IdentityUser SetUserFromLogin(LoginDto model)
         {
+            var user = new IdentityUser {
 
-            var user = new IdentityUser { Email = model.Email, PasswordHash = model.Password };
+                Email = model.Email,
+                PasswordHash = model.Password
 
-           
-            await _identityService.AuthenticateIdentityUser(user);
+            };
 
             return user;
-
-    
-           
         }
-
     }
 
-
 }
+
+
+
 
 
 

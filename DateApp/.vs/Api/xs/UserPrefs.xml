@@ -1,18 +1,45 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Data/DbContext.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="27" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/MediatR/Queries/GetIdentityUser.cs" relfile="MediatR/Queries/GetIdentityUser.cs" line="40" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/MediatR/Queries/GetIdentityUser.cs" relfile="MediatR/Queries/GetIdentityUser.cs" line="26" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/UserService.cs">
     <Files>
-      <File FileName="Data/DbContext.cs" Line="46" Column="1" />
-      <File FileName="Entities/UserProfile.cs" />
-      <File FileName="Entities/UserComment.cs" />
+      <File FileName="Data/DbContext.cs" Line="16" Column="1" />
+      <File FileName="Entities/UserProfile.cs" Line="4" Column="26" />
+      <File FileName="Entities/UserComment.cs" Line="1" Column="1" />
       <File FileName="Entities/UserLike.cs" />
-      <File FileName="Program.cs" />
+      <File FileName="Program.cs" Line="142" Column="1" />
       <File FileName="Entities/UserPost.cs" />
-      <File FileName="Controllers/AuthController.cs" />
+      <File FileName="Controllers/AuthController.cs" Line="20" Column="6" />
       <File FileName="DTOs/RegisterDto.cs" />
-      <File FileName="Repositories/AuthRepo.cs" />
-      <File FileName="Controllers/UserController.cs" />
-      <File FileName="Controllers/AdminController.cs" />
+      <File FileName="Controllers/UserController.cs" Line="28" Column="52" />
+      <File FileName="Controllers/AdminController.cs" Line="8" Column="16" />
       <File FileName="DTOs/LoginDto.cs" />
+      <File FileName="GlobalUsings.cs" Line="15" Column="45" />
+      <File FileName="../Server/IdentityService.cs" Line="11" Column="31" />
+      <File FileName="../Server/Program.cs" Line="22" Column="1" />
+      <File FileName="Helpers/AutoMapperProfiles.cs" Line="16" Column="8" />
+      <File FileName="DTOs/UserProfileDto.cs" Line="17" Column="1" />
+      <File FileName="Migrations/20221228092815_Migrate.cs" Line="23" Column="2" />
+      <File FileName="Interfaces/IAuthRepo.cs" Line="12" Column="7" />
+      <File FileName="Services/TokenService.cs" Line="10" Column="30" />
+      <File FileName="Services/Interfaces/IAuthService.cs" Line="7" Column="40" />
+      <File FileName="Repositories/UserRepository.cs" Line="18" Column="27" />
+      <File FileName="MediatR/Queries/GetUser.cs" Line="22" Column="99" NotebookId="1" />
+      <File FileName="Repositories/AuthRepo.cs" Line="27" Column="21" NotebookId="1" />
+      <File FileName="Services/AuthService.cs" Line="14" Column="3" NotebookId="1" />
+      <File FileName="Services/UserService.cs" Line="37" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,28 +48,23 @@
             <Node name="Api" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
+              <Node name="DTOs" expanded="True" />
               <Node name="Entities" expanded="True" />
               <Node name="Helpers" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
+              <Node name="MediatR" expanded="True">
+                <Node name="Queries" expanded="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Repositories" expanded="True" />
+              <Node name="Repositories" expanded="True">
+                <Node name="UserRepository.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
             </Node>
+            <Node name="Server" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="26" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="38" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

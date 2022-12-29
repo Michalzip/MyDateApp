@@ -16,12 +16,10 @@ namespace App.Db
 
         }
 
-
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-                
+
 
 
             builder.Entity<UserProfile>().HasKey(k => k.UserId);

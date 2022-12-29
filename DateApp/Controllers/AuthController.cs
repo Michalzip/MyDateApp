@@ -1,6 +1,7 @@
 ﻿
 namespace App.Controllers;
 
+using Api.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Server;
@@ -8,40 +9,45 @@ using Server;
 public class AuthController : Controller
 {
 
-    private readonly IAuthRepo _authRepo;
+    private readonly IAuthService _authService;
  
 
-    public AuthController(IAuthRepo authRepo)
+    public AuthController(IAuthService authService)
     {
 
-        _authRepo = authRepo;
+        _authService = authService;
 
     }
 
 
     [HttpPost("Register")]
-    public async Task<ActionResult> Register(RegisterDto model)
+    public async Task<IActionResult> Register(RegisterDto model)
     {
 
-        var user = await _authRepo.Register(model);
+        var result  =   await _authService.RegisterUser(model);
 
-        return Ok(user);
+        if (result.Succeeded) return Ok(result);
+
+        return Unauthorized();
 
     }
 
 
 
     [HttpPost("Login")]
-    public async Task<ActionResult> Login(LoginDto model)
+    public async Task<IActionResult> Login(LoginDto model)
     {
 
-       var user =  await _authRepo.Login(model);
+        var result  = await _authService.LoginUser(model);
 
-        return Ok(user);
+        if (result.Succeeded) return Ok(result);
+
+        return Unauthorized();
     }
 
+    
 
-    public async Task<IActionResult> LoginSuccess()
+        public async Task<IActionResult> LoginSuccess()
     {
 
         return View();

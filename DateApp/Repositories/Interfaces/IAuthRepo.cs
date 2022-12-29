@@ -7,8 +7,8 @@ namespace App.Interfaces
     public interface IAuthRepo
     {
 
-        Task<IdentityUser> Register(RegisterDto model);
-        Task<IdentityUser> Login(LoginDto model);
+        IdentityUser SetUserFromRegister(RegisterDto model);
+        IdentityUser SetUserFromLogin(LoginDto model);
       
     }
 

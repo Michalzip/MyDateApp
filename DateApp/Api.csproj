@@ -21,7 +21,6 @@
     <None Remove="Swashbuckle.AspNetCore.Swagger" />
     <None Remove="Swashbuckle.AspNetCore" />
     <None Remove="DataAnnotationsExtensions" />
-    <None Remove="Interfaces\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="Services\" />
@@ -41,6 +40,8 @@
     <None Remove="MediatR\Queries\" />
     <None Remove="MediatR\Commands\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="Repositories\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.12" />
@@ -67,7 +68,6 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Helpers\" />
     <Folder Include="Views\" />
@@ -77,6 +77,8 @@
     <Folder Include="MediatR\" />
     <Folder Include="MediatR\Queries\" />
     <Folder Include="MediatR\Commands\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Repositories\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Home.cshtml" />

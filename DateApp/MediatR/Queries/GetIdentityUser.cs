@@ -2,18 +2,20 @@
 using Api.DTOs;
 using Api.Entities;
 using App.Db;
+using Server.Repository;
+using Server.Repository.interfaces;
 
 namespace Api.MediatR.Queries
 {
 
     public class GetIdentityUserQueryHandler : IRequestHandler<UserProfileDto, UserProfile>
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IIdentityUserRepo _identityUserRepo;
         private readonly AppDbContext _context;
 
-        public GetIdentityUserQueryHandler(UserManager<IdentityUser> userManager, AppDbContext context)
+        public GetIdentityUserQueryHandler(IIdentityUserRepo identityUserRepo, AppDbContext context)
         {
-            _userManager = userManager;
+            _identityUserRepo = identityUserRepo;
             _context = context;
         }
 
@@ -21,7 +23,8 @@ namespace Api.MediatR.Queries
 
         async Task<UserProfile> IRequestHandler<UserProfileDto, UserProfile>.Handle(UserProfileDto request, CancellationToken cancellationToken)
         {
-            var identityUser = await _userManager.FindByNameAsync(request.UserName);
+
+            var identityUser = await _identityUserRepo.GetIdentityUserByName(request.UserName);
 
             if (identityUser == null) return new UserProfile { };
             
@@ -37,6 +40,7 @@ namespace Api.MediatR.Queries
             };
 
             _context.UserProfiles.Add(user);
+
             await _context.SaveChangesAsync(cancellationToken);
 
             return user;
@@ -44,9 +48,7 @@ namespace Api.MediatR.Queries
 
 
 
-        //Musisz zmapować z IdentytyUser na IdentityUserDto i wysłać to
-        //    do mediatr, ponieważ tego oczekuje twój program obsługi
-
+  
 
 
 

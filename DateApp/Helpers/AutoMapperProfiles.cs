@@ -13,7 +13,9 @@ namespace App.Helpers
     {
 		public AutoMapperProfiles()
 		{
-			CreateMap<RegisterDto, IdentityUser>();
+
+			//not used yet.
+			
 		}
 	}
 }

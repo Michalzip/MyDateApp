@@ -7,6 +7,12 @@ using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using Server.data;
 using System.Reflection;
+using Server.Repository;
+using Api.Services;
+using Api.Services.Interfaces;
+using Server.Repository.interfaces;
+using Api.Repositories;
+using Api.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -154,7 +160,9 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddScoped<IAuthRepo, AuthRepo>();
 builder.Services.AddScoped<AuthRepo>();
-builder.Services.AddScoped<IdentityService>();
+builder.Services.AddScoped<IIdentityUserRepo,IdentityUserRepo > ();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<AppDbContext>();
 

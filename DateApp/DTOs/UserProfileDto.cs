@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Api.Entities;
 
 namespace Api.DTOs
@@ -6,9 +7,9 @@ namespace Api.DTOs
 	public class UserProfileDto : IRequest<UserProfile>
     {
         public string? UserId;
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-        public string? UserName { get; set; }
+        [Required] public string? FirstName { get; set; }
+        [Required] public string? LastName { get; set; }
+        [Required] public string? UserName { get; set; }
         public string? PhotoUrl { get; set; }
  
     }
