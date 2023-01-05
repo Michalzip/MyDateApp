@@ -1,11 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Api.Entities;
-using Api.DTOs;
-using Api.Services;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using Api.Repositories;
-using Api.Repositories.Interfaces;
-using Microsoft.AspNetCore.Authentication;
+
 
 namespace App.Controllers
 {
@@ -14,39 +8,47 @@ namespace App.Controllers
     {
 
 
-        private readonly IUserRepo _userRepo;
-        public UserController(IUserRepo userRepo)
-        {
-            _userRepo = userRepo;
-        }
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        //adameczek@gmail.com
-        //adeeekhaha
-        //Janek141214#21
+        public UserController(IUnitOfWork unitOfWork, IMediator mediator, IMapper mapper)
+        {
+            _unitOfWork = unitOfWork;
+            _mediator = mediator;
+            _mapper = mapper;
+        }
 
 
         [HttpGet("GetUserByName")]
-        public async Task<IActionResult> GetUser(String name)
+        public async Task<ActionResult<UserGetProfileDto>> GetUser(string username)
         {
-           var user =  await _userRepo.GetUserByName(name);
 
-            if (user!=null) return Ok(user);
+            var user = await _unitOfWork.UserRepository.GetUser(username);
 
-            return NotFound();
+            if (user != null) return Ok(_mapper.Map<UserProfile, UserGetProfileDto>(user));
+
+            return NotFound("Not Found User");
         }
 
 
-        [HttpPost("AddProfile")]
-        public async Task<IActionResult> AddUserProfile(UserProfileDto model)
+
+
+        [HttpPost("CreateUser")]
+        public async Task<ActionResult<UserGetProfileDto>> CreateUser(UserCreateProfileDto model)
         {
-           var userProfile =  await _userRepo.AddUserProfile(model);
 
-            return Ok(userProfile);
+            var userProfile = await _mediator.Send(model);
 
-          
+            _unitOfWork.UserRepository.AddUserProfile(userProfile);
+
+            if (await _unitOfWork.Complete()) return Ok(_mapper.Map<UserProfile, UserGetProfileDto>(userProfile));
+
+            return BadRequest("Failed To Create UserProfile");
+
+
         }
 
-    
     }
 }
 

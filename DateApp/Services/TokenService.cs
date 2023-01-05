@@ -27,7 +27,6 @@ namespace App.Services
 
         public async Task<string> CreateToken(IdentityUser user)
         {
-
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
 
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

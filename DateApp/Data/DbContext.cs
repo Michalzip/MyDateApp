@@ -1,11 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Api.Entities;
-using Microsoft.AspNetCore.Identity;
-using System.Reflection.Metadata;
-using System.Reflection.Emit;
-
+﻿
 namespace App.Db
 {
     public class AppDbContext : DbContext
@@ -16,6 +9,12 @@ namespace App.Db
 
         }
 
+
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        //public DbSet<UserLike> UserLikes { get; set; }
+        //public DbSet<UserPost> UserPosts { get; set; }
+        public DbSet<UserMessage> UserMessages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -24,29 +23,28 @@ namespace App.Db
 
             builder.Entity<UserProfile>().HasKey(k => k.UserId);
 
-            builder.Entity<UserComment>().HasKey(k => k.IdComment);
+            builder.Entity<UserMessage>().HasKey(k => k.IdMessage);
 
-            builder.Entity<UserLike>().HasKey(k => k.UserIdLike);
+            //builder.Entity<UserLike>().HasKey(k => k.UserIdLike);
 
+            
+            //one user  send many messages to another user 
+            builder.Entity<UserMessage>()
+                .HasOne(userBy => userBy.ByUserMessage)
+                .WithMany(userTo => userTo.SendedMessages)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            //one user received many messages from another user
+            builder.Entity<UserMessage>()
+                .HasOne(userTo => userTo.ToUserMessage)
+                .WithMany(userBy => userBy.ReceivedMessages)
+                .OnDelete(DeleteBehavior.Restrict);
+            
 
-            builder.Entity<UserComment>()
-                .HasOne(p => p.CommentedByUser)
-                .WithMany(c => c.CommentsByUsers)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
-            builder.Entity<UserLike>()
-               .HasOne(p => p.LikedByUser)
-               .WithMany(c => c.LikedByUsers)
-               .OnDelete(DeleteBehavior.Cascade);
         }
 
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<UserLike> UserLikes { get; set; }
-        public DbSet<UserPost> UserPosts { get; set; }
-        public DbSet<UserComment> UserComments { get; set; }
+
     }
 }
 

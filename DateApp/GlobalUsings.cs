@@ -9,7 +9,13 @@ global using App.Interfaces;
 global using  AutoMapper;
 global using System.Text;
 global using App.Services;
-global using Server;
-global using App.AuthRepository;
+global using Api.Repositories.Interfaces;
+global using Api.Repository;
 global using MediatR;
 global using  Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;
+global using Api.Entities;
+global using Api.DTOs;
+global using Server.Repository.interfaces;
+global using System.Security.Claims;
+

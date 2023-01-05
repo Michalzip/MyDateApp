@@ -1,12 +1,5 @@
-﻿using System;
-using AutoMapper;
-using App.DTOs;
-using System.Linq;
-using Microsoft.EntityFrameworkCore.SqlServer;
+﻿
 
-using Microsoft.AspNetCore.Identity;
-using System;
-using Microsoft.EntityFrameworkCore;
 namespace App.Helpers
 {
 	public class AutoMapperProfiles: Profile
@@ -14,9 +7,23 @@ namespace App.Helpers
 		public AutoMapperProfiles()
 		{
 
-			//not used yet.
-			
-		}
+			CreateMap<UserProfile, UserGetProfileDto>();
+			CreateMap<UserMessage, MessageGetDto>()
+				.ForMember(dest => dest.Sender,
+				opt => opt.MapFrom(src => src.ByUserMessage.UserName)
+				).ForMember(dest => dest.Receiver,
+				opt => opt.MapFrom(src => src.ToUserMessage.UserName)
+				);
+
+
+            CreateMap<UserProfile, MessageGetDto>().ForMember(
+				dest=>dest.Sender,opt=>opt.MapFrom(src=>src.UserName)
+				).ForMember(
+                dest => dest.Receiver, opt => opt.MapFrom(src => src.UserName)
+                ); ;
+
+
+        }
 	}
 }
 

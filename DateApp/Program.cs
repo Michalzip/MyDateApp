@@ -1,6 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using App.Db;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -8,11 +6,12 @@ using System.Security.Claims;
 using Server.data;
 using System.Reflection;
 using Server.Repository;
-using Api.Services;
-using Api.Services.Interfaces;
 using Server.Repository.interfaces;
 using Api.Repositories;
-using Api.Repositories.Interfaces;
+using App.Helpers;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Api.Entities;
+using Api.Policy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,7 +70,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddAuthorization();
 builder.Host.ConfigureAppConfiguration((config =>
 {
@@ -103,12 +102,16 @@ builder.Services.AddAuthorization(options =>
 {
 
     options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
-
+    options.AddPolicy("UserProfile", policy => policy.Requirements.Add(new UserProfileRequirement()));
+    //UserProfileRequirement
 });
 
 
 builder.Services.AddAuthentication(options =>
 {
+                    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+                    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+                    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
 
 })
                 .AddCookie("Cookies", options =>
@@ -116,7 +119,7 @@ builder.Services.AddAuthentication(options =>
 
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
                     options.SlidingExpiration = true;
-                    options.LoginPath = "https://localhost:7189";
+                    options.LoginPath = "/https://localhost:7189";
                 })
                 .AddJwtBearer(options =>
 {
@@ -158,13 +161,34 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 
-builder.Services.AddScoped<IAuthRepo, AuthRepo>();
-builder.Services.AddScoped<AuthRepo>();
+var mapperConfig = new MapperConfiguration(mc =>
+
+
+{
+    mc.AddProfile(new AutoMapperProfiles());
+
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+
+
+builder.Services.AddSingleton(mapper);
+
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IIdentityUserRepo,IdentityUserRepo > ();
-builder.Services.AddScoped<IUserRepo, UserRepo>();
-builder.Services.AddScoped<IAuthService,AuthService>();
-builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITokenService,TokenService>();
 builder.Services.AddScoped<AppDbContext>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+
+builder.Services.AddScoped<IAuthorizationHandler, RequirementHandler>();
+//builder.Services.AddSingleton<IAuthorizationHandler, RequirementHandler>();
+
 
 
 var app = builder.Build();

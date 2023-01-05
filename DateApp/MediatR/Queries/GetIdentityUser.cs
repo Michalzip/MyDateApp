@@ -1,32 +1,25 @@
-﻿using System;
-using Api.DTOs;
-using Api.Entities;
-using App.Db;
-using Server.Repository;
-using Server.Repository.interfaces;
-
+﻿
 namespace Api.MediatR.Queries
 {
 
-    public class GetIdentityUserQueryHandler : IRequestHandler<UserProfileDto, UserProfile>
+    public class GetIdentityUserQueryHandler : IRequestHandler<UserCreateProfileDto, UserProfile>
     {
         private readonly IIdentityUserRepo _identityUserRepo;
-        private readonly AppDbContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public GetIdentityUserQueryHandler(IIdentityUserRepo identityUserRepo, AppDbContext context)
+        public GetIdentityUserQueryHandler(IIdentityUserRepo identityUserRepo, IHttpContextAccessor httpContextAccessor)
         {
             _identityUserRepo = identityUserRepo;
-            _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
 
 
-        async Task<UserProfile> IRequestHandler<UserProfileDto, UserProfile>.Handle(UserProfileDto request, CancellationToken cancellationToken)
+        async Task<UserProfile> IRequestHandler<UserCreateProfileDto, UserProfile>.Handle(UserCreateProfileDto request, CancellationToken cancellationToken)
         {
+            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var identityUser = await _identityUserRepo.GetIdentityUserByName(request.UserName);
-
-            if (identityUser == null) return new UserProfile { };
+            var identityUser = await _identityUserRepo.GetIdentityUserById(userId); 
             
             var user = new UserProfile
             {
@@ -39,20 +32,9 @@ namespace Api.MediatR.Queries
 
             };
 
-            _context.UserProfiles.Add(user);
-
-            await _context.SaveChangesAsync(cancellationToken);
-
             return user;
+    
         }
-
-
-
-  
-
-
-
-
 
     }
 }

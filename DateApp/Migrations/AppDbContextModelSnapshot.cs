@@ -22,35 +22,6 @@ namespace Api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Api.Entities.UserComment", b =>
-                {
-                    b.Property<int>("IdComment")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdComment"));
-
-                    b.Property<string>("CommentedByUserUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CommentedToUserUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IdComment");
-
-                    b.HasIndex("CommentedByUserUserId");
-
-                    b.HasIndex("CommentedToUserUserId");
-
-                    b.ToTable("UserComments");
-                });
-
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
                     b.Property<int>("UserIdLike")
@@ -72,6 +43,35 @@ namespace Api.Migrations
                     b.HasIndex("LikedToUserUserId");
 
                     b.ToTable("UserLikes");
+                });
+
+            modelBuilder.Entity("Api.Entities.UserMessage", b =>
+                {
+                    b.Property<int>("IdMessage")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdMessage"));
+
+                    b.Property<string>("ByUserMessageUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ToUserMessageUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("IdMessage");
+
+                    b.HasIndex("ByUserMessageUserId");
+
+                    b.HasIndex("ToUserMessageUserId");
+
+                    b.ToTable("UserMessages");
                 });
 
             modelBuilder.Entity("Api.Entities.UserPost", b =>
@@ -129,36 +129,36 @@ namespace Api.Migrations
                     b.ToTable("UserProfiles");
                 });
 
-            modelBuilder.Entity("Api.Entities.UserComment", b =>
-                {
-                    b.HasOne("Api.Entities.UserProfile", "CommentedByUser")
-                        .WithMany("CommentsByUsers")
-                        .HasForeignKey("CommentedByUserUserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Api.Entities.UserProfile", "CommentedToUser")
-                        .WithMany("CommentsFromAnotherUsers")
-                        .HasForeignKey("CommentedToUserUserId");
-
-                    b.Navigation("CommentedByUser");
-
-                    b.Navigation("CommentedToUser");
-                });
-
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
                     b.HasOne("Api.Entities.UserProfile", "LikedByUser")
-                        .WithMany("LikedByUsers")
-                        .HasForeignKey("LikedByUserUserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany()
+                        .HasForeignKey("LikedByUserUserId");
 
                     b.HasOne("Api.Entities.UserProfile", "LikedToUser")
-                        .WithMany("LikedUsers")
+                        .WithMany()
                         .HasForeignKey("LikedToUserUserId");
 
                     b.Navigation("LikedByUser");
 
                     b.Navigation("LikedToUser");
+                });
+
+            modelBuilder.Entity("Api.Entities.UserMessage", b =>
+                {
+                    b.HasOne("Api.Entities.UserProfile", "ByUserMessage")
+                        .WithMany("SendedMessages")
+                        .HasForeignKey("ByUserMessageUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Api.Entities.UserProfile", "ToUserMessage")
+                        .WithMany("ReceivedMessages")
+                        .HasForeignKey("ToUserMessageUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ByUserMessage");
+
+                    b.Navigation("ToUserMessage");
                 });
 
             modelBuilder.Entity("Api.Entities.UserPost", b =>
@@ -172,15 +172,11 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
                 {
-                    b.Navigation("CommentsByUsers");
-
-                    b.Navigation("CommentsFromAnotherUsers");
-
-                    b.Navigation("LikedByUsers");
-
-                    b.Navigation("LikedUsers");
-
                     b.Navigation("PostsUser");
+
+                    b.Navigation("ReceivedMessages");
+
+                    b.Navigation("SendedMessages");
                 });
 #pragma warning restore 612, 618
         }
