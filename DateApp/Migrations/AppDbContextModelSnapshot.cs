@@ -17,33 +17,10 @@ namespace Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "6.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Api.Entities.UserLike", b =>
-                {
-                    b.Property<int>("UserIdLike")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserIdLike"));
-
-                    b.Property<string>("LikedByUserUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LikedToUserUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("UserIdLike");
-
-                    b.HasIndex("LikedByUserUserId");
-
-                    b.HasIndex("LikedToUserUserId");
-
-                    b.ToTable("UserLikes");
-                });
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
@@ -51,7 +28,7 @@ namespace Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdMessage"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdMessage"), 1L, 1);
 
                     b.Property<string>("ByUserMessageUserId")
                         .HasColumnType("nvarchar(450)");
@@ -72,33 +49,6 @@ namespace Api.Migrations
                     b.HasIndex("ToUserMessageUserId");
 
                     b.ToTable("UserMessages");
-                });
-
-            modelBuilder.Entity("Api.Entities.UserPost", b =>
-                {
-                    b.Property<int>("UserPostId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserPostId"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FromUserUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserPostId");
-
-                    b.HasIndex("FromUserUserId");
-
-                    b.ToTable("UserPosts");
                 });
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
@@ -129,21 +79,6 @@ namespace Api.Migrations
                     b.ToTable("UserProfiles");
                 });
 
-            modelBuilder.Entity("Api.Entities.UserLike", b =>
-                {
-                    b.HasOne("Api.Entities.UserProfile", "LikedByUser")
-                        .WithMany()
-                        .HasForeignKey("LikedByUserUserId");
-
-                    b.HasOne("Api.Entities.UserProfile", "LikedToUser")
-                        .WithMany()
-                        .HasForeignKey("LikedToUserUserId");
-
-                    b.Navigation("LikedByUser");
-
-                    b.Navigation("LikedToUser");
-                });
-
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
                     b.HasOne("Api.Entities.UserProfile", "ByUserMessage")
@@ -161,19 +96,8 @@ namespace Api.Migrations
                     b.Navigation("ToUserMessage");
                 });
 
-            modelBuilder.Entity("Api.Entities.UserPost", b =>
-                {
-                    b.HasOne("Api.Entities.UserProfile", "FromUser")
-                        .WithMany("PostsUser")
-                        .HasForeignKey("FromUserUserId");
-
-                    b.Navigation("FromUser");
-                });
-
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
                 {
-                    b.Navigation("PostsUser");
-
                     b.Navigation("ReceivedMessages");
 
                     b.Navigation("SendedMessages");

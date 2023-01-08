@@ -81,7 +81,7 @@ builder.Host.ConfigureAppConfiguration((config =>
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("connectionString");
-
+    options.UseLazyLoadingProxies(true);
     options.UseSqlServer(connectionString);
 
 });

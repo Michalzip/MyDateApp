@@ -20,11 +20,14 @@ namespace Api.Repositories
 
 
 
-        public async Task<List<UserMessage>> GetConversation(string currentUserName, string receiverUserName)
+        public Task <List<UserMessage>> GetConversation(string currentUserName, string receiverUserName)
         {
-            var result = await _context.UserMessages.Include(x=>x.ByUserMessage).Include(x=>x.ToUserMessage).Where(u=>u.ByUserMessage.UserName == currentUserName && u.ToUserMessage.UserName == receiverUserName
+
+            var result =  _context.UserMessages.Include(x=>x.ByUserMessage).Include(x=>x.ToUserMessage).Where(u=>u.ByUserMessage.UserName == currentUserName && u.ToUserMessage.UserName == receiverUserName
             || u.ByUserMessage.UserName == receiverUserName && u.ToUserMessage.UserName == currentUserName
             ).ToListAsync();
+
+
 
             return result;
 

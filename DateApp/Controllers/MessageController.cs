@@ -25,8 +25,6 @@ namespace Api.Controllers
         {
             currentUserName = User.Identity.Name;
 
-            if (currentUserName == null) return BadRequest("User Not Logged In");
-
             var messages = await _unitOfWork.MessageRepository.GetConversation(currentUserName , name);
 
             var result = _mapper.Map<List<UserMessage>, List<MessageGetDto>>(messages);

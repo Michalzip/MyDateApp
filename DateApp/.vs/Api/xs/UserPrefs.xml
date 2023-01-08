@@ -1,25 +1,24 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repositories/MessageRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Policies/UserProfileRequirement.cs">
     <Files>
-      <File FileName="Controllers/AuthController.cs" Line="28" Column="31" />
-      <File FileName="Program.cs" Line="50" Column="26" />
-      <File FileName="Entities/UserProfile.cs" Line="12" Column="15" />
-      <File FileName="Entities/UserMessage.cs" Line="12" Column="16" />
-      <File FileName="Entities/UserPost.cs" Line="15" Column="1" />
-      <File FileName="Entities/UserLike.cs" Line="1" Column="1" />
-      <File FileName="Controllers/MessageController.cs" Line="30" Column="1" />
-      <File FileName="Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="Repositories/MessageRepository.cs" Line="25" Column="1" />
+      <File FileName="Controllers/AuthController.cs" />
+      <File FileName="Program.cs" />
+      <File FileName="Entities/UserProfile.cs" />
+      <File FileName="Entities/UserMessage.cs" />
+      <File FileName="Entities/UserPost.cs" />
+      <File FileName="Entities/UserLike.cs" />
+      <File FileName="Controllers/MessageController.cs" />
+      <File FileName="Controllers/UserController.cs" />
+      <File FileName="Repositories/MessageRepository.cs" />
+      <File FileName="Policies/UserProfileRequirement.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
             <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MessageController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="DTOs" expanded="True" />
               <Node name="Entities" expanded="True" />
@@ -27,7 +26,7 @@
               <Node name="MediatR" expanded="True">
                 <Node name="Queries" expanded="True" />
               </Node>
-              <Node name="Policy" expanded="True" />
+              <Node name="Policies" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Repositories" expanded="True" />
               <Node name="Services" expanded="True" />

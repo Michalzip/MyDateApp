@@ -7,9 +7,9 @@ namespace Api.Entities
 
         public int IdMessage;
 
-        public UserProfile? ByUserMessage { get; set; }
+        public virtual UserProfile? ByUserMessage { get; set; }
 
-        public  UserProfile? ToUserMessage { get; set; }
+        public virtual UserProfile? ToUserMessage { get; set; }
 
         public string? Message { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
