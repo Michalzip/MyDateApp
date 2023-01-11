@@ -1,50 +1,73 @@
 ﻿
 
 using Microsoft.AspNetCore.Mvc;
-
+using DateApp.Extensions;
 namespace Api.Controllers
 {
     [Authorize(Policy = "UserProfile")]
     public class MessageController : Controller
     {
- 
+
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public MessageController(IUnitOfWork unitOfWork,IMapper mapper)
+        public MessageController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
-        private string? currentUserName;
+        private string? sourceUserName;
 
-        [HttpGet("GetMessage")]
+        [HttpGet("GetMessages")]
 
-        public async Task<ActionResult<MessageGetDto>> GetMessages(string name)
+        public async Task<ActionResult<MessageDto>> GetMessages(string username)
         {
-            currentUserName = User.Identity.Name;
+            sourceUserName = User.GetUsername();
 
-            var messages = await _unitOfWork.MessageRepository.GetConversation(currentUserName , name);
+            var messages = await _unitOfWork.MessageRepository.GetMessages(sourceUserName, username);
 
-            var result = _mapper.Map<List<UserMessage>, List<MessageGetDto>>(messages);
+            if (messages.Count() == 0) return BadRequest("you dont have messages with this user");
+
+            var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
 
             return Ok(result);
-
-          
 
         }
 
 
-        [HttpPost("CreateMessages")]
+        [HttpGet("GetMessagesByTime")]
 
-        public async Task<ActionResult<MessageGetDto>> CreateMessages(MessageCreateDto user)
+        public async Task<ActionResult<MessageDto>> GetMessagesByTime(string username, int hourFrom, int hourTo, int day)
         {
-           
 
-            currentUserName = User.Identity.Name;
+            var sourceUser = User.GetUsername();
 
-            var currentUser =  await _unitOfWork.UserRepository.GetUser(currentUserName);
+            var message = new MessageDto
+            {
+                Sender = sourceUser,
+                Receiver = username
+            };
+
+            var messages = await _unitOfWork.MessageRepository.GetMessagesByTime(message, hourFrom, hourTo, day);
+
+            if (messages.Count() == 0) return BadRequest("You have no messages with this user in the time limit");
+
+            var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
+
+            return Ok(result);
+
+        }
+
+        [HttpPost("AddMessages")]
+
+        public async Task<ActionResult<MessageDto>> AddMessages(MessageCreateDto user)
+        {
+
+
+            sourceUserName = User.GetUsername();
+
+            var sourceUser = await _unitOfWork.UserRepository.GetUser(sourceUserName);
 
             var receiverUser = await _unitOfWork.UserRepository.GetUser(user.UserName);
 
@@ -53,18 +76,41 @@ namespace Api.Controllers
 
             var message = new UserMessage
             {
-                ByUserMessage = currentUser,
-                ToUserMessage = receiverUser,
+                ByUser = sourceUser,
+                ToUser = receiverUser,
                 Message = user.Message,
             };
 
             _unitOfWork.MessageRepository.AddMessage(message);
 
-            var result =   _mapper.Map<UserMessage, MessageGetDto>(message);
+            var messageDto = _mapper.Map<UserMessage, MessageDto>(message);
 
-            if (await _unitOfWork.Complete()) return Ok(result);
+            if (await _unitOfWork.Complete()) return Ok(messageDto);
 
             return BadRequest("Message Not Added");
+
+        }
+
+
+
+        [HttpDelete("DeleteMessage")]
+        public async Task<ActionResult> DeleteMessage(int id)
+        {
+            var username = User.GetUsername();
+
+            var message = await _unitOfWork.MessageRepository.GetMessage(id);
+
+            if (message == null) return BadRequest("Message not exists");
+
+            var checkMessageAuthor = await _unitOfWork.MessageRepository.CheckAuthorMessage(username, id);
+
+            if (checkMessageAuthor == null) return Unauthorized();
+
+            _unitOfWork.MessageRepository.DeleteMessage(message);
+
+            if (await _unitOfWork.Complete()) return Ok("Message Delete");
+
+            return BadRequest("Problem Deleting the message");
 
         }
 

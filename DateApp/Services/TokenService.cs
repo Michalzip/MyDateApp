@@ -34,7 +34,7 @@ namespace App.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Email,user.Email),
-                
+
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor

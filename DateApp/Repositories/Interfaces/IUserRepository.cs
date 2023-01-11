@@ -9,9 +9,7 @@ namespace Api.Repositories.Interfaces
 	{
 
         Task<UserProfile> GetUser(string username);
-        //Task<UserProfile> GetUserByIdAsync(int id);
         void AddUserProfile(UserProfile user);
-        //Task<UserProfile> GetUserByUsername(string username);
 
 
     }

@@ -11,8 +11,7 @@ namespace App.Db
 
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        //public DbSet<UserLike> UserLikes { get; set; }
-        //public DbSet<UserPost> UserPosts { get; set; }
+        public DbSet<UserLike> UserLikes { get; set; }
         public DbSet<UserMessage> UserMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -21,23 +20,30 @@ namespace App.Db
 
 
 
-            builder.Entity<UserProfile>().HasKey(k => k.UserId);
+            builder.Entity<UserProfile>().HasKey(k => k.Id);
+            builder.Entity<UserLike>().HasKey(K => K.Id);
+            builder.Entity<UserMessage>().HasKey(k => k.Id);
 
-            builder.Entity<UserMessage>().HasKey(k => k.IdMessage);
+            builder.Entity<UserLike>()
+                .HasOne(userBy => userBy.ByUser)
+                .WithMany(userTo => userTo.SendedLikes)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            //builder.Entity<UserLike>().HasKey(k => k.UserIdLike);
+            builder.Entity<UserLike>()
+               .HasOne(userBy => userBy.ToUser)
+               .WithMany(userTo => userTo.ReceivedLikes)
+               .OnDelete(DeleteBehavior.Restrict);
 
-            
             //one user  send many messages to another user 
             builder.Entity<UserMessage>()
-                .HasOne(userBy => userBy.ByUserMessage)
+                .HasOne(userBy => userBy.ByUser)
                 .WithMany(userTo => userTo.SendedMessages)
                 .OnDelete(DeleteBehavior.Restrict);
 
             //one user received many messages from another user
             builder.Entity<UserMessage>()
-                .HasOne(userTo => userTo.ToUserMessage)
-                .WithMany(userBy => userBy.ReceivedMessages)
+                .HasOne(userBy => userBy.ToUser)
+                .WithMany(userTo => userTo.ReceivedMessages)
                 .OnDelete(DeleteBehavior.Restrict);
             
 

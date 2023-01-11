@@ -2,7 +2,7 @@
 
 namespace Api.Repository
 {
-    public class AuthRepository :IAuthRepository
+    public class AuthRepository : IAuthRepository
     {
 
         private readonly IIdentityUserRepo _identityUserRepo;
@@ -17,7 +17,7 @@ namespace Api.Repository
 
         public async Task<IdentityResult> RegisterUser(RegisterDto model)
         {
-            
+
 
             var userIdentity = new IdentityUser
             {
@@ -26,12 +26,10 @@ namespace Api.Repository
                 PasswordHash = model.Password,
             };
 
-            var result = await _identityUserRepo.InsertIdentityUser(userIdentity);
-
-            return result;
+            return await _identityUserRepo.InsertIdentityUser(userIdentity);
 
         }
-  
+
 
         public async Task<SignInResult> LoginUser(LoginDto model)
         {

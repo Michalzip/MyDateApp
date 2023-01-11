@@ -4,6 +4,7 @@ using App.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230108165356_migratev2")]
+    partial class migratev2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,39 +26,39 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdLike")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLike"), 1L, 1);
 
-                    b.Property<string>("ByUserId")
+                    b.Property<string>("ByUserLikedIdUser")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ToUserId")
+                    b.Property<string>("ToUserLikedIdUser")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdLike");
 
-                    b.HasIndex("ByUserId");
+                    b.HasIndex("ByUserLikedIdUser");
 
-                    b.HasIndex("ToUserId");
+                    b.HasIndex("ToUserLikedIdUser");
 
-                    b.ToTable("UserLikes");
+                    b.ToTable("UserLike");
                 });
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdMessage")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdMessage"), 1L, 1);
 
-                    b.Property<string>("ByUserId")
+                    b.Property<string>("ByUserMessageIdUser")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -65,21 +67,21 @@ namespace Api.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToUserId")
+                    b.Property<string>("ToUserMessageIdUser")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdMessage");
 
-                    b.HasIndex("ByUserId");
+                    b.HasIndex("ByUserMessageIdUser");
 
-                    b.HasIndex("ToUserId");
+                    b.HasIndex("ToUserMessageIdUser");
 
                     b.ToTable("UserMessages");
                 });
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("IdUser")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -100,43 +102,41 @@ namespace Api.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdUser");
 
                     b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
-                    b.HasOne("Api.Entities.UserProfile", "ByUser")
+                    b.HasOne("Api.Entities.UserProfile", "ByUserLiked")
                         .WithMany("SendedLikes")
-                        .HasForeignKey("ByUserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ByUserLikedIdUser");
 
-                    b.HasOne("Api.Entities.UserProfile", "ToUser")
+                    b.HasOne("Api.Entities.UserProfile", "ToUserLiked")
                         .WithMany("ReceivedLikes")
-                        .HasForeignKey("ToUserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ToUserLikedIdUser");
 
-                    b.Navigation("ByUser");
+                    b.Navigation("ByUserLiked");
 
-                    b.Navigation("ToUser");
+                    b.Navigation("ToUserLiked");
                 });
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
-                    b.HasOne("Api.Entities.UserProfile", "ByUser")
+                    b.HasOne("Api.Entities.UserProfile", "ByUserMessage")
                         .WithMany("SendedMessages")
-                        .HasForeignKey("ByUserId")
+                        .HasForeignKey("ByUserMessageIdUser")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Api.Entities.UserProfile", "ToUser")
+                    b.HasOne("Api.Entities.UserProfile", "ToUserMessage")
                         .WithMany("ReceivedMessages")
-                        .HasForeignKey("ToUserId")
+                        .HasForeignKey("ToUserMessageIdUser")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("ByUser");
+                    b.Navigation("ByUserMessage");
 
-                    b.Navigation("ToUser");
+                    b.Navigation("ToUserMessage");
                 });
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>

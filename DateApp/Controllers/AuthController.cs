@@ -7,7 +7,7 @@ public class AuthController : Controller
 {
 
     private readonly IAuthRepository _authRepo;
- 
+
 
     public AuthController(IAuthRepository authRepo)
     {
@@ -16,12 +16,11 @@ public class AuthController : Controller
 
     }
 
-
     [HttpPost("Register")]
     public async Task<IActionResult> Register(RegisterDto model)
     {
 
-        var result  =   await _authRepo.RegisterUser(model);
+        var result = await _authRepo.RegisterUser(model);
 
         if (result.Succeeded) return Ok(result);
 
@@ -32,7 +31,7 @@ public class AuthController : Controller
     [HttpPost("Logout")]
     public async Task<ActionResult> Logout()
     {
-      
+
         await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
         return Ok("User Logout");
@@ -43,16 +42,15 @@ public class AuthController : Controller
     public async Task<IActionResult> Login(LoginDto model)
     {
 
-        var result  = await _authRepo.LoginUser(model);
+        var result = await _authRepo.LoginUser(model);
 
         if (result.Succeeded) return Ok(result);
 
         return Unauthorized();
     }
 
-    
 
-        public async Task<IActionResult> LoginSuccess()
+    public async Task<IActionResult> LoginSuccess()
     {
 
         return View();

@@ -84,6 +84,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseLazyLoadingProxies(true);
     options.UseSqlServer(connectionString);
 
+
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -102,16 +103,15 @@ builder.Services.AddAuthorization(options =>
 {
 
     options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
-    options.AddPolicy("UserProfile", policy => policy.Requirements.Add(new UserProfileRequirement()));
-    //UserProfileRequirement
+    options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfileRequirement());  policy.RequireAuthenticatedUser(); });
 });
 
 
 builder.Services.AddAuthentication(options =>
 {
-                    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-                    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-                    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
 
 })
                 .AddCookie("Cookies", options =>
@@ -175,10 +175,10 @@ IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
-builder.Services.AddScoped<IIdentityUserRepo,IdentityUserRepo > ();
+builder.Services.AddScoped<IIdentityUserRepo, IdentityUserRepo>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<ITokenService,TokenService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AppDbContext>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddHttpContextAccessor();

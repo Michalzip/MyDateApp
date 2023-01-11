@@ -8,42 +8,70 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Repositories
 {
-	public class MessageRepository:IMessageRepository
-	{
+    public class MessageRepository : IMessageRepository
+    {
         private readonly AppDbContext _context;
 
         public MessageRepository(AppDbContext context)
-		{
+        {
             _context = context;
 
         }
 
-
-
-        public Task <List<UserMessage>> GetConversation(string currentUserName, string receiverUserName)
+        public async Task<UserMessage> CheckAuthorMessage(string currentUserName, int messageId)
         {
 
-            var result =  _context.UserMessages.Include(x=>x.ByUserMessage).Include(x=>x.ToUserMessage).Where(u=>u.ByUserMessage.UserName == currentUserName && u.ToUserMessage.UserName == receiverUserName
-            || u.ByUserMessage.UserName == receiverUserName && u.ToUserMessage.UserName == currentUserName
-            ).ToListAsync();
-
-
-
-            return result;
-
-
+            return await _context.UserMessages.Where(u => u.ByUser.UserName == currentUserName && u.Id == messageId).FirstOrDefaultAsync();
 
         }
 
 
+        public async Task<UserMessage> GetMessage(int id)
+        {
+            return await _context.UserMessages
+                .Include(u => u.ByUser)
+                .Include(u => u.ToUser)
+                .SingleOrDefaultAsync(x => x.Id == id);
+        }
 
-        //public async Task
+        public async Task<List<UserMessage>> GetMessages(string currentUserName, string receiverUserName)
+        {
+
+            return await _context.UserMessages
+               .Include(x => x.ByUser)
+               .Include(x => x.ToUser)
+               .Where(u => u.ByUser.UserName == currentUserName && u.ToUser.UserName == receiverUserName
+                || u.ByUser.UserName == receiverUserName && u.ToUser.UserName == currentUserName
+               )
+               .ToListAsync();
+        }
+
+        public async Task<List<UserMessage>> GetMessagesByTime(MessageDto message, int hourFrom, int hourTo, int day)
+        {
+
+            return await _context.UserMessages
+                 .Include(x => x.ByUser)
+                 .Include(x => x.ToUser)
+                 .Where(u => u.CreatedAt.Hour >= hourFrom && u.CreatedAt.Hour <= hourTo && u.CreatedAt.Day == day
+                 && u.ByUser.UserName == message.Sender && u.ToUser.UserName == message.Receiver
+                 || u.ByUser.UserName == message.Receiver && u.ToUser.UserName == message.Sender
+                 && u.CreatedAt.Hour >= hourFrom && u.CreatedAt.Hour <= hourTo && u.CreatedAt.Day == day
+                 )
+
+                 .ToListAsync();
+
+        }
+
         public void AddMessage(UserMessage message)
         {
 
             _context.Add(message);
         }
 
+        public void DeleteMessage(UserMessage message)
+        {
+            _context.UserMessages.Remove(message);
+        }
 
     }
 }

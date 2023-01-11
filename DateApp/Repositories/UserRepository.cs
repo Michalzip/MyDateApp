@@ -24,30 +24,9 @@ namespace Api.Repositories
         public async Task<UserProfile> GetUser(string username)
         {
 
-            var result = _context.UserProfiles.Where(u => u.UserName == username);
-            //.ProjectTo<UserGetProfileDto>(_mapper.ConfigurationProvider);
+            return await _context.UserProfiles.Where(u => u.UserName == username).FirstOrDefaultAsync();
 
-            return await result.FirstOrDefaultAsync();
         }
-
-        //public async Task<UserGetProfileDto> GetUserByIdAsync(int id)
-        //{
-
-        //    var result = _context.UserProfiles.FindAsync(id);
-
-        //    _mapper.ProjectTo<UserGetProfileDto>(result).FirstOrDefault();
-        //        //ProjectTo<UserGetProfileDto>(_mapper.ConfigurationProvider);
-
-        //    //.FindAsync(id)
-        //    //
-        //    return  await  result.Find(id);
-
-
-        //}
-
-
-  
-
 
         public void AddUserProfile(UserProfile user)
         {

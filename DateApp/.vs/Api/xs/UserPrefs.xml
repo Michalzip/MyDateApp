@@ -1,34 +1,64 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Policies/UserProfileRequirement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/MessageController.cs">
     <Files>
-      <File FileName="Controllers/AuthController.cs" />
-      <File FileName="Program.cs" />
-      <File FileName="Entities/UserProfile.cs" />
-      <File FileName="Entities/UserMessage.cs" />
-      <File FileName="Entities/UserPost.cs" />
-      <File FileName="Entities/UserLike.cs" />
-      <File FileName="Controllers/MessageController.cs" />
-      <File FileName="Controllers/UserController.cs" />
-      <File FileName="Repositories/MessageRepository.cs" />
-      <File FileName="Policies/UserProfileRequirement.cs" Line="1" Column="1" />
+      <File FileName="Repositories/LikeRepository.cs" Line="20" Column="1" />
+      <File FileName="DTOs/LikeDto.cs" Line="13" Column="6" />
+      <File FileName="Repositories/Interfaces/ILikeRepository.cs" Line="11" Column="33" />
+      <File FileName="Data/DbContext.cs" Line="24" Column="58" />
+      <File FileName="Helpers/AutoMapperProfiles.cs" Line="33" Column="41" />
+      <File FileName="Controllers/LikeController.cs" Line="70" Column="1" />
+      <File FileName="Controllers/MessageController.cs" Line="121" Column="1" />
+      <File FileName="Repositories/MessageRepository.cs" Line="21" Column="97" />
+      <File FileName="Controllers/AdminController.cs" Line="15" Column="13" />
+      <File FileName="Controllers/UserController.cs" Line="22" Column="1" />
+      <File FileName="Policies/RequirementHandler.cs" Line="17" Column="35" />
+      <File FileName="MediatR/Queries/GetIdentityUser.cs" Line="1" Column="1" />
+      <File FileName="Extensions/ClaimPrincipleExtension.cs" Line="1" Column="1" />
+      <File FileName="Policies/UserProfileRequirement.cs" Line="4" Column="37" />
+      <File FileName="Program.cs" Line="106" Column="144" />
+      <File FileName="Controllers/AuthController.cs" Line="1" Column="1" />
+      <File FileName="DTOs/LikeCreateDto.cs" Line="1" Column="1" />
+      <File FileName="DTOs/LoginDto.cs" Line="1" Column="1" />
+      <File FileName="DTOs/MessageCreateDto.cs" Line="1" Column="1" />
+      <File FileName="DTOs/MessageDto.cs" Line="1" Column="1" />
+      <File FileName="DTOs/RegisterDto.cs" Line="1" Column="1" />
+      <File FileName="DTOs/UserCreateProfileDto.cs" Line="9" Column="1" />
+      <File FileName="DTOs/UserProfileDto.cs" Line="16" Column="1" />
+      <File FileName="Repositories/Interfaces/IAuthRepository.cs" Line="1" Column="1" />
+      <File FileName="Repositories/Interfaces/IMessageRepository.cs" Line="6" Column="2" />
+      <File FileName="Repositories/Interfaces/IUnitOfWork.cs" Line="1" Column="1" />
+      <File FileName="Repositories/Interfaces/IUserRepository.cs" Line="12" Column="47" />
+      <File FileName="Repositories/AuthRepository.cs" Line="43" Column="1" />
+      <File FileName="Repositories/UnitOfWork.cs" Line="39" Column="1" />
+      <File FileName="Repositories/UserRepository.cs" Line="34" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
             <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="MessageController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="DTOs" expanded="True" />
               <Node name="Entities" expanded="True" />
+              <Node name="Extensions" expanded="True" />
               <Node name="Helpers" expanded="True" />
               <Node name="MediatR" expanded="True">
                 <Node name="Queries" expanded="True" />
               </Node>
               <Node name="Policies" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Repositories" expanded="True" />
+              <Node name="Repositories" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Server" expanded="True" />
@@ -37,18 +67,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
-    <Watch file="../../../Repositories/MessageRepository.cs" line="24" column="16" endLine="24" endColumn="71" offsetX="-1" offsetY="-1" expression="w" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/AuthController.cs" relfile="Controllers/AuthController.cs" line="24" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="27" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Repositories/MessageRepository.cs" relfile="Repositories/MessageRepository.cs" line="25" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/MessageController.cs" relfile="Controllers/MessageController.cs" line="30" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Repositories/MessageRepository.cs" relfile="Repositories/MessageRepository.cs" line="40" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/LikeController.cs" relfile="Controllers/LikeController.cs" line="71" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

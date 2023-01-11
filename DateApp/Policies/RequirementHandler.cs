@@ -1,6 +1,6 @@
 ﻿
 using App.Db;
-
+using DateApp.Extensions;
 
 namespace Api.Policy
 {
@@ -18,13 +18,11 @@ namespace Api.Policy
         {
             var currentUserName = context.User.Identity.Name;
 
-            var result =  _context.UserProfiles.Where(u => u.UserName == currentUserName).FirstOrDefault();
+            var result = _context.UserProfiles.Where(u => u.UserName == currentUserName).FirstOrDefault();
 
             if (result != null) context.Succeed(requirement);
-        
 
-
-          
+            await Task.CompletedTask;
         }
     }
 }

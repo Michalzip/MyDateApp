@@ -4,6 +4,7 @@ using App.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230108170329_migratev3")]
+    partial class migratev3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +47,7 @@ namespace Api.Migrations
 
                     b.HasIndex("ToUserId");
 
-                    b.ToTable("UserLikes");
+                    b.ToTable("UserLike");
                 });
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
@@ -56,7 +58,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ByUserId")
+                    b.Property<string>("ByUserMessageId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -65,14 +67,14 @@ namespace Api.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToUserId")
+                    b.Property<string>("ToUserMessageId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ByUserId");
+                    b.HasIndex("ByUserMessageId");
 
-                    b.HasIndex("ToUserId");
+                    b.HasIndex("ToUserMessageId");
 
                     b.ToTable("UserMessages");
                 });
@@ -109,13 +111,11 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Entities.UserProfile", "ByUser")
                         .WithMany("SendedLikes")
-                        .HasForeignKey("ByUserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ByUserId");
 
                     b.HasOne("Api.Entities.UserProfile", "ToUser")
                         .WithMany("ReceivedLikes")
-                        .HasForeignKey("ToUserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ToUserId");
 
                     b.Navigation("ByUser");
 
@@ -124,19 +124,19 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
-                    b.HasOne("Api.Entities.UserProfile", "ByUser")
+                    b.HasOne("Api.Entities.UserProfile", "ByUserMessage")
                         .WithMany("SendedMessages")
-                        .HasForeignKey("ByUserId")
+                        .HasForeignKey("ByUserMessageId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Api.Entities.UserProfile", "ToUser")
+                    b.HasOne("Api.Entities.UserProfile", "ToUserMessage")
                         .WithMany("ReceivedMessages")
-                        .HasForeignKey("ToUserId")
+                        .HasForeignKey("ToUserMessageId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("ByUser");
+                    b.Navigation("ByUserMessage");
 
-                    b.Navigation("ToUser");
+                    b.Navigation("ToUserMessage");
                 });
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>

@@ -19,11 +19,11 @@ namespace Api.MediatR.Queries
         {
             var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var identityUser = await _identityUserRepo.GetIdentityUserById(userId); 
-            
+            var identityUser = await _identityUserRepo.GetIdentityUserById(userId);
+
             var user = new UserProfile
             {
-                UserId = identityUser.Id,
+                Id = identityUser.Id,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 UserName = identityUser.UserName,
@@ -33,7 +33,7 @@ namespace Api.MediatR.Queries
             };
 
             return user;
-    
+
         }
 
     }

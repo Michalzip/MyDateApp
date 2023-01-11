@@ -1,15 +1,14 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
 
 namespace Api.DTOs
 {
-    public class MessageCreateDto
+    public class LikeCreateDto
     {
         [Required] public string? UserName { get; set; }
-        [Required] public string? Message { get; set; }
-
 
     }
 }
-

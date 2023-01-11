@@ -21,12 +21,12 @@ namespace App.Controllers
 
 
         [HttpGet("GetUserByName")]
-        public async Task<ActionResult<UserGetProfileDto>> GetUser(string username)
+        public async Task<ActionResult<UserProfileDto>> GetUser(string username)
         {
 
             var user = await _unitOfWork.UserRepository.GetUser(username);
 
-            if (user != null) return Ok(_mapper.Map<UserProfile, UserGetProfileDto>(user));
+            if (user != null) return Ok(_mapper.Map<UserProfile, UserProfileDto>(user));
 
             return NotFound("Not Found User");
         }
@@ -35,14 +35,14 @@ namespace App.Controllers
 
 
         [HttpPost("CreateUser")]
-        public async Task<ActionResult<UserGetProfileDto>> CreateUser(UserCreateProfileDto model)
+        public async Task<ActionResult<UserProfileDto>> CreateUser(UserCreateProfileDto model)
         {
 
             var userProfile = await _mediator.Send(model);
 
             _unitOfWork.UserRepository.AddUserProfile(userProfile);
 
-            if (await _unitOfWork.Complete()) return Ok(_mapper.Map<UserProfile, UserGetProfileDto>(userProfile));
+            if (await _unitOfWork.Complete()) return Ok(_mapper.Map<UserProfile, UserProfileDto>(userProfile));
 
             return BadRequest("Failed To Create UserProfile");
 
