@@ -125,11 +125,6 @@
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Identity.Client.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
@@ -190,9 +185,6 @@
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/MediatR.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/MediatR.Contracts.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-/Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/michal/Desktop/apka/DateApp/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll

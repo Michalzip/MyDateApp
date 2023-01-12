@@ -11,15 +11,16 @@ namespace Api.MediatR.Queries
         {
             _identityUserRepo = identityUserRepo;
             _httpContextAccessor = httpContextAccessor;
+
         }
 
 
 
         async Task<UserProfile> IRequestHandler<UserCreateProfileDto, UserProfile>.Handle(UserCreateProfileDto request, CancellationToken cancellationToken)
         {
-            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var username = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
 
-            var identityUser = await _identityUserRepo.GetIdentityUserById(userId);
+            var identityUser = await _identityUserRepo.GetIdentityUserByName(username);
 
             var user = new UserProfile
             {

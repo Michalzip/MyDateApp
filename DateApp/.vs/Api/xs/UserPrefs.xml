@@ -1,58 +1,59 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+    <Watch file="../../../Controllers/UserController.cs" line="40" column="16" endLine="40" endColumn="57" offsetX="-1" offsetY="-1" expression="userProfile" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/MessageController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Server/Repository/IdentityUserRepo.cs">
     <Files>
-      <File FileName="Repositories/LikeRepository.cs" Line="20" Column="1" />
-      <File FileName="DTOs/LikeDto.cs" Line="13" Column="6" />
-      <File FileName="Repositories/Interfaces/ILikeRepository.cs" Line="11" Column="33" />
-      <File FileName="Data/DbContext.cs" Line="24" Column="58" />
-      <File FileName="Helpers/AutoMapperProfiles.cs" Line="33" Column="41" />
-      <File FileName="Controllers/LikeController.cs" Line="70" Column="1" />
-      <File FileName="Controllers/MessageController.cs" Line="121" Column="1" />
-      <File FileName="Repositories/MessageRepository.cs" Line="21" Column="97" />
-      <File FileName="Controllers/AdminController.cs" Line="15" Column="13" />
-      <File FileName="Controllers/UserController.cs" Line="22" Column="1" />
-      <File FileName="Policies/RequirementHandler.cs" Line="17" Column="35" />
-      <File FileName="MediatR/Queries/GetIdentityUser.cs" Line="1" Column="1" />
+      <File FileName="Repositories/LikeRepository.cs" />
+      <File FileName="DTOs/LikeDto.cs" />
+      <File FileName="Repositories/Interfaces/ILikeRepository.cs" />
+      <File FileName="Data/DbContext.cs" />
+      <File FileName="Helpers/AutoMapperProfiles.cs" />
+      <File FileName="Controllers/LikeController.cs" />
+      <File FileName="Controllers/MessageController.cs" Line="119" Column="2" />
+      <File FileName="Repositories/MessageRepository.cs" />
+      <File FileName="Controllers/AdminController.cs" />
+      <File FileName="Controllers/UserController.cs" Line="41" Column="1" />
+      <File FileName="Policies/RequirementHandler.cs" />
+      <File FileName="MediatR/Queries/GetIdentityUser.cs" Line="23" Column="1" />
       <File FileName="Extensions/ClaimPrincipleExtension.cs" Line="1" Column="1" />
-      <File FileName="Policies/UserProfileRequirement.cs" Line="4" Column="37" />
+      <File FileName="Policies/UserProfileRequirement.cs" />
       <File FileName="Program.cs" Line="106" Column="144" />
-      <File FileName="Controllers/AuthController.cs" Line="1" Column="1" />
-      <File FileName="DTOs/LikeCreateDto.cs" Line="1" Column="1" />
-      <File FileName="DTOs/LoginDto.cs" Line="1" Column="1" />
-      <File FileName="DTOs/MessageCreateDto.cs" Line="1" Column="1" />
-      <File FileName="DTOs/MessageDto.cs" Line="1" Column="1" />
-      <File FileName="DTOs/RegisterDto.cs" Line="1" Column="1" />
-      <File FileName="DTOs/UserCreateProfileDto.cs" Line="9" Column="1" />
-      <File FileName="DTOs/UserProfileDto.cs" Line="16" Column="1" />
-      <File FileName="Repositories/Interfaces/IAuthRepository.cs" Line="1" Column="1" />
-      <File FileName="Repositories/Interfaces/IMessageRepository.cs" Line="6" Column="2" />
-      <File FileName="Repositories/Interfaces/IUnitOfWork.cs" Line="1" Column="1" />
-      <File FileName="Repositories/Interfaces/IUserRepository.cs" Line="12" Column="47" />
-      <File FileName="Repositories/AuthRepository.cs" Line="43" Column="1" />
-      <File FileName="Repositories/UnitOfWork.cs" Line="39" Column="1" />
-      <File FileName="Repositories/UserRepository.cs" Line="34" Column="1" />
+      <File FileName="Controllers/AuthController.cs" />
+      <File FileName="DTOs/LikeCreateDto.cs" />
+      <File FileName="DTOs/LoginDto.cs" />
+      <File FileName="DTOs/MessageCreateDto.cs" />
+      <File FileName="DTOs/MessageDto.cs" />
+      <File FileName="DTOs/RegisterDto.cs" />
+      <File FileName="DTOs/UserCreateProfileDto.cs" />
+      <File FileName="DTOs/UserProfileDto.cs" />
+      <File FileName="Repositories/Interfaces/IAuthRepository.cs" />
+      <File FileName="Repositories/Interfaces/IMessageRepository.cs" />
+      <File FileName="Repositories/Interfaces/IUnitOfWork.cs" />
+      <File FileName="Repositories/Interfaces/IUserRepository.cs" />
+      <File FileName="Repositories/AuthRepository.cs" />
+      <File FileName="Repositories/UnitOfWork.cs" />
+      <File FileName="Repositories/UserRepository.cs" Line="29" Column="10" />
+      <File FileName="Api.csproj" Line="39" Column="31" />
+      <File FileName="../Server/Repository/IdentityUserRepo.cs" Line="25" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
             <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MessageController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="DTOs" expanded="True" />
               <Node name="Entities" expanded="True" />
               <Node name="Extensions" expanded="True" />
-              <Node name="Helpers" expanded="True" />
               <Node name="MediatR" expanded="True">
-                <Node name="Queries" expanded="True" />
+                <Node name="Queries" expanded="True">
+                  <Node name="GetIdentityUser.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Policies" expanded="True" />
               <Node name="Properties" expanded="True" />
@@ -61,7 +62,9 @@
               </Node>
               <Node name="Services" expanded="True" />
             </Node>
-            <Node name="Server" expanded="True" />
+            <Node name="Server" expanded="True">
+              <Node name="Repository" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -72,6 +75,10 @@
       <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="27" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Repositories/MessageRepository.cs" relfile="Repositories/MessageRepository.cs" line="40" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/apka/DateApp/Controllers/LikeController.cs" relfile="Controllers/LikeController.cs" line="71" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/Server/Repository/IdentityUserRepo.cs" line="26" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/MediatR/Queries/GetIdentityUser.cs" relfile="MediatR/Queries/GetIdentityUser.cs" line="21" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/apka/DateApp/Controllers/UserController.cs" relfile="Controllers/UserController.cs" line="41" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
