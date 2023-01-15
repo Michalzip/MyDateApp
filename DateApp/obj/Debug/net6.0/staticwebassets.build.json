@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "d/QANZOLy58QKFgRPAqKvibtTil7V4pUq2/8n1VryNA=",
+  "Hash": "m03cy1Tg6L3zTxPRQA/CTnIbwthqHlP9k/a0PzB9IU8=",
   "Source": "App",
   "BasePath": "_content/App",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "/Users/michal/Desktop/apka/Server/Server.csproj",
+      "Identity": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj",
       "Version": 2,
       "Source": "Server",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

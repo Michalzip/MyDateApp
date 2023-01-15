@@ -1636,7 +1636,8 @@
         "dependencies": {
           "IdentityServer4": "4.1.2",
           "IdentityServer4.EntityFramework": "4.1.2",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12"
         },
         "runtime": {
           "Server.dll": {}
