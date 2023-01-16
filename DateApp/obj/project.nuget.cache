@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4UAbfHe0Xr4DT05M9a/IYzWs86VIbQyLVhuztLSiAGO7FF1SKOUWP3gwj57lmjRt2aadr+v72yjtgCULlJ1VNw==",
+  "dgSpecHash": "y1uEyq/ztZVAVMn+DM5tDqI/MxlsuqJV9LFNOzTrCCdqUoUO1HLWbY0sjl7WEKGn40Vhc5zjTSru2N1t2wU7/Q==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
   "expectedPackageFiles": [
@@ -35,7 +35,6 @@
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.0/microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512",
-    "/Users/michal/.nuget/packages/microsoft.aspnetcore.identity.ui/7.0.0/microsoft.aspnetcore.identity.ui.7.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.jsonpatch/6.0.11/microsoft.aspnetcore.jsonpatch.6.0.11.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/6.0.11/microsoft.aspnetcore.mvc.newtonsoftjson.6.0.11.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
