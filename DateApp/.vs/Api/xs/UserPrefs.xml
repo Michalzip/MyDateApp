@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{662B41C5-C537-4743-8085-2F27DAEA6824}|Default">
+﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
   <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
@@ -10,9 +10,9 @@
   <DisabledProjects>
     <String>docker-compose.dcproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workbench ActiveDocument="docker-compose.yml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repositories/LikeRepository.cs">
     <Files>
-      <File FileName="Repositories/LikeRepository.cs" />
+      <File FileName="Repositories/LikeRepository.cs" Line="15" Column="5" />
       <File FileName="DTOs/LikeDto.cs" />
       <File FileName="Repositories/Interfaces/ILikeRepository.cs" />
       <File FileName="Data/DbContext.cs" />
@@ -43,17 +43,15 @@
       <File FileName="Repositories/UnitOfWork.cs" />
       <File FileName="Repositories/UserRepository.cs" />
       <File FileName="Api.csproj" />
-      <File FileName="../Server/Repository/IdentityUserRepo.cs" Line="35" Column="1" />
-      <File FileName="Dockerfile" Line="17" Column="16" />
-      <File FileName="docker-compose.yml" Line="1" Column="1" />
-      <File FileName="obj/Debug/net6.0/Api.AssemblyInfo.cs" Line="13" Column="1" />
+      <File FileName="../Server/Repository/IdentityUserRepo.cs" />
+      <File FileName="obj/Debug/net6.0/Api.AssemblyInfo.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
             <Node name="Api" expanded="True" />
-            <Node name="docker-compose" expanded="True" />
+            <Node name="Server" expanded="True" />
           </Node>
         </State>
       </Pad>

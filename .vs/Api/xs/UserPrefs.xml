@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+    <Watch file="../../../DateApp/Controllers/UserController.cs" line="40" column="16" endLine="40" endColumn="57" offsetX="-1" offsetY="-1" expression="userProfile" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Api" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
