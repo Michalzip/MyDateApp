@@ -1,16 +1,32 @@
-﻿<Properties StartupConfiguration="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}|Default">
-  <MultiItemStartupConfigurations />
+﻿<Properties StartupConfiguration="Wiele projektów">
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
+      <Items>
+        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="App" />
+        <StartupItem ItemId="{0A6213E7-F39B-4131-B70F-57BC69BD55DB}" ItemName="Server" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
     <Watch file="../../../DateApp/Controllers/UserController.cs" line="40" column="16" endLine="40" endColumn="57" offsetX="-1" offsetY="-1" expression="userProfile" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Controllers/AuthController.cs">
+    <Files>
+      <File FileName="DateApp/Controllers/AuthController.cs" Line="31" Column="21" />
+      <File FileName="DateApp/Controllers/LikeController.cs" />
+      <File FileName="DateApp/Controllers/MessageController.cs" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Api" expanded="True" />
+          <Node name="Api" expanded="True">
+            <Node name="Api" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

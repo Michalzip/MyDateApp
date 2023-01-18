@@ -10,7 +10,8 @@
   "profiles": {
     "Server": {
       "commandName": "Project",
-      "applicationUrl": "https://localhost:7269;http://localhost:5104",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:2616",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

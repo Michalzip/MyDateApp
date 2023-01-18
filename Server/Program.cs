@@ -40,12 +40,14 @@ builder.Services.AddIdentityServer()
 
 
 
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
+
 app.UseAuthentication();
-app.UseAuthorization();
 app.UseIdentityServer();
+app.UseAuthorization();
 
 app.Run();

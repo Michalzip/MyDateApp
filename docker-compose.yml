@@ -3,19 +3,20 @@
 version: '3.4'
 
 services:
+  api:
+    image: api
+    container_name: entity-container
+    build:
+      context: .
+      dockerfile: DateApp/Dockerfile
+    ports:
+      - 7189:7189
+
   server:
     image: server
+    container_name: identity-container
     build:
       context: .
       dockerfile: Server/Dockerfile
     ports:
-      - 5136:5136
-  api:
-    image: api
-    build:
-      context: .
-      dockerfile: DateApp/Dockerfile
-    links:
-      - server
-    ports:
-      - 7189:7189
+      - 5136:7189

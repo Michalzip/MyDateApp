@@ -4,8 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Server</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Server' " />
   <ItemGroup>
     <None Remove="IdentityServer4" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />

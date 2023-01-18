@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{6C3F4AB6-9EB3-4BB0-8DFC-D86895CE618D}|Default">
+﻿<Properties StartupConfiguration="{6C3F4AB6-9EB3-4BB0-8DFC-D86895CE618D}|Server">
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -7,10 +7,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Server" expanded="True">
-            <Node name="Server" expanded="True">
-              <Node name="Dockerfile" selected="True" />
-            </Node>
+          <Node name="IdentityServer" expanded="True">
+            <Node name="Server" expanded="True" />
           </Node>
         </State>
       </Pad>

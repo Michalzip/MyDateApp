@@ -78,6 +78,8 @@ builder.Host.ConfigureAppConfiguration((config =>
     config.AddJsonFile("secret.json");
 
 }));
+
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("connectionString");
@@ -86,6 +88,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 });
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -103,7 +106,7 @@ builder.Services.AddAuthorization(options =>
 {
 
     options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
-    options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfileRequirement());  policy.RequireAuthenticatedUser(); });
+    options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfileRequirement()); policy.RequireAuthenticatedUser(); });
 });
 
 
