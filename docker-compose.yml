@@ -5,7 +5,7 @@ version: '3.4'
 services:
   api:
     image: api
-    container_name: entity-container
+    container_name: core-container
     build:
       context: .
       dockerfile: DateApp/Dockerfile
