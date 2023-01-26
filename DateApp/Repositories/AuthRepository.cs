@@ -1,5 +1,7 @@
 ﻿
 
+using Server.Models;
+
 namespace Api.Repository
 {
     public class AuthRepository : IAuthRepository
@@ -19,7 +21,7 @@ namespace Api.Repository
         {
 
 
-            var userIdentity = new IdentityUser
+            var userIdentity = new ApplicationUser
             {
                 Email = model.Email,
                 UserName = model.UserName,
@@ -33,7 +35,7 @@ namespace Api.Repository
 
         public async Task<SignInResult> LoginUser(LoginDto model)
         {
-            var userIdentity = new IdentityUser
+            var userIdentity = new ApplicationUser
             {
 
                 Email = model.Email,

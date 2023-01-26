@@ -9,9 +9,12 @@ using Server.Repository;
 using Server.Repository.interfaces;
 using Api.Repositories;
 using App.Helpers;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
-using Api.Entities;
 using Api.Policy;
+using DateApp.Repositories;
+using DateApp.Repositories.Interfaces;
+using Api.Extensions;
+using Server.Models;
+using Api.Policies.UserVipProfile;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -82,7 +85,7 @@ builder.Host.ConfigureAppConfiguration((config =>
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("connectionString");
+    var connectionString = builder.Configuration["ConnectionStrings:EntityCore"];
     options.UseLazyLoadingProxies(true);
     options.UseSqlServer(connectionString);
 
@@ -92,21 +95,24 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("connectionStringTwo");
+    var connectionString = builder.Configuration["ConnectionStrings:Identity"];
 
     options.UseSqlServer(connectionString);
 
 });
 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddAuthorization(options =>
 {
 
     options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
+
     options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfileRequirement()); policy.RequireAuthenticatedUser(); });
+
+    options.AddPolicy("UserVipProfile", policy => { policy.Requirements.Add(new UserVipProfileRequirement()); policy.RequireAuthenticatedUser(); });
 });
 
 
@@ -184,14 +190,28 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AppDbContext>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddScoped<IPaymentRepository, PayPalRepository>();
+builder.Services.AddScoped<ContextAccessorExtension>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
-
+builder.Services.AddSession();
 builder.Services.AddScoped<IAuthorizationHandler, RequirementHandler>();
+builder.Services.AddScoped<IAuthorizationHandler, RequirementVipHandler>();
 //builder.Services.AddSingleton<IAuthorizationHandler, RequirementHandler>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AnyOrigin", builder =>
+    {
+        builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+    });
+});
 
 
 var app = builder.Build();
@@ -206,32 +226,47 @@ if (!app.Environment.IsDevelopment())
 
 
 }
+
+
 app.UseSwagger();
 
 
+app.UseSession();
 
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
     options.OAuth2RedirectUrl("https://localhost:7189/Auth/LoginSuccess");
+    options.RoutePrefix = string.Empty;
+
 });
 
 
 
-app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapControllers();
 
-
+app.UseCors("AnyOrigin");
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+
+
+
 
 app.Run();
 

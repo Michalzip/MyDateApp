@@ -25,5 +25,11 @@ namespace Api.Policy
             await Task.CompletedTask;
         }
     }
+
+
+    public class UserProfileRequirement : IAuthorizationRequirement
+    {
+
+    }
 }
 

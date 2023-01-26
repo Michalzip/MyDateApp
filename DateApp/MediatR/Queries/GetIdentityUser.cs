@@ -30,7 +30,6 @@ namespace Api.MediatR.Queries
                 UserName = identityUser.UserName,
                 PhotoUrl = request.PhotoUrl,
 
-
             };
 
             return user;

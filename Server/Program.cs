@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Server.data;
 using Microsoft.EntityFrameworkCore.SqlServer;
-
+using Server.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using Microsoft.EntityFrameworkCore;
@@ -15,15 +15,22 @@ var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
 
 
 
-var connectionString = builder.Configuration.GetConnectionString("connectionString");
+var connectionString = builder.Configuration["ConnectionString:connectionString"];
 
 builder.Services.AddDbContext<ApplicationDbContext>(builder =>
     builder.UseSqlServer(connectionString, sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)));
 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+builder.Host.ConfigureAppConfiguration((config =>
+{
+
+    config.AddJsonFile("secret.json");
+
+}));
 
 builder.Services.AddIdentityServer()
     .AddOperationalStore(options =>

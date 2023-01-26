@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TyvNcp+2ni18tba8chZBBium+XbzvEz25lQXVZ/4UYUbXYdgm+3yriut7h6Gj71zG8B+2jhZqfFuQ4wez4h15A==",
+  "dgSpecHash": "VGNTLaT3m55X2gzJs9OyzZx1O+HcySPGwqqCbpCl+yeMJ9CTsoy23dTBEDDmG+u5vLLKmBNMFnPbgjNqXlhMqg==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/10.0.0/automapper.10.0.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/michal/.nuget/packages/identitymodel/4.4.0/identitymodel.4.4.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4/4.1.2/identityserver4.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4.entityframework/4.1.2/identityserver4.entityframework.4.1.2.nupkg.sha512",
@@ -20,8 +21,10 @@
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore/6.0.12/microsoft.entityframeworkcore.6.0.12.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.12/microsoft.entityframeworkcore.abstractions.6.0.12.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.12/microsoft.entityframeworkcore.analyzers.6.0.12.nupkg.sha512",
+    "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.design/6.0.10/microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.12/microsoft.entityframeworkcore.relational.6.0.12.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.sqlserver/6.0.12/microsoft.entityframeworkcore.sqlserver.6.0.12.nupkg.sha512",
+    "/Users/michal/.nuget/packages/microsoft.entityframeworkcore.tools/6.0.10/microsoft.entityframeworkcore.tools.6.0.10.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.caching.memory/6.0.1/microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
