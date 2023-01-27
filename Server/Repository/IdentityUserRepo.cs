@@ -8,22 +8,22 @@ using Server.Models;
 
 namespace Server.Repository
 {
-	public class IdentityUserRepo: IIdentityUserRepo
+    public class IdentityUserRepo : IIdentityUserRepo
     {
 
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        
 
-        public	IdentityUserRepo(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
-		{
+
+        public IdentityUserRepo(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        {
             _userManager = userManager;
             _signInManager = signInManager;
-       
+
         }
 
         public async Task<ApplicationUser> GetIdentityUserByName(string userName)
-		{
+        {
             var user = await _userManager.FindByNameAsync(userName);
 
             return user;
@@ -55,6 +55,15 @@ namespace Server.Repository
             return result;
         }
 
+       public async Task<bool> CheckUserVipExists(string userName)
+        {
+            var user = await this.GetIdentityUserByName(userName);
+
+            if (user.isvVip == true) return true;
+
+            return false;
+
+        }
         public async Task<IdentityResult> SetIdentityVipUser(string userName)
         {
 
@@ -65,9 +74,9 @@ namespace Server.Repository
             var result = await _userManager.UpdateAsync(user);
 
             return result;
-            
+
         }
-     
+
     }
 }
 

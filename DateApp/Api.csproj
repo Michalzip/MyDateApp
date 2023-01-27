@@ -28,7 +28,6 @@
     <None Remove="Microsoft.AspNetCore.Authentication.Google" />
     <None Remove="Helpers\" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
-    <None Remove="Views\" />
     <None Remove="Views\Auth\" />
     <None Remove="Data\" />
     <None Remove="Microsoft.AspNetCore.Authentication.Cookies" />
@@ -78,7 +77,6 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Views\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Data\" />
     <Folder Include="Entities\" />

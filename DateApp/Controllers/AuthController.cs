@@ -50,12 +50,7 @@ public class AuthController : Controller
     }
 
 
-    public async Task<IActionResult> LoginSuccess()
-    {
 
-        return View();
-
-    }
 
 }
 

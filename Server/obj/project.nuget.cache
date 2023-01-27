@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VGNTLaT3m55X2gzJs9OyzZx1O+HcySPGwqqCbpCl+yeMJ9CTsoy23dTBEDDmG+u5vLLKmBNMFnPbgjNqXlhMqg==",
+  "dgSpecHash": "4CNNvxl78UOVSc3yuNy/io/Q8387BYJsXl80ln+RPpEmUjq8yO0JWb2qSpywQ7sRP3hNzTmo2zRUnsYwhKS/Bg==",
   "success": true,
-  "projectFilePath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj",
+  "projectFilePath": "/Users/michal/Desktop/MyDateApp/MyDateApp/Server/Server.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/10.0.0/automapper.10.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",

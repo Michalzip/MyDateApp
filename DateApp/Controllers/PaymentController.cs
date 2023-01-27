@@ -41,19 +41,23 @@ namespace App.Controllers
         [HttpGet("ConfirmPayment")]
         public async Task<ActionResult> ConfirmPayment([FromQuery] string? PayerID, [FromQuery] string? guid)
         {
+
+
+            string currentUser = User.GetUsername();
+
+            var isVipUser = _identityUserRepo.CheckUserVipExists(currentUser).Result;
+
+            if (isVipUser) return BadRequest("user already has vip");
+
             var paymentConfirm = _paymentRepository.ConfirmPayment(PayerID, guid);
 
-            string? currentUser = null;
-
-            if (paymentConfirm == true) currentUser = User.GetUsername();
-
-            if (string.IsNullOrEmpty(currentUser)) return NotFound("user not found");
+            if (paymentConfirm == false) return BadRequest("payments not execute, please try again..");
 
             var result = await _identityUserRepo.SetIdentityVipUser(currentUser);
 
             if (result.Succeeded) return Ok($" user : {currentUser} buy vip successfuly");
 
-            return BadRequest();
+            return BadRequest("unhandled error");
 
 
 

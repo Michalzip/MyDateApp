@@ -236,7 +236,7 @@ app.UseSession();
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.OAuth2RedirectUrl("https://localhost:7189/Auth/LoginSuccess");
+    options.OAuth2RedirectUrl("https://localhost:7189/");
     options.RoutePrefix = string.Empty;
 
 });
