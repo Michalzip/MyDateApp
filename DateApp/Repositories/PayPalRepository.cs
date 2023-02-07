@@ -2,23 +2,31 @@
 using PayPal.Api;
 using Api.Extensions;
 using DateApp.Repositories.Interfaces;
+using App.Db;
+using DateApp.Entities;
 
+using DateApp.Extensions;
 namespace DateApp.Repositories
 {
 
 
-    public class PayPalRepository : IPaymentRepository
+    public class PayPalRepository : IPaypalRepository
     {
 
         private readonly ContextAccessorExtension _contextAccessor;
+        private readonly AppDbContext _context;
 
-        public PayPalRepository(ContextAccessorExtension contextAccessor)
+
+        public PayPalRepository(ContextAccessorExtension contextAccessor, AppDbContext context)
         {
+
             _contextAccessor = contextAccessor;
+            _context = context;
+
+
         }
 
-
-        public Dictionary<string, string> GetConfig()
+        private Dictionary<string, string> GetConfig()
         {
             return ConfigManager.Instance.GetProperties();
         }
@@ -31,7 +39,7 @@ namespace DateApp.Repositories
             return accessToken;
         }
 
-        public APIContext GetAPIContext()
+        private APIContext GetAPIContext()
         {
             APIContext apiContext = new APIContext(GetAccessToken());
 
@@ -40,9 +48,18 @@ namespace DateApp.Repositories
             return apiContext;
         }
 
-        private Payment CreateVipPayment(APIContext apiContext, string redirectUrl)
+
+        public Payment CreateVipPayment()
         {
 
+
+            APIContext apiContext = GetAPIContext();
+
+            var guidStringNumber = Convert.ToString((new Random()).Next(100000));
+
+            string? paypalUri = "https://localhost:7189/ConfirmPayment?";
+
+            string redirectUrl = paypalUri + "guid=" + guidStringNumber;
 
             var itemList = new ItemList() { items = new List<Item>() };
 
@@ -97,7 +114,16 @@ namespace DateApp.Repositories
                 redirect_urls = redirUrls
             };
 
-            return payment.Create(apiContext);
+
+
+
+            var paymentData = payment.Create(apiContext);
+
+            _contextAccessor.SetSession(guidStringNumber, paymentData.id);
+
+            var transactionStatus = new UserTransaction { TransactionId = paymentData.id, Currency = amount.currency, Amount = transactionList[0].item_list.items[0].quantity, PendingConfirm = true };
+
+            return paymentData;
         }
 
         private Payment ExecutePayment(APIContext apiContext, string payerId, string paymentId)
@@ -107,27 +133,19 @@ namespace DateApp.Repositories
             var payment = new Payment() { id = paymentId };
 
             return payment.Execute(apiContext, paymentExecution);
-
-
         }
 
 
 
-        public String BuyVip()
+        public String GetPaymentLink(Payment payment)
         {
 
             APIContext apiContext = GetAPIContext();
 
             string? paymentLink = null;
 
-            var guidStringNumber = Convert.ToString((new Random()).Next(100000));
 
-            string paypalUri = "https://localhost:7189/ConfirmPayment?";
-
-            var createdPayment = this.CreateVipPayment(apiContext, paypalUri + "guid=" + guidStringNumber);
-
-            var links = createdPayment.links.GetEnumerator();
-
+            var links = payment.links.GetEnumerator();
 
 
             while (links.MoveNext())
@@ -136,33 +154,22 @@ namespace DateApp.Repositories
 
             }
 
-
-            _contextAccessor.SetSession(guidStringNumber, createdPayment.id);
-
             return paymentLink;
-
-
 
         }
 
 
-        public bool ConfirmPayment(string? PayerID, string? guid)
+        public Payment ConfirmPayment(string? PayerID, string? guid)
         {
 
             APIContext apiContext = GetAPIContext();
 
-            if (!string.IsNullOrEmpty(PayerID))
-            {
+            string paymentId = _contextAccessor.GetSession(guid);
 
-                string paymentId = _contextAccessor.GetSession(guid);
+            if (paymentId == null) return null;
 
-                var executedPayment = ExecutePayment(apiContext, PayerID, paymentId);
+            return ExecutePayment(apiContext, PayerID, paymentId);
 
-                if (executedPayment.state.Equals("approved")) return true;
-
-            }
-
-            return false;
         }
 
     }

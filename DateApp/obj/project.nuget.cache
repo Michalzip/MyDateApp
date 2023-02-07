@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+GrxRNHDm/97tgBSTPb1VEgse1ixPUxlwHLsnbI+ZpmlN45jAm/q6moNrCji3DsaI707tBbCsud/+STx8lz0Rw==",
+  "dgSpecHash": "m7QKvxvm6HlnvUkk6u66PfAQqWCWAACbHocD8MQlCF1XEkGIm81xb9KcI9v1kAdQH/kEMQ9/wZHuqaJk+DT01g==",
   "success": true,
-  "projectFilePath": "/Users/michal/Desktop/MyDateApp/MyDateApp/DateApp/Api.csproj",
+  "projectFilePath": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

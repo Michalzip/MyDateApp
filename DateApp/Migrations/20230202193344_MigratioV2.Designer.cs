@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230108182839_migratev5")]
-    partial class migratev5
+    [Migration("20230202193344_MigratioV2")]
+    partial class MigratioV2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,34 @@ namespace Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Api.Entities.TransactionStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("Expires")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PendingConfirm")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Success")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TransactionRef")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TransactionRef")
+                        .IsUnique();
+
+                    b.ToTable("TransactionStatus");
+                });
 
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
@@ -107,6 +135,58 @@ namespace Api.Migrations
                     b.ToTable("UserProfiles");
                 });
 
+            modelBuilder.Entity("Api.Entities.UserVipPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DaysCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserVipPayments");
+                });
+
+            modelBuilder.Entity("DateApp.Entities.TransactionConfirmed", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Currency")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransactionConfirmed");
+                });
+
+            modelBuilder.Entity("Api.Entities.TransactionStatus", b =>
+                {
+                    b.HasOne("DateApp.Entities.TransactionConfirmed", "transactionConfirmed")
+                        .WithOne("status")
+                        .HasForeignKey("Api.Entities.TransactionStatus", "TransactionRef")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("transactionConfirmed");
+                });
+
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
                     b.HasOne("Api.Entities.UserProfile", "ByUser")
@@ -150,6 +230,11 @@ namespace Api.Migrations
                     b.Navigation("SendedLikes");
 
                     b.Navigation("SendedMessages");
+                });
+
+            modelBuilder.Entity("DateApp.Entities.TransactionConfirmed", b =>
+                {
+                    b.Navigation("status");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,16 +1,18 @@
 ﻿
 
 using Microsoft.AspNetCore.Mvc;
-
+using DateApp.Helpers;
 namespace App.Controllers
 {
+
+    [Authorize(Policy = "Admin")]
     public class AdminController : Controller
     {
 
-        [Authorize(Policy = "Admin")]
+
 
         [HttpGet("getAdmin")]
-        public async Task GetAdmin()
+        public async Task GetSuccessPayments([FromQuery] PaginationParams w)
         {
             Console.WriteLine("hello admin");
         }

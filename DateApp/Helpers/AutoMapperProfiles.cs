@@ -2,6 +2,17 @@
 
 using Api.DTOs;
 using DateApp.DTOs;
+using Microsoft.AspNetCore.Mvc;
+using DateApp.Repositories;
+using Microsoft.AspNetCore.Session;
+using PayPal.Api;
+using Api.Extensions;
+using System;
+using DateApp.Repositories.Interfaces;
+using DateApp.Extensions;
+using Api.Repository;
+using DateApp.Entities;
+
 namespace App.Helpers
 {
 	public class AutoMapperProfiles: Profile
@@ -38,7 +49,11 @@ namespace App.Helpers
 			).ForMember(dest=>dest.Name,opt=>
 			opt.MapFrom(src=>src.ToUser.UserName)
 			);
-	
+
+
+
+
+
 
 
         }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230108170329_migratev3")]
-    partial class migratev3
+    [Migration("20230205200618_MigratioV4")]
+    partial class MigratioV4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,7 @@ namespace Api.Migrations
 
                     b.HasIndex("ToUserId");
 
-                    b.ToTable("UserLike");
+                    b.ToTable("UserLikes");
                 });
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
@@ -58,7 +58,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ByUserMessageId")
+                    b.Property<string>("ByUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
@@ -67,14 +67,14 @@ namespace Api.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToUserMessageId")
+                    b.Property<string>("ToUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ByUserMessageId");
+                    b.HasIndex("ByUserId");
 
-                    b.HasIndex("ToUserMessageId");
+                    b.HasIndex("ToUserId");
 
                     b.ToTable("UserMessages");
                 });
@@ -107,15 +107,73 @@ namespace Api.Migrations
                     b.ToTable("UserProfiles");
                 });
 
+            modelBuilder.Entity("Api.Entities.UserVipPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DaysCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserVipPayments");
+                });
+
+            modelBuilder.Entity("DateApp.Entities.UserTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Currency")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Expires")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Failed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PendingConfirm")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Success")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transactions");
+                });
+
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
                     b.HasOne("Api.Entities.UserProfile", "ByUser")
                         .WithMany("SendedLikes")
-                        .HasForeignKey("ByUserId");
+                        .HasForeignKey("ByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Api.Entities.UserProfile", "ToUser")
                         .WithMany("ReceivedLikes")
-                        .HasForeignKey("ToUserId");
+                        .HasForeignKey("ToUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ByUser");
 
@@ -124,19 +182,19 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Entities.UserMessage", b =>
                 {
-                    b.HasOne("Api.Entities.UserProfile", "ByUserMessage")
+                    b.HasOne("Api.Entities.UserProfile", "ByUser")
                         .WithMany("SendedMessages")
-                        .HasForeignKey("ByUserMessageId")
+                        .HasForeignKey("ByUserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Api.Entities.UserProfile", "ToUserMessage")
+                    b.HasOne("Api.Entities.UserProfile", "ToUser")
                         .WithMany("ReceivedMessages")
-                        .HasForeignKey("ToUserMessageId")
+                        .HasForeignKey("ToUserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("ByUserMessage");
+                    b.Navigation("ByUser");
 
-                    b.Navigation("ToUserMessage");
+                    b.Navigation("ToUser");
                 });
 
             modelBuilder.Entity("Api.Entities.UserProfile", b =>

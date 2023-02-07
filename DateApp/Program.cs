@@ -133,7 +133,7 @@ builder.Services.AddAuthentication(options =>
                 .AddJwtBearer(options =>
 {
     options.Audience = options.Audience = "api1";
-    options.Authority = "https://localhost:7269";
+    options.Authority = "https://localhost:7189";
 
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -190,9 +190,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AppDbContext>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
-builder.Services.AddScoped<IPaymentRepository, PayPalRepository>();
+builder.Services.AddScoped<IPaypalRepository, PayPalRepository>();
 builder.Services.AddScoped<ContextAccessorExtension>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddNewtonsoftJson(options =>

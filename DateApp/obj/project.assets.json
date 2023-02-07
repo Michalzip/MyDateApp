@@ -9072,11 +9072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michal/Desktop/MyDateApp/MyDateApp/DateApp/Api.csproj",
+      "projectUniqueName": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
       "projectName": "App",
-      "projectPath": "/Users/michal/Desktop/MyDateApp/MyDateApp/DateApp/Api.csproj",
+      "projectPath": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
       "packagesPath": "/Users/michal/.nuget/packages/",
-      "outputPath": "/Users/michal/Desktop/MyDateApp/MyDateApp/DateApp/obj/",
+      "outputPath": "/Users/michal/Desktop/MyDateApp/DateApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/michal/.nuget/NuGet/NuGet.Config"
@@ -9091,8 +9091,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/michal/Desktop/MyDateApp/MyDateApp/Server/Server.csproj": {
-              "projectPath": "/Users/michal/Desktop/MyDateApp/MyDateApp/Server/Server.csproj"
+            "/Users/michal/Desktop/MyDateApp/Server/Server.csproj": {
+              "projectPath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj"
             }
           }
         }

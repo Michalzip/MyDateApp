@@ -71,6 +71,8 @@ namespace Api.Repositories
         public void DeleteMessage(UserMessage message)
         {
             _context.UserMessages.Remove(message);
+
+
         }
 
     }

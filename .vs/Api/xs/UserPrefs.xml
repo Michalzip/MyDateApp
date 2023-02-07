@@ -1,17 +1,74 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Controllers/UserVipController.cs">
+    <Files>
+      <File FileName="DateApp/Repositories/LikeRepository.cs" Line="1" Column="1" />
+      <File FileName="DateApp/Controllers/LikeController.cs" Line="81" Column="15" />
+      <File FileName="DateApp/Program.cs" />
+      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" Line="17" Column="2" />
+      <File FileName="DateApp/Entities/TransactionConfirmed.cs" />
+      <File FileName="DateApp/Controllers/AdminController.cs" Line="15" Column="76" />
+      <File FileName="DateApp/Controllers/AuthController.cs" Line="1" Column="1" />
+      <File FileName="DateApp/Controllers/PaypalController.cs" Line="75" Column="51" />
+      <File FileName="DateApp/Helpers/PaginationParams.cs" Line="24" Column="1" />
+      <File FileName="DateApp/Repositories/Interfaces/ITransactionRepository.cs" Line="17" Column="59" NotebookId="1" />
+      <File FileName="DateApp/Repositories/UnitOfWork.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/Interfaces/IPaypalRepository.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/PayPalRepository.cs" Line="54" Column="40" NotebookId="1" />
+      <File FileName="DateApp/Controllers/MessageController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Controllers/UserController.cs" NotebookId="1" />
+      <File FileName="DateApp/Controllers/UserVipController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Repositories/TransactionRepository.cs" Line="49" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Extensions/ContextAccessorExtension.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Policies/UserProfile/RequirementHandler.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Policies/UserVipProfile/RequirementVipHandler.cs" Line="32" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Api" expanded="True">
+            <Node name="Api" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UserVipController.cs" selected="True" />
+              </Node>
+              <Node name="DTOs" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="MediatR" expanded="True">
+                <Node name="Queries" expanded="True" />
+              </Node>
+              <Node name="Policies" expanded="True">
+                <Node name="UserProfile" expanded="True" />
+                <Node name="UserVipProfile" expanded="True" />
+              </Node>
+              <Node name="Repositories" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Server" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="ApplicationDb" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Repository" expanded="True">
+                <Node name="interfaces" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
     <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/PayPalRepository.cs" relfile="DateApp/Repositories/PayPalRepository.cs" line="159" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaymentController.cs" relfile="DateApp/Controllers/PaymentController.cs" line="46" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/PayPalRepository.cs" relfile="DateApp/Repositories/PayPalRepository.cs" line="161" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/PayPalRepository.cs" relfile="DateApp/Repositories/PayPalRepository.cs" line="163" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
       <Items>
@@ -20,88 +77,19 @@
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Repository/IdentityUserRepo.cs">
-    <Files>
-      <File FileName="DateApp/Controllers/PaymentController.cs" Line="48" Column="95" />
-      <File FileName="DateApp/DTOs/LikeCreateDto.cs" />
-      <File FileName="DateApp/Controllers/MessageController.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Program.cs" Line="111" Column="78" />
-      <File FileName="DateApp/appsettings.json" />
-      <File FileName="DateApp/secret.json" Line="12" Column="46" />
-      <File FileName="DateApp/Repositories/PayPalRepository.cs" Line="154" Column="38" />
-      <File FileName="DateApp/Controllers/UserController.cs" Line="12" Column="45" />
-      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/AuthController.cs" Line="35" Column="39" />
-      <File FileName="DateApp/Repositories/UserRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/MediatR/Queries/GetIdentityUser.cs" Line="23" Column="56" />
-      <File FileName="Server/Program.cs" Line="44" Column="1" />
-      <File FileName="DateApp/Services/TokenService.cs" Line="29" Column="46" />
-      <File FileName="DateApp/Repositories/AuthRepository.cs" Line="46" Column="50" />
-      <File FileName="DateApp/Repositories/Interfaces/IMessageRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Repositories/Interfaces/IPaymentRepository.cs" Line="10" Column="60" />
-      <File FileName="Server/Data/DbContext.cs" Line="14" Column="1" />
-      <File FileName="Server/Repository/IdentityUserRepo.cs" Line="62" Column="1" />
-      <File FileName="Server/Models/ApplicationUser.cs" Line="6" Column="30" />
-      <File FileName="Server/Dockerfile" Line="1" Column="1" />
-      <File FileName="DateApp/Repositories/UnitOfWork.cs" Line="1" Column="1" />
-      <File FileName="Server/Migrations/ApplicationDb/20221224195923_InitialIdentityServerMigration.cs" Line="14" Column="12" />
-      <File FileName="DateApp/Migrations/20230108182839_migratev5.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Migrations/20230108173737_migratev4.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Migrations/20230108170329_migratev3.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Migrations/20230108165356_migratev2.cs" Line="72" Column="35" />
-      <File FileName="DateApp/Migrations/20230108161558_InitialCreate.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Repositories/Interfaces/IAuthRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Repositories/Interfaces/IUserRepository.cs" Line="1" Column="1" />
-      <File FileName="Server/appsettings.json" Line="12" Column="2" />
-      <File FileName="DateApp/gitignore" Line="2" Column="11" />
-      <File FileName="Server/gitignore.txt" Line="2" Column="1" />
-      <File FileName="Server/Migrations/20221224195751_InitialIdentityServerMigration.cs" Line="28" Column="1" />
-      <File FileName="Server/Migrations/PersistedGrantDbContextModelSnapshot.cs" Line="59" Column="47" />
-      <File FileName="Server/Migrations/ApplicationDb/ApplicationDbContextModelSnapshot.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Services/Interfaces/ITokenService.cs" Line="19" Column="1" />
-      <File FileName="Server/Migrations/ApplicationDb/20230125190140_migrationv2.cs" Line="27" Column="1" />
-      <File FileName="DateApp/Repositories/LikeRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Repositories/MessageRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/AdminController.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/LikeController.cs" Line="31" Column="34" />
-      <File FileName="DateApp/Policies/RequirementHandler.cs" Line="17" Column="99" />
-      <File FileName="DateApp/Policies/UserProfile/UserProfileRequirement.cs" Line="4" Column="15" />
-      <File FileName="DateApp/Extensions/ClaimPrincipleExtension.cs" Line="11" Column="41" NotebookId="1" />
-      <File FileName="Server/Repository/interfaces/IIdentityUserRepo.cs" Line="10" Column="68" NotebookId="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Api" expanded="True">
-            <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Extensions" expanded="True" />
-              <Node name="MediatR" expanded="True">
-                <Node name="Queries" expanded="True" />
-              </Node>
-              <Node name="Migrations" expanded="True" />
-              <Node name="Policies" expanded="True">
-                <Node name="UserProfile" expanded="True" />
-              </Node>
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Server" expanded="True">
-              <Node name="Migrations" expanded="True">
-                <Node name="ApplicationDb" expanded="True" />
-              </Node>
-              <Node name="Repository" expanded="True">
-                <Node name="interfaces" expanded="True" />
-                <Node name="IdentityUserRepo.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="21" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="29" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="37" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="39" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="41" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="35" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="38" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="44" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="40" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
