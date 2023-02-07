@@ -51,6 +51,13 @@ namespace Api.Repositories
 
         }
 
+        public async Task<List<UserTransaction>> GetSuccessTransactions()
+        {
+
+          return   _context.Transactions.Where(u => u.Success == true).ToList();
+
+        }
+
         public void UpdateStatusPayemnt(UserTransaction transaction)
         {
             _context.Update(transaction);

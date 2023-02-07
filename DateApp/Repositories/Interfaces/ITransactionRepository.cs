@@ -15,6 +15,7 @@ namespace Api.Repositories.Interfaces
         void PaymentExpires(UserTransaction transaction);
         public void PaymentFailed(UserTransaction transaction);
         Task<UserTransaction> GetThePreviousTransaction();
+        Task<List<UserTransaction>> GetSuccessTransactions();
     }
 }
 
