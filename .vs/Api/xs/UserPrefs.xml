@@ -1,36 +1,43 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Controllers/UserVipController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Program.cs">
     <Files>
-      <File FileName="DateApp/Repositories/LikeRepository.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/LikeController.cs" Line="81" Column="15" />
-      <File FileName="DateApp/Program.cs" />
-      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" Line="17" Column="2" />
-      <File FileName="DateApp/Entities/TransactionConfirmed.cs" />
-      <File FileName="DateApp/Controllers/AdminController.cs" Line="15" Column="76" />
-      <File FileName="DateApp/Controllers/AuthController.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/PaypalController.cs" Line="75" Column="51" />
-      <File FileName="DateApp/Helpers/PaginationParams.cs" Line="24" Column="1" />
-      <File FileName="DateApp/Repositories/Interfaces/ITransactionRepository.cs" Line="17" Column="59" NotebookId="1" />
+      <File FileName="DateApp/Repositories/LikeRepository.cs" />
+      <File FileName="DateApp/Controllers/LikeController.cs" />
+      <File FileName="DateApp/Program.cs" Line="272" Column="1" />
+      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" Line="1" Column="1" />
+      <File FileName="DateApp/Controllers/AdminController.cs" Line="37" Column="12" />
+      <File FileName="DateApp/Controllers/AuthController.cs" />
+      <File FileName="DateApp/Controllers/PaypalController.cs" Line="16" Column="47" />
+      <File FileName="DateApp/Helpers/PaginationParams.cs" Line="18" Column="34" />
+      <File FileName="DateApp/Repositories/PayPalRepository.cs" />
+      <File FileName="DateApp/Data/DbContext.cs" />
+      <File FileName="DateApp/DTOs/LikeCreateDto.cs" />
+      <File FileName="DateApp/DTOs/TransactionDto.cs" Line="1" Column="1" />
+      <File FileName="DateApp/Repositories/Interfaces/ITransactionRepository.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/UnitOfWork.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/Interfaces/IPaypalRepository.cs" NotebookId="1" />
-      <File FileName="DateApp/Repositories/PayPalRepository.cs" Line="54" Column="40" NotebookId="1" />
-      <File FileName="DateApp/Controllers/MessageController.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="DateApp/Controllers/UserController.cs" NotebookId="1" />
-      <File FileName="DateApp/Controllers/UserVipController.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="DateApp/Repositories/TransactionRepository.cs" Line="49" Column="1" NotebookId="1" />
-      <File FileName="DateApp/Extensions/ContextAccessorExtension.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="DateApp/Policies/UserProfile/RequirementHandler.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="DateApp/Policies/UserVipProfile/RequirementVipHandler.cs" Line="32" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Controllers/MessageController.cs" Line="40" Column="10" NotebookId="1" />
+      <File FileName="DateApp/Controllers/UserController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Controllers/UserVipController.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/TransactionRepository.cs" Line="57" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Extensions/ContextAccessorExtension.cs" NotebookId="1" />
+      <File FileName="DateApp/Policies/UserProfile/RequirementHandler.cs" NotebookId="1" />
+      <File FileName="DateApp/Policies/UserVipProfile/RequirementVipHandler.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/Interfaces/IAdminRepository.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/AuthRepository.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/AdminRepository.cs" NotebookId="1" />
+      <File FileName="DateApp/Repositories/MessageRepository.cs" Line="45" Column="17" NotebookId="1" />
+      <File FileName="DateApp/Helpers/PaginationList.cs" Line="10" Column="27" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
             <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UserVipController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
               <Node name="DTOs" expanded="True" />
+              <Node name="Extensions" expanded="True" />
               <Node name="Helpers" expanded="True" />
               <Node name="MediatR" expanded="True">
                 <Node name="Queries" expanded="True" />
@@ -45,6 +52,7 @@
               <Node name="Services" expanded="True">
                 <Node name="Interfaces" expanded="True" />
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Data" expanded="True" />
@@ -82,14 +90,17 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="21" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="29" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="37" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="39" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="41" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="35" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="38" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="44" column="1" />
-      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="40" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="29" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="37" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="39" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="41" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="35" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="38" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="44" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="40" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="27" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/TransactionRepository.cs" relfile="DateApp/Repositories/TransactionRepository.cs" line="57" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="29" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

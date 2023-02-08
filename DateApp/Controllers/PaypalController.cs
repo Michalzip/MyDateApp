@@ -1,13 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using DateApp.Repositories;
-using Microsoft.AspNetCore.Session;
-using PayPal.Api;
-using Api.Extensions;
-using System;
 using DateApp.Repositories.Interfaces;
 using DateApp.Extensions;
-using Api.Repository;
 using DateApp.Entities;
 
 namespace App.Controllers
@@ -34,10 +28,10 @@ namespace App.Controllers
         [HttpGet("BuyVip")]
         public async Task<ActionResult> BuyVip()
         {
-           
-            var previosTransaction =   _unitOfWork.TransactionRepository.GetThePreviousTransaction().Result;
 
-            if (previosTransaction != null && previosTransaction.PendingConfirm==true)
+            var previosTransaction = _unitOfWork.TransactionRepository.GetThePreviousTransaction().Result;
+
+            if (previosTransaction != null && previosTransaction.PendingConfirm == true)
             {
                 _unitOfWork.TransactionRepository.PaymentExpires(previosTransaction);
 

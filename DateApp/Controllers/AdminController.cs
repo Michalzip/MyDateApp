@@ -1,13 +1,8 @@
 ﻿
 
 using Microsoft.AspNetCore.Mvc;
-using DateApp.Helpers;
-using Api.Repository;
-using App.Db;
 using DateApp.Entities;
-using Microsoft.EntityFrameworkCore;
-using Api.Repositories.Interfaces;
-using Api.DTOs;
+using DateApp.Helpers;
 
 namespace App.Controllers
 {
@@ -27,13 +22,19 @@ namespace App.Controllers
 
 
         [HttpGet("GetSuccessTransactions")]
-        public async Task<ActionResult<UserTransaction>> GetSuccessTransactions()
+        public async Task<ActionResult<PagedList<TransactionDto>>> GetSuccessTransactions([FromQuery] PaginationParams paginationParams)
         {
             var successTransaction = _unitOfWork.TransactionRepository.GetSuccessTransactions().Result;
 
-            if (successTransaction.Any()) return Ok(_mapper.Map<List<UserTransaction>, List<TransactionDto>>(successTransaction));
+            if (!successTransaction.Any()) return NotFound();
 
-            return NotFound("Not found success transactions...");
+            var successTransactions = _mapper.Map<List<UserTransaction>, List<TransactionDto>>(successTransaction);
+
+            return PagedList<TransactionDto>.ToPagedList(successTransactions,
+               paginationParams.PageNumber,
+               paginationParams.PageSize);
+
+           
         }
 
     }

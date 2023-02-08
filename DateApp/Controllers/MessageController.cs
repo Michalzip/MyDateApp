@@ -2,6 +2,8 @@
 
 using Microsoft.AspNetCore.Mvc;
 using DateApp.Extensions;
+using DateApp.Helpers;
+
 namespace Api.Controllers
 {
     [Authorize(Policy = "UserProfile")]
@@ -21,7 +23,7 @@ namespace Api.Controllers
 
         [HttpGet("GetMessages")]
 
-        public async Task<ActionResult<MessageDto>> GetMessages(string username)
+        public async Task<ActionResult<PagedList<MessageDto>>> GetMessages(string username, [FromQuery] PaginationParams paginationParams)
         {
             sourceUserName = User.GetUsername();
 
@@ -31,7 +33,9 @@ namespace Api.Controllers
 
             var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
 
-            return Ok(result);
+            return  PagedList<MessageDto>.ToPagedList(result,
+               paginationParams.PageNumber,
+               paginationParams.PageSize);
 
         }
 

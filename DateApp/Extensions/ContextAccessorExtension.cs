@@ -6,19 +6,17 @@ namespace Api.Extensions
         private readonly IHttpContextAccessor _contextAccessor;
 
         public ContextAccessorExtension(IHttpContextAccessor contextAccessor)
-		{
+        {
             _contextAccessor = contextAccessor;
 
 
         }
 
 
-        public  void SetSession(string key,string value)
+        public void SetSession(string key, string value)
         {
 
-           //var w =  _contextAccessor.HttpContext.Request.Query[""];
-            _contextAccessor.HttpContext.Session.SetString(key,value);
-
+            _contextAccessor.HttpContext.Session.SetString(key, value);
 
         }
 
@@ -26,9 +24,9 @@ namespace Api.Extensions
         public string GetSession(string key)
         {
 
-        return  _contextAccessor.HttpContext.Session.GetString(key);
+            return _contextAccessor.HttpContext.Session.GetString(key);
 
-            
+
         }
     }
 }
