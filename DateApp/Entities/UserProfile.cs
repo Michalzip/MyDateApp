@@ -1,4 +1,5 @@
-﻿namespace Api.Entities
+﻿using DateApp.Entities;
+namespace Api.Entities
 {
     public class UserProfile
     {
@@ -11,6 +12,7 @@
         public virtual ICollection<UserLike>? ReceivedLikes { get; set; }
         public virtual ICollection<UserMessage>? SendedMessages { get; set; }
         public virtual ICollection<UserMessage>? ReceivedMessages { get; set; }
+        public virtual ICollection<UserTransaction>? UserTransactions { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
     }

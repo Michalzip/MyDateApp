@@ -19,8 +19,6 @@ namespace Api.Repositories
 
 
 
-
-
         public async Task<UserTransaction> GePaymentById(string transactionId)
         {
 

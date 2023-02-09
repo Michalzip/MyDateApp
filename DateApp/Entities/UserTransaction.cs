@@ -18,5 +18,7 @@ namespace DateApp.Entities
         public bool Success { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
+        public virtual UserProfile? ByUser { get; set; }
+
     }
 }

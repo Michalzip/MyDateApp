@@ -28,8 +28,12 @@ namespace App.Db
             builder.Entity<UserMessage>().HasKey(k => k.Id);
             builder.Entity<UserVipPayment>().HasKey(k => k.Id);
             builder.Entity<UserTransaction>().HasKey(k => k.Id);
-   
 
+
+            builder.Entity<UserTransaction>()
+               .HasOne(userBy => userBy.ByUser)
+               .WithMany(payment => payment.UserTransactions)
+               .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<UserLike>()
                 .HasOne(userBy => userBy.ByUser)

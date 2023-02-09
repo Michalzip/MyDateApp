@@ -15,6 +15,7 @@ using DateApp.Repositories.Interfaces;
 using Api.Extensions;
 using Server.Models;
 using Api.Policies.UserVipProfile;
+using AutoMapper.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -174,6 +175,7 @@ var mapperConfig = new MapperConfiguration(mc =>
 
 
 {
+   
     mc.AddProfile(new AutoMapperProfiles());
 
 });
@@ -202,7 +204,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddSession();
 builder.Services.AddScoped<IAuthorizationHandler, RequirementHandler>();
 builder.Services.AddScoped<IAuthorizationHandler, RequirementVipHandler>();
-//builder.Services.AddSingleton<IAuthorizationHandler, RequirementHandler>();
+
 
 builder.Services.AddCors(options =>
 {

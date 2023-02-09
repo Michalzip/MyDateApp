@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
-
+using Server.Models;
 namespace Api.Repositories.Interfaces
 {
 
- 
+
     public interface IAuthRepository
     {
 
-        Task<IdentityResult> RegisterUser(RegisterDto model);
-        Task<SignInResult> LoginUser(LoginDto model);
+        Task<IdentityResult> RegisterUser(ApplicationUser model);
+        Task<SignInResult> LoginUser(ApplicationUser model);
 
 
     }

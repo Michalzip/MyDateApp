@@ -14,13 +14,6 @@ namespace Api.Repositories
             _context = context;
             _unitOfWork = unitOfWork;
         }
-
-
-
-    
-
-
-
         
     };
 }
