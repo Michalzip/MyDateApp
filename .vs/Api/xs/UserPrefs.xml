@@ -3,12 +3,12 @@
     <Files>
       <File FileName="DateApp/Repositories/LikeRepository.cs" />
       <File FileName="DateApp/Controllers/LikeController.cs" />
-      <File FileName="DateApp/Program.cs" Line="272" Column="1" />
-      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/AdminController.cs" Line="37" Column="12" />
+      <File FileName="DateApp/Program.cs" Line="140" Column="31" />
+      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" />
+      <File FileName="DateApp/Controllers/AdminController.cs" />
       <File FileName="DateApp/Controllers/AuthController.cs" />
-      <File FileName="DateApp/Controllers/PaypalController.cs" Line="16" Column="47" />
-      <File FileName="DateApp/Helpers/PaginationParams.cs" Line="18" Column="34" />
+      <File FileName="DateApp/Controllers/PaypalController.cs" />
+      <File FileName="DateApp/Helpers/PaginationParams.cs" />
       <File FileName="DateApp/Repositories/PayPalRepository.cs" />
       <File FileName="DateApp/Data/DbContext.cs" />
       <File FileName="DateApp/DTOs/LikeCreateDto.cs" />
@@ -16,18 +16,18 @@
       <File FileName="DateApp/Repositories/Interfaces/ITransactionRepository.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/UnitOfWork.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/Interfaces/IPaypalRepository.cs" NotebookId="1" />
-      <File FileName="DateApp/Controllers/MessageController.cs" Line="40" Column="10" NotebookId="1" />
-      <File FileName="DateApp/Controllers/UserController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Controllers/MessageController.cs" NotebookId="1" />
+      <File FileName="DateApp/Controllers/UserController.cs" NotebookId="1" />
       <File FileName="DateApp/Controllers/UserVipController.cs" NotebookId="1" />
-      <File FileName="DateApp/Repositories/TransactionRepository.cs" Line="57" Column="1" NotebookId="1" />
+      <File FileName="DateApp/Repositories/TransactionRepository.cs" NotebookId="1" />
       <File FileName="DateApp/Extensions/ContextAccessorExtension.cs" NotebookId="1" />
       <File FileName="DateApp/Policies/UserProfile/RequirementHandler.cs" NotebookId="1" />
       <File FileName="DateApp/Policies/UserVipProfile/RequirementVipHandler.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/Interfaces/IAdminRepository.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/AuthRepository.cs" NotebookId="1" />
       <File FileName="DateApp/Repositories/AdminRepository.cs" NotebookId="1" />
-      <File FileName="DateApp/Repositories/MessageRepository.cs" Line="45" Column="17" NotebookId="1" />
-      <File FileName="DateApp/Helpers/PaginationList.cs" Line="10" Column="27" NotebookId="1" />
+      <File FileName="DateApp/Repositories/MessageRepository.cs" NotebookId="1" />
+      <File FileName="DateApp/Helpers/PaginationList.cs" Line="34" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -52,7 +52,6 @@
               <Node name="Services" expanded="True">
                 <Node name="Interfaces" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
             </Node>
             <Node name="Server" expanded="True">
               <Node name="Data" expanded="True" />
