@@ -19,8 +19,11 @@
     +- DateApp
          +- secret.json
          +- app.config
+    +- Server
+        +- secret.json
 
-<H4>secret.json</H4>
+
+<H4>secret.json (DateApp)</H4>
 
 ```
 {
@@ -40,6 +43,17 @@
         "EntityCore": "Server=LOCAL ADRESS,PORT;Initial Catalog=DateAppDB;User Id=sa;Password=PASSWORD;Encrypt=false;",
 
         "Identity": "Server=LOCAL ADRESS,PORT;Initial Catalog=IdentityDB;User Id=sa;Password=PASSWORD;Encrypt=false;"
+    }
+}
+
+```
+
+<H4>secret.json (Server)</H4>
+
+```
+{
+    "ConnectionString": {
+        "connectionString": "Server=LOCAL ADRESS,PORT;Initial Catalog=IdentityDB;User Id=sa;Password=PASSWORD;Encrypt=false;"
     }
 }
 
