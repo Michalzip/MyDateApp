@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "35WbiL7HJZ8j6FUbSi3heecUcDsywLg3hN7vHfnlAIgpzmST2jrVe4eqpju+zj+FtA8uAyO8gM/+00HNEVMS7w==",
+  "dgSpecHash": "2som6l8jGKsAkEztf9syxSltMv113mhoEUgis7pjXS4aRRW9qpTyazgqkoKaRy0U+Byd9/ibZR1qen4nfmyvEQ==",
   "success": true,
-  "projectFilePath": "/Users/michal/Desktop/apka/Server/Server.csproj",
+  "projectFilePath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/10.0.0/automapper.10.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",

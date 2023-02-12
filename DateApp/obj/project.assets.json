@@ -3085,7 +3085,8 @@
         "dependencies": {
           "IdentityServer4": "4.1.2",
           "IdentityServer4.EntityFramework": "4.1.2",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0"
         },
         "compile": {
           "bin/placeholder/Server.dll": {}
@@ -9006,11 +9007,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
+      "projectUniqueName": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
       "projectName": "App",
-      "projectPath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
+      "projectPath": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
       "packagesPath": "/Users/michal/.nuget/packages/",
-      "outputPath": "/Users/michal/Desktop/apka/DateApp/obj/",
+      "outputPath": "/Users/michal/Desktop/MyDateApp/DateApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/michal/.nuget/NuGet/NuGet.Config"
@@ -9025,8 +9026,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/michal/Desktop/apka/Server/Server.csproj": {
-              "projectPath": "/Users/michal/Desktop/apka/Server/Server.csproj"
+            "/Users/michal/Desktop/MyDateApp/Server/Server.csproj": {
+              "projectPath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj"
             }
           }
         }
@@ -9138,6 +9139,15 @@
       "warningLevel": 1,
       "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "DataAnnotationsExtensions",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 7.0.0 to 6.0.12. Reference the package directly from the project to select a different version. \n App -> Server -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.0) \n App -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.12)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
       "targetGraphs": [
         "net6.0"
       ]

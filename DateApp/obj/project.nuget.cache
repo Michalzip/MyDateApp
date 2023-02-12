@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uGL79gX65+ikZ6a0J3PlE4xkx6yNg2Ri/g+LAcTq9s2X2KnDa3IZ6OckfHCLGY3/tbZfJtBPoj7o3iawIqHsOQ==",
-  "success": true,
-  "projectFilePath": "/Users/michal/Desktop/apka/DateApp/Api.csproj",
+  "dgSpecHash": "+nKtOXd12yG6pYxKhTuofn/XXv1c0SyNIKGIhVjbxvpJLXuQ9RwImhMLXGhf7VC7+u41xzYSTmLpyq9MsT6FuQ==",
+  "success": false,
+  "projectFilePath": "/Users/michal/Desktop/MyDateApp/DateApp/Api.csproj",
   "expectedPackageFiles": [
     "/Users/michal/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
@@ -188,6 +188,15 @@
       "warningLevel": 1,
       "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "DataAnnotationsExtensions",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 7.0.0 to 6.0.12. Reference the package directly from the project to select a different version. \n App -> Server -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.0) \n App -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.12)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
       "targetGraphs": [
         "net6.0"
       ]
