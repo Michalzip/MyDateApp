@@ -105,6 +105,68 @@ namespace Api.Migrations
                     b.ToTable("UserProfiles");
                 });
 
+            modelBuilder.Entity("Api.Entities.UserVipPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DaysCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserVipPayments");
+                });
+
+            modelBuilder.Entity("DateApp.Entities.UserTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Currency")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Expires")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Failed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PendingConfirm")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Success")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TransactionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ByUserId");
+
+                    b.ToTable("Transactions");
+                });
+
             modelBuilder.Entity("Api.Entities.UserLike", b =>
                 {
                     b.HasOne("Api.Entities.UserProfile", "ByUser")
@@ -139,6 +201,16 @@ namespace Api.Migrations
                     b.Navigation("ToUser");
                 });
 
+            modelBuilder.Entity("DateApp.Entities.UserTransaction", b =>
+                {
+                    b.HasOne("Api.Entities.UserProfile", "ByUser")
+                        .WithMany("UserTransactions")
+                        .HasForeignKey("ByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ByUser");
+                });
+
             modelBuilder.Entity("Api.Entities.UserProfile", b =>
                 {
                     b.Navigation("ReceivedLikes");
@@ -148,6 +220,8 @@ namespace Api.Migrations
                     b.Navigation("SendedLikes");
 
                     b.Navigation("SendedMessages");
+
+                    b.Navigation("UserTransactions");
                 });
 #pragma warning restore 612, 618
         }

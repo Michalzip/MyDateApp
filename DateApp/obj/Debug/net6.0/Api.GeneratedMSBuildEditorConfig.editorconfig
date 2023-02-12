@@ -15,11 +15,3 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/michal/Desktop/MyDateApp/DateApp
 build_property._RazorSourceGeneratorDebug = 
-
-[/Users/michal/Desktop/MyDateApp/DateApp/Views/Auth/LoginSuccess.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Mb2dpblN1Y2Nlc3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/michal/Desktop/MyDateApp/DateApp/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 

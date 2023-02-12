@@ -50,7 +50,6 @@ namespace Api.Controllers
 
             var likeFromUsers = await _unitOfWork.LikeRepository.GetLikeUsers(sourceUserName);
 
-
             if (likeFromUsers.Count == 0) return BadRequest("No user liked you yet");
 
             var likesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(likeFromUsers);

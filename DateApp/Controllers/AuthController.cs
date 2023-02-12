@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
+using Server.Models;
 
 namespace App.Controllers;
 
@@ -17,10 +18,19 @@ public class AuthController : Controller
     }
 
     [HttpPost("Register")]
-    public async Task<IActionResult> Register(RegisterDto model)
+    public async Task<IActionResult> Register(RegisterDto user)
     {
 
-        var result = await _authRepo.RegisterUser(model);
+
+        var applicationUser = new ApplicationUser
+        {
+            Email = user.Email,
+            UserName = user.UserName,
+            PasswordHash = user.Password,
+        };
+
+
+        var result = await _authRepo.RegisterUser(applicationUser);
 
         if (result.Succeeded) return Ok(result);
 
@@ -39,10 +49,18 @@ public class AuthController : Controller
     }
 
     [HttpPost("Login")]
-    public async Task<IActionResult> Login(LoginDto model)
+    public async Task<IActionResult> Login(LoginDto user)
     {
 
-        var result = await _authRepo.LoginUser(model);
+        var applicationUser = new ApplicationUser
+        {
+
+            Email = user.Email,
+            PasswordHash = user.Password
+
+        };
+
+        var result = await _authRepo.LoginUser(applicationUser);
 
         if (result.Succeeded) return Ok(result);
 
@@ -50,12 +68,7 @@ public class AuthController : Controller
     }
 
 
-    public async Task<IActionResult> LoginSuccess()
-    {
 
-        return View();
-
-    }
 
 }
 

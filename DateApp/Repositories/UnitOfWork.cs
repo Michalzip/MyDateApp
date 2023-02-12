@@ -6,6 +6,8 @@ using Api.Repositories.Interfaces;
 using App.Db;
 using Api.Repositories;
 using MediatR;
+using DateApp.Repositories;
+using DateApp.Repositories.Interfaces;
 
 namespace Api.Repository
 {
@@ -27,7 +29,7 @@ namespace Api.Repository
         public IUserRepository UserRepository => new UserRepository(_context, _mapper);
         public IMessageRepository MessageRepository => new MessageRepository(_context);
         public ILikeRepository LikeRepository => new LikeRepository(_context);
-
+        public ITransactionRepository TransactionRepository => new TransactionRepository(_context);
 
         public async Task<bool> Complete()
         {

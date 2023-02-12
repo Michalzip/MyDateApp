@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
+using Server.Models;
 
 namespace App.Services
 {
@@ -11,11 +12,11 @@ namespace App.Services
     {
 
         private readonly SymmetricSecurityKey _key;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _config;
 
 
-        public TokenService(IConfiguration config, UserManager<IdentityUser> userManager)
+        public TokenService(IConfiguration config, UserManager<ApplicationUser> userManager)
         {
             _config = config;
 
@@ -25,8 +26,9 @@ namespace App.Services
 
         }
 
-        public async Task<string> CreateToken(IdentityUser user)
+        public async Task<string> CreateToken(ApplicationUser user)
         {
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
 
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

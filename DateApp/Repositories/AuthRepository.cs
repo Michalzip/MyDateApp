@@ -1,5 +1,7 @@
 ﻿
 
+using Server.Models;
+
 namespace Api.Repository
 {
     public class AuthRepository : IAuthRepository
@@ -15,35 +17,20 @@ namespace Api.Repository
             _tokenService = tokenService;
         }
 
-        public async Task<IdentityResult> RegisterUser(RegisterDto model)
+        public async Task<IdentityResult> RegisterUser(ApplicationUser user)
         {
 
-
-            var userIdentity = new IdentityUser
-            {
-                Email = model.Email,
-                UserName = model.UserName,
-                PasswordHash = model.Password,
-            };
-
-            return await _identityUserRepo.InsertIdentityUser(userIdentity);
+            return await _identityUserRepo.InsertIdentityUser(user);
 
         }
 
 
-        public async Task<SignInResult> LoginUser(LoginDto model)
+        public async Task<SignInResult> LoginUser(ApplicationUser user)
         {
-            var userIdentity = new IdentityUser
-            {
 
-                Email = model.Email,
-                PasswordHash = model.Password
+            var result = await _identityUserRepo.AuthenticateIdentityUser(user);
 
-            };
-
-            var result = await _identityUserRepo.AuthenticateIdentityUser(userIdentity);
-
-            if (result.Succeeded) await _tokenService.CreateToken(userIdentity);
+            if (result.Succeeded) await _tokenService.CreateToken(user);
 
 
             return result;

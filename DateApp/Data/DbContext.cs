@@ -1,4 +1,4 @@
-﻿
+﻿using DateApp.Entities;
 namespace App.Db
 {
     public class AppDbContext : DbContext
@@ -13,6 +13,9 @@ namespace App.Db
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserLike> UserLikes { get; set; }
         public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<UserVipPayment> UserVipPayments { get; set; }
+        public DbSet<UserTransaction> Transactions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -23,6 +26,14 @@ namespace App.Db
             builder.Entity<UserProfile>().HasKey(k => k.Id);
             builder.Entity<UserLike>().HasKey(K => K.Id);
             builder.Entity<UserMessage>().HasKey(k => k.Id);
+            builder.Entity<UserVipPayment>().HasKey(k => k.Id);
+            builder.Entity<UserTransaction>().HasKey(k => k.Id);
+
+
+            builder.Entity<UserTransaction>()
+               .HasOne(userBy => userBy.ByUser)
+               .WithMany(payment => payment.UserTransactions)
+               .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<UserLike>()
                 .HasOne(userBy => userBy.ByUser)
@@ -45,12 +56,11 @@ namespace App.Db
                 .HasOne(userBy => userBy.ToUser)
                 .WithMany(userTo => userTo.ReceivedMessages)
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
+         
+
 
         }
-
-
-
     }
 }
 
