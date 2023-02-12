@@ -219,7 +219,6 @@
 /Users/michal/Desktop/MyDateApp/MyDateApp/Server/obj/Debug/net6.0/Server.pdb
 /Users/michal/Desktop/MyDateApp/MyDateApp/Server/obj/Debug/net6.0/Server.genruntimeconfig.cache
 /Users/michal/Desktop/MyDateApp/MyDateApp/Server/obj/Debug/net6.0/ref/Server.dll
-/Users/michal/Desktop/MyDateApp/Server/bin/Debug/net6.0/secret.json
 /Users/michal/Desktop/MyDateApp/Server/obj/Debug/net6.0/staticwebassets/msbuild.Server.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/michal/Desktop/MyDateApp/Server/obj/Debug/net6.0/staticwebassets/msbuild.build.Server.props
 /Users/michal/Desktop/MyDateApp/Server/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Server.props
