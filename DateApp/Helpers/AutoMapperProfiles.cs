@@ -12,6 +12,8 @@ using DateApp.Repositories.Interfaces;
 using DateApp.Extensions;
 using Api.Repository;
 using DateApp.Entities;
+using DateApp.Functions.LikeFunctions.Queries;
+using DateApp.Functions.LikeFunctions.Commands;
 
 namespace App.Helpers
 {
@@ -41,7 +43,21 @@ namespace App.Helpers
                 dest => dest.Receiver, opt => opt.MapFrom(src => src.UserName)
             );
 
-            CreateMap<UserLike, LikeCreateDto>();
+          ;
+
+            // CreateMap<UserLike, LikeCreateDto>();
+
+
+            // CreateMap<GetLikedUserQuery, List<LikeDto>>();
+
+            // CreateMap<LikeCreateDto, LikeDto>();
+
+
+            // CreateMap<GetLikedUserQuery, LikeDto>().ForMember(
+            //     dest => dest.Name, opt => opt.MapFrom(src => src.signInUserName)
+            //     );
+
+            //CreateMap<IRequest, LikeDto>();
 
             CreateMap<UserLike, LikeDto>()
             .ForMember(dest => dest.Name, opt =>
@@ -49,6 +65,12 @@ namespace App.Helpers
             ).ForMember(dest => dest.Name, opt =>
             opt.MapFrom(src => src.ToUser.UserName)
             );
+
+
+            CreateMap<UserProfile, LikeDto>().ForMember(
+                dest => dest.Name, opt => opt.MapFrom(src => src.UserName)
+                );
+           
 
             CreateMap<UserTransaction, TransactionDto>()
             .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))

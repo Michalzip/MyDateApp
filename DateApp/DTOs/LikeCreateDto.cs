@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Api.DTOs
 {
-    public class LikeCreateDto
-    {
-        [Required] public string? UserName { get; set; }
+    // public class LikeCreateDto : IRequest<LikeDto>
+    // {
+    //     [Required] public string? UserName { get; set; }
 
-    }
+    // }
 }

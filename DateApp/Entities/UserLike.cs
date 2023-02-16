@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Api.Entities
 {
-    public class UserLike
+
+    public class UserLike 
     {
         public int Id;
         public virtual UserProfile? ByUser { get; set; }

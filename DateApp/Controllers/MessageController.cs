@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DateApp.Extensions;
 using DateApp.Helpers;
+using DateApp.Services.Interfaces;
 
 namespace Api.Controllers
 {
@@ -11,12 +12,15 @@ namespace Api.Controllers
     {
 
         private readonly IMapper _mapper;
-        private readonly IUnitOfWork _unitOfWork;
 
-        public MessageController(IUnitOfWork unitOfWork, IMapper mapper)
+
+        private readonly IMessageService _messageService;
+
+        public MessageController(IMapper mapper, IMessageService messageService)
         {
             _mapper = mapper;
-            _unitOfWork = unitOfWork;
+
+            _messageService = messageService;
         }
 
         private string? sourceUserName;
@@ -27,15 +31,15 @@ namespace Api.Controllers
         {
             sourceUserName = User.GetUsername();
 
-            var messages = await _unitOfWork.MessageRepository.GetMessages(sourceUserName, username);
+            // var messages = await _unitOfWork.MessageRepository.GetMessages(sourceUserName, username);
 
-            if (messages.Count() == 0) return BadRequest("you dont have messages with this user");
+            // if (messages.Count() == 0) return BadRequest("you dont have messages with this user");
 
-            var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
+            // var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
 
-            return  PagedList<MessageDto>.ToPagedList(result,
-               paginationParams.PageNumber,
-               paginationParams.PageSize);
+            // return PagedList<MessageDto>.ToPagedList(result,
+            //    paginationParams.PageNumber,
+            //    paginationParams.PageSize);
 
         }
 
@@ -47,19 +51,19 @@ namespace Api.Controllers
 
             var sourceUser = User.GetUsername();
 
-            var message = new MessageDto
-            {
-                Sender = sourceUser,
-                Receiver = username
-            };
+            // var message = new MessageDto
+            // {
+            //     Sender = sourceUser,
+            //     Receiver = username
+            // };
 
-            var messages = await _unitOfWork.MessageRepository.GetMessagesByTime(message, hourFrom, hourTo, day);
+            // var messages = await _unitOfWork.MessageRepository.GetMessagesByTime(message, hourFrom, hourTo, day);
 
-            if (messages.Count() == 0) return BadRequest("You have no messages with this user in the time limit");
+            // if (messages.Count() == 0) return BadRequest("You have no messages with this user in the time limit");
 
-            var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
+            // var result = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
 
-            return Ok(result);
+            // return Ok(result);
 
         }
 
@@ -71,27 +75,27 @@ namespace Api.Controllers
 
             sourceUserName = User.GetUsername();
 
-            var sourceUser = await _unitOfWork.UserRepository.GetUser(sourceUserName);
+            // var sourceUser = await _unitOfWork.UserRepository.GetUser(sourceUserName);
 
-            var receiverUser = await _unitOfWork.UserRepository.GetUser(user.UserName);
+            // var receiverUser = await _unitOfWork.UserRepository.GetUser(user.UserName);
 
-            if (receiverUser == null) return NotFound("Not Found user");
+            // if (receiverUser == null) return NotFound("Not Found user");
 
 
-            var message = new UserMessage
-            {
-                ByUser = sourceUser,
-                ToUser = receiverUser,
-                Message = user.Message,
-            };
+            // var message = new UserMessage
+            // {
+            //     ByUser = sourceUser,
+            //     ToUser = receiverUser,
+            //     Message = user.Message,
+            // };
 
-            _unitOfWork.MessageRepository.AddMessage(message);
+            // _unitOfWork.MessageRepository.AddMessage(message);
 
-            var messageDto = _mapper.Map<UserMessage, MessageDto>(message);
+            // var messageDto = _mapper.Map<UserMessage, MessageDto>(message);
 
-            if (await _unitOfWork.Complete()) return Ok(messageDto);
+            // if (await _unitOfWork.Complete()) return Ok(messageDto);
 
-            return BadRequest("Message Not Added");
+            // return BadRequest("Message Not Added");
 
         }
 
@@ -100,21 +104,14 @@ namespace Api.Controllers
         [HttpDelete("DeleteMessage")]
         public async Task<ActionResult> DeleteMessage(int id)
         {
-            var username = User.GetUsername();
 
-            var message = await _unitOfWork.MessageRepository.GetMessage(id);
+            // var result = await _messageService.DeleteMessageById(id);
 
-            if (message == null) return BadRequest("Message not exists");
+            // if (result == false) return BadRequest("Problem Deleting the message");
 
-            var checkMessageAuthor = await _unitOfWork.MessageRepository.CheckAuthorMessage(username, id);
+            // return Ok("Message Delete");
 
-            if (checkMessageAuthor == null) return Unauthorized();
 
-            _unitOfWork.MessageRepository.DeleteMessage(message);
-
-            if (await _unitOfWork.Complete()) return Ok("Message Delete");
-
-            return BadRequest("Problem Deleting the message");
 
         }
 

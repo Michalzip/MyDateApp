@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DateApp.Entities
 {
-    public class UserTransaction
+    public class UserTransaction 
     {
 
         public int Id;

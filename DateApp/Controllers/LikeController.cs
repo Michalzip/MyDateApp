@@ -5,90 +5,77 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DateApp.Extensions;
 using DateApp.DTOs;
-
+using DateApp.Services.Interfaces;
 
 namespace Api.Controllers
 {
     [Authorize(Policy = "UserProfile")]
     public class LikeController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+
         private readonly IMapper _mapper;
-        public LikeController(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly ILikeService _likeService;
+        public LikeController(IMapper mapper, ILikeService likeService)
         {
-            _unitOfWork = unitOfWork;
+
             _mapper = mapper;
+            _likeService = likeService;
         }
 
         private string? sourceUserName;
 
 
-        [HttpGet("GetLikedUsers")]
-        public async Task<ActionResult<LikeDto>> GetLikedUsers()
+        [HttpGet("GetLikedProfiles")]
+        public async Task<ActionResult<LikeDto>> GetLikedProfiles()
         {
 
 
             sourceUserName = User.GetUsername();
 
-            var likesBySourceUser = await _unitOfWork.LikeRepository.GetLikedUsers(sourceUserName);
+            var result = await _likeService.GetLikedProfiles(sourceUserName);
 
-            if (likesBySourceUser == null) return BadRequest("you  didn't like users");
+            if (result == null) return BadRequest("you  didn't like users");
 
-            var likesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(likesBySourceUser);
+            return Ok(result);
 
-            return Ok(likesDto);
 
         }
 
 
-        [HttpGet("GetLikeUsers")]
-        public async Task<ActionResult<LikeDto>> GetLikeUsers()
+        [HttpGet("GetLikesProfiles")]
+        public async Task<ActionResult<LikeDto>> GetLikesProfiles()
         {
+
 
 
             sourceUserName = User.GetUsername();
 
-            var likeFromUsers = await _unitOfWork.LikeRepository.GetLikeUsers(sourceUserName);
+            var result = await _likeService.GetLikesProfiles(sourceUserName);
 
-            if (likeFromUsers.Count == 0) return BadRequest("No user liked you yet");
+            if (result == null) return BadRequest("any user like your profile yet");
 
-            var likesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(likeFromUsers);
+            return Ok(result);
 
 
-
-            return Ok(likesDto);
 
         }
 
 
         [HttpPost("AddLike")]
-        public async Task<ActionResult> AddLike(LikeCreateDto user)
+        public async Task<ActionResult> AddLike(string toUser)
         {
 
             sourceUserName = User.GetUsername();
 
-            var currentUser = await _unitOfWork.UserRepository.GetUser(sourceUserName);
+            var result = await _likeService.CreateLikeFromQuery(sourceUserName, toUser);
 
-            var receiverUser = await _unitOfWork.UserRepository.GetUser(user.UserName);
+            if (result != null) return Ok("Like Added" + result);
 
-            if (receiverUser == null) return NotFound("Not Found user");
+            return BadRequest("u can't like user twice");
 
-            var like = new UserLike
-            {
-                ByUser = currentUser,
-                ToUser = receiverUser,
-            };
-
-            bool result = await _unitOfWork.LikeRepository.CheckExistsLike(like);
-
-            if (result == true) return BadRequest("u can't like user twice");
-
-            _unitOfWork.LikeRepository.AddLike(like);
-
-            if (await _unitOfWork.Complete()) return Ok("Like Added");
-
-            return BadRequest("Like Not Added");
         }
     }
 }
+
+
 

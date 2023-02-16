@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Api.Entities
 {
-    public class UserVipPayment
+    public class UserVipPayment 
     {
         public int Id;
         public int DaysCount { get; set; }

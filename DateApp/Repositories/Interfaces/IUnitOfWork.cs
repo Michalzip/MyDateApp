@@ -9,9 +9,9 @@ namespace Api.Repositories.Interfaces
     public interface IUnitOfWork
     {
         IUserRepository UserRepository { get; }
-        IMessageRepository MessageRepository { get; }
+
         ITransactionRepository TransactionRepository { get; }
-        ILikeRepository LikeRepository { get; }
+
         Task<bool> Complete();
     }
 }

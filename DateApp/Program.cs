@@ -16,6 +16,8 @@ using Api.Extensions;
 using Server.Models;
 using Api.Policies.UserVipProfile;
 using AutoMapper.Internal;
+using DateApp.Services.Interfaces;
+using DateApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,7 +76,10 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+
+builder.Services.AddTransient<AppDbContext>();
+
 builder.Services.AddAuthorization();
 builder.Host.ConfigureAppConfiguration((config =>
 {
@@ -171,19 +176,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 
-var mapperConfig = new MapperConfiguration(mc =>
 
-
-{
-   
-    mc.AddProfile(new AutoMapperProfiles());
-
-});
-
-IMapper mapper = mapperConfig.CreateMapper();
-
-
-builder.Services.AddSingleton(mapper);
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IIdentityUserRepo, IdentityUserRepo>();
@@ -191,11 +184,12 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AppDbContext>();
-builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IPaypalRepository, PayPalRepository>();
 builder.Services.AddScoped<ContextAccessorExtension>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ILikeService, LikeService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
