@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DateApp.Functions.MessageFunctions.Commands
 {
 
-    public class CreateMessageCommand : IRequest<MessageDto>
+    public class CreateMessageCommand : IRequest<int>
     {
         public UserProfile? ByUser { get; set; }
         public UserProfile? ToUser { get; set; }
@@ -14,19 +9,19 @@ namespace DateApp.Functions.MessageFunctions.Commands
 
 
 
-        public class CreateMessage : IRequestHandler<CreateMessageCommand, MessageDto>
+        public class CreateMessage : IRequestHandler<CreateMessageCommand, int>
         {
             private readonly AppDbContext _context;
-            private readonly IMapper _mapper;
-            public CreateMessage(AppDbContext context, IMapper mapper)
+
+            public CreateMessage(AppDbContext context)
             {
                 _context = context;
-                _mapper = mapper;
+
             }
 
 
 
-            async Task<MessageDto> IRequestHandler<CreateMessageCommand, MessageDto>.Handle(CreateMessageCommand request, CancellationToken cancellationToken)
+            async Task<int> IRequestHandler<CreateMessageCommand, int>.Handle(CreateMessageCommand request, CancellationToken cancellationToken)
             {
 
                 var message = new UserMessage
@@ -39,11 +34,8 @@ namespace DateApp.Functions.MessageFunctions.Commands
 
                 await _context.AddAsync(message);
 
-                var result = await _context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
 
-                if (result == 0) return null;
-
-                return _mapper.Map<UserMessage, MessageDto>(message);
             }
         }
     }

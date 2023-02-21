@@ -1686,6 +1686,8 @@
         "dependencies": {
           "IdentityServer4": "4.1.2",
           "IdentityServer4.EntityFramework": "4.1.2",
+          "MediatR": "11.1.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12"
         },

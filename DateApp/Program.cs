@@ -1,23 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using App.Db;
+﻿
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Security.Claims;
 using Server.data;
 using System.Reflection;
-using Server.Repository;
-using Server.Repository.interfaces;
-using Api.Repositories;
 using App.Helpers;
 using Api.Policy;
-using DateApp.Repositories;
-using DateApp.Repositories.Interfaces;
-using Api.Extensions;
-using Server.Models;
 using Api.Policies.UserVipProfile;
-using AutoMapper.Internal;
-using DateApp.Services.Interfaces;
-using DateApp.Services;
+using DateApp.Helpers;
+using Server.Functions.UserFunctions.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -114,7 +104,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFramework
 builder.Services.AddAuthorization(options =>
 {
 
-    options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "Adam2141@gmail.com"));
+    options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "adam@gmail.com"));
 
     options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfileRequirement()); policy.RequireAuthenticatedUser(); });
 
@@ -160,6 +150,10 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(typeof(CreateUserCommand).GetTypeInfo().Assembly);
+builder.Services.AddMediatR(typeof(CreateVipUserCommand).GetTypeInfo().Assembly);
+//builder.Services.AddMediatR(typeof(AuthenticateUserCommand).GetTypeInfo().Assembly);
+
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -175,29 +169,18 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = false;
 });
 
+builder.Services.AddTransient<Mediator>();
 
 
 
-builder.Services.AddScoped<IAuthRepository, AuthRepository>();
-builder.Services.AddScoped<IIdentityUserRepo, IdentityUserRepo>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<AppDbContext>();
-builder.Services.AddScoped<IPaypalRepository, PayPalRepository>();
-builder.Services.AddScoped<ContextAccessorExtension>();
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
-builder.Services.AddScoped<ILikeService, LikeService>();
-builder.Services.AddScoped<IMessageService, MessageService>();
+ServicesInjector.InjectServices(builder.Services);
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 builder.Services.AddSession();
-builder.Services.AddScoped<IAuthorizationHandler, RequirementHandler>();
-builder.Services.AddScoped<IAuthorizationHandler, RequirementVipHandler>();
+
 
 
 builder.Services.AddCors(options =>

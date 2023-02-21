@@ -8,7 +8,7 @@ namespace Api.Controllers
     public class UserVipController : Controller
     {
 
-        [HttpGet("checkIfYouAreVip")]
+        [HttpGet("check-vip-status")]
         public ActionResult HelloVip()
         {
             return Ok("hello i am a vip");

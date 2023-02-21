@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DateApp.Functions.MessageFunctions.Commands
 {
 
-    public class DeleteMessageByIdCommand : IRequest<bool>
+    public class DeleteMessageByIdCommand : IRequest<int>
     {
 
-        public int Id { get; set; }
+        public UserMessage? UserMessage { get; set; }
 
-        public class DeleteMessageById : IRequestHandler<DeleteMessageByIdCommand, bool>
+        public class DeleteMessageById : IRequestHandler<DeleteMessageByIdCommand, int>
         {
 
             private readonly AppDbContext _context;
@@ -23,21 +18,14 @@ namespace DateApp.Functions.MessageFunctions.Commands
 
             }
 
-            async Task<bool> IRequestHandler<DeleteMessageByIdCommand, bool>.Handle(DeleteMessageByIdCommand request, CancellationToken cancellationToken)
+            async Task<int> IRequestHandler<DeleteMessageByIdCommand, int>.Handle(DeleteMessageByIdCommand request, CancellationToken cancellationToken)
             {
 
-                var message = new UserMessage
-                {
-                    Id = request.Id,
-                };
 
-                _context.UserMessages.Remove(message);
+                _context.UserMessages.Remove(request.UserMessage);
 
-                var result = await _context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
 
-                if (result == 0) return false;
-
-                return true;
             }
         }
 

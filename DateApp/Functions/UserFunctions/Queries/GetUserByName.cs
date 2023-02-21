@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DateApp.Functions.UserFunctions.Queries
 {
 
 
     public class GetUserByNameQuery : IRequest<UserProfile>
     {
-        public string? userName { get; set; }
+        public string? UserName { get; set; }
         public class GetUserByName : IRequestHandler<GetUserByNameQuery, UserProfile>
         {
             private readonly AppDbContext _context;
@@ -22,11 +17,9 @@ namespace DateApp.Functions.UserFunctions.Queries
 
             async Task<UserProfile> IRequestHandler<GetUserByNameQuery, UserProfile>.Handle(GetUserByNameQuery request, CancellationToken cancellationToken)
             {
-                var userProfile = await _context.UserProfiles.Where(u => u.UserName == request.userName).FirstOrDefaultAsync();
+                return await _context.UserProfiles.Where(u => u.UserName == request.UserName).FirstOrDefaultAsync();
 
-                if (userProfile == null) return null;
 
-                return userProfile;
 
 
             }

@@ -2,10 +2,7 @@
 using PayPal.Api;
 using Api.Extensions;
 using DateApp.Repositories.Interfaces;
-using App.Db;
-using DateApp.Entities;
 
-using DateApp.Extensions;
 namespace DateApp.Repositories
 {
 

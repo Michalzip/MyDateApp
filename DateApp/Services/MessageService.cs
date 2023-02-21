@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DateApp.Services.Interfaces;
-using DateApp.Functions.LikeFunctions.Queries;
-using DateApp.Functions.LikeFunctions.Commands;
 using DateApp.Functions.MessageFunctions.Commands;
 using DateApp.Functions.MessageFunctions.Queries;
-using DateApp.Helpers;
+
 
 namespace DateApp.Services
 {
@@ -24,12 +17,12 @@ namespace DateApp.Services
 
 
 
-        public async Task<MessageDto> CreateMessageFromQuery(string byUserName, string toUserName, string message)
+        public async Task<int> CreateMessageFromQuery(string byUserName, string toUserName, string message)
         {
 
             var user1 = new GetUserByNameQuery
             {
-                userName = byUserName
+                UserName = byUserName
             };
 
 
@@ -38,11 +31,13 @@ namespace DateApp.Services
 
             var user2 = new GetUserByNameQuery
             {
-                userName = toUserName
+                UserName = toUserName
             };
+
 
             var toUserProfile = await _mediator.Send(user2);
 
+            if (toUserProfile == null) return 0;
 
             var userMessage = new CreateMessageCommand
             {
@@ -58,26 +53,26 @@ namespace DateApp.Services
         }
 
 
-        public async Task<PagedList<MessageDto>> GetAllMessages(string byUserName, string toUserName, PaginationParams paginationParams)
+        public async Task<List<UserMessage>> GetAllMessages(string byUserName, string toUserName)
         {
 
             var messagesQuery = new GetAllMessagesQuery
             {
                 ByUserName = byUserName,
                 ToUserName = toUserName,
-                PaginationParams = paginationParams
+
 
             };
 
-            var messages = await _mediator.Send(messagesQuery);
+            return await _mediator.Send(messagesQuery);
 
 
-            return messages;
+
 
         }
 
 
-        public async Task<List<MessageDto>> GetMessageByTimeQuery(string byUserName, string toUserName, int hourTo, int hourFrom, int day)
+        public async Task<List<UserMessage>> GetMessageByTime(string byUserName, string toUserName, int hourTo, int hourFrom, int day)
         {
 
             var messagesQuery = new GetMessageByTimeQuery
@@ -90,14 +85,12 @@ namespace DateApp.Services
 
             };
 
-            var messages = await _mediator.Send(messagesQuery);
-
-            return messages;
+            return await _mediator.Send(messagesQuery);
 
         }
 
 
-        public async Task<bool> DeleteMessageById(int id)
+        public async Task<int> DeleteMessageById(int id)
         {
             var idMessage = new GetMessageByIdQuery
             {
@@ -107,19 +100,22 @@ namespace DateApp.Services
 
             var message = await _mediator.Send(idMessage);
 
+            if (message == null) return 0;
 
-            var idMessageToDelete = new DeleteMessageByIdCommand
+
+            var MessageToDelete = new DeleteMessageByIdCommand
             {
 
-                Id = message.Id
+                UserMessage = message
             };
 
-            var deleteCompleteResult = await _mediator.Send(idMessageToDelete);
+            return await _mediator.Send(MessageToDelete);
 
-            return deleteCompleteResult;
+
 
 
         }
+
 
     }
 }

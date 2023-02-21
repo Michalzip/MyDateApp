@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using DateApp.Extensions;
-using DateApp.DTOs;
-using DateApp.Services.Interfaces;
+using DateApp.Helpers;
+
 
 namespace Api.Controllers
 {
@@ -25,43 +21,45 @@ namespace Api.Controllers
         private string? sourceUserName;
 
 
-        [HttpGet("GetLikedProfiles")]
-        public async Task<ActionResult<LikeDto>> GetLikedProfiles()
+        [HttpGet("get-liked-profiles")]
+        public async Task<ActionResult<PagedList<LikeDto>>> GetLikedProfiles([FromQuery] PaginationParams paginationParams)
         {
-
 
             sourceUserName = User.GetUsername();
 
             var result = await _likeService.GetLikedProfiles(sourceUserName);
 
-            if (result == null) return BadRequest("you  didn't like users");
+            if (result.Count == 0) return NotFound("you  didn't like users");
 
-            return Ok(result);
+            var likesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(result);
+
+            return Ok(PagedList<LikeDto>.ToPagedList(likesDto,
+                 paginationParams.PageNumber,
+                 paginationParams.PageSize));
 
 
         }
 
 
-        [HttpGet("GetLikesProfiles")]
-        public async Task<ActionResult<LikeDto>> GetLikesProfiles()
+        [HttpGet("get-likes-profiles")]
+        public async Task<ActionResult<PagedList<LikeDto>>> GetLikesProfiles([FromQuery] PaginationParams paginationParams)
         {
 
-
-
             sourceUserName = User.GetUsername();
-
             var result = await _likeService.GetLikesProfiles(sourceUserName);
 
-            if (result == null) return BadRequest("any user like your profile yet");
+            if (result.Count == 0) return NotFound("any user like your profile yet");
 
-            return Ok(result);
+            var likesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(result);
 
-
+            return Ok(PagedList<LikeDto>.ToPagedList(likesDto,
+                 paginationParams.PageNumber,
+                 paginationParams.PageSize));
 
         }
 
 
-        [HttpPost("AddLike")]
+        [HttpPost("add-like")]
         public async Task<ActionResult> AddLike(string toUser)
         {
 
@@ -69,9 +67,9 @@ namespace Api.Controllers
 
             var result = await _likeService.CreateLikeFromQuery(sourceUserName, toUser);
 
-            if (result != null) return Ok("Like Added" + result);
+            if (result == 0) return BadRequest("u can't like user twice");
 
-            return BadRequest("u can't like user twice");
+            return Ok("Like Added");
 
         }
     }

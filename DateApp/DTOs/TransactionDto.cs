@@ -9,7 +9,7 @@ namespace Api.DTOs
     {
         public string? Currency { get; set; }
         public string? Amount { get; set; }
-        public DateTime createdAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
     }
 }

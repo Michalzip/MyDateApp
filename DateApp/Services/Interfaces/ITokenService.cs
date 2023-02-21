@@ -1,8 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using Server.Models;
-
-namespace App.Interfaces
+﻿namespace App.Interfaces
 {
 
 

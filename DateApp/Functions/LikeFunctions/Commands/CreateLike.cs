@@ -1,38 +1,31 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-
 namespace DateApp.Functions.LikeFunctions.Commands
 {
 
 
-    public class CreateLikeCommand : IRequest<LikeDto>
+    public class CreateLikeCommand : IRequest<int>
     {
         public UserProfile? ByUser { get; set; }
         public UserProfile? ToUser { get; set; }
 
 
 
-        public class CreateLike : IRequestHandler<CreateLikeCommand, LikeDto>
+        public class CreateLike : IRequestHandler<CreateLikeCommand, int>
         {
 
 
 
             private readonly AppDbContext _context;
-            private readonly IMapper _mapper;
 
-            public CreateLike(AppDbContext context, IMapper mapper)
+
+            public CreateLike(AppDbContext context)
             {
                 _context = context;
-                _mapper = mapper;
+
             }
 
-            async Task<LikeDto> IRequestHandler<CreateLikeCommand, LikeDto>.Handle(CreateLikeCommand request, CancellationToken cancellationToken)
+            async Task<int> IRequestHandler<CreateLikeCommand, int>.Handle(CreateLikeCommand request, CancellationToken cancellationToken)
             {
-   
+
 
                 var like = new UserLike
                 {
@@ -43,9 +36,9 @@ namespace DateApp.Functions.LikeFunctions.Commands
 
                 await _context.AddAsync(like);
 
-                await _context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
 
-                return _mapper.Map<UserLike, LikeDto>(like);
+
 
 
             }

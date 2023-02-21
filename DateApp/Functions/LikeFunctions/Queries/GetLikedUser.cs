@@ -1,33 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DateApp.Functions.LikeFunctions.Queries
 {
 
-    public class GetLikedUserQuery : IRequest<List<LikeDto>>
+    public class GetLikedUserQuery : IRequest<List<UserLike>>
     {
 
         public string? sourceUser { get; set; }
-        public class GetLikedUser : IRequestHandler<GetLikedUserQuery, List<LikeDto>>
+        public class GetLikedUser : IRequestHandler<GetLikedUserQuery, List<UserLike>>
         {
             private readonly AppDbContext _context;
-            private readonly IMapper _mapper;
-            public GetLikedUser(AppDbContext context, IMapper mapper)
+
+            public GetLikedUser(AppDbContext context)
             {
                 _context = context;
-                _mapper = mapper;
+
             }
 
-            async Task<List<LikeDto>> IRequestHandler<GetLikedUserQuery, List<LikeDto>>.Handle(GetLikedUserQuery request, CancellationToken cancellationToken)
+            async Task<List<UserLike>> IRequestHandler<GetLikedUserQuery, List<UserLike>>.Handle(GetLikedUserQuery request, CancellationToken cancellationToken)
             {
                 //users that liked your account.
-                var likedUsers = await _context.UserLikes.Where(u => u.ByUser.UserName == request.sourceUser).ToListAsync();
-
-                if (likedUsers == null) return null;
-
-                return _mapper.Map<List<UserLike>, List<LikeDto>>(likedUsers);
+                return await _context.UserLikes.Where(u => u.ByUser.UserName == request.sourceUser).ToListAsync();
 
             }
         }

@@ -36,8 +36,6 @@
     <None Remove="Entities\" />
     <None Remove="AutoMapper" />
     <None Remove="MediatR" />
-    <None Remove="MediatR\" />
-    <None Remove="MediatR\Queries\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Services\Interfaces\" />
     <None Remove="Repositories\Interfaces\" />
@@ -80,8 +78,6 @@
     <Folder Include="Views\Auth\" />
     <Folder Include="Data\" />
     <Folder Include="Entities\" />
-    <Folder Include="MediatR\" />
-    <Folder Include="MediatR\Queries\" />
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Repositories\Interfaces\" />
     <Folder Include="Policies\UserProfile\" />

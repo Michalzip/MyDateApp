@@ -1,5 +1,4 @@
-﻿using System;
-namespace Api.Extensions
+﻿namespace Api.Extensions
 {
     public class ContextAccessorExtension
     {

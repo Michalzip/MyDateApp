@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SHSVxw+6NqDUOvmdv6GPHk8hTN0WoqyZtu1u0dEnJsScWW7NxRx/27efcxS5NAIkbUJDfeOFGv0lpuoklHhptQ==",
+  "dgSpecHash": "gsbH3zUaTqXMZmiieZBIdQHkIBrSgJDElsUAX7XKaG73+iIh0p5e/Zu/TI2d5DTcP4ZgwrEq84njoz2iga4wcg==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/MyDateApp/Server/Server.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,9 @@
     "/Users/michal/.nuget/packages/identityserver4.entityframework/4.1.2/identityserver4.entityframework.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4.entityframework.storage/4.1.2/identityserver4.entityframework.storage.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/identityserver4.storage/4.1.2/identityserver4.storage.4.1.2.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr/11.1.0/mediatr.11.1.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/michal/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.0.0/mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/3.1.0/microsoft.aspnetcore.authentication.openidconnect.3.1.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.0/microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.0/microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",

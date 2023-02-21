@@ -1,13 +1,8 @@
 
-using IdentityServer4.Test;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Server.data;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using Server.Models;
-using Microsoft.AspNetCore.Identity;
-using System;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using Server.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +18,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(builder =>
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
 
 
 builder.Host.ConfigureAppConfiguration((config =>
@@ -45,16 +43,14 @@ builder.Services.AddIdentityServer()
         connectionString,
         sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)));
 
-
+ServicesInjector.InjectServices(builder.Services);
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
-
 app.UseAuthentication();
 app.UseIdentityServer();
 app.UseAuthorization();
-
 app.Run();

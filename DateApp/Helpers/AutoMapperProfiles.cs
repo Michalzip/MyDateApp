@@ -1,21 +1,4 @@
-﻿
-
-using Api.DTOs;
-using DateApp.DTOs;
-using Microsoft.AspNetCore.Mvc;
-using DateApp.Repositories;
-using Microsoft.AspNetCore.Session;
-using PayPal.Api;
-using Api.Extensions;
-using System;
-using DateApp.Repositories.Interfaces;
-using DateApp.Extensions;
-using Api.Repository;
-using DateApp.Entities;
-using DateApp.Functions.LikeFunctions.Queries;
-using DateApp.Functions.LikeFunctions.Commands;
-
-namespace App.Helpers
+﻿namespace App.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
@@ -43,26 +26,11 @@ namespace App.Helpers
                 dest => dest.Receiver, opt => opt.MapFrom(src => src.UserName)
             );
 
-          ;
-
-            // CreateMap<UserLike, LikeCreateDto>();
-
-
-            // CreateMap<GetLikedUserQuery, List<LikeDto>>();
-
-            // CreateMap<LikeCreateDto, LikeDto>();
-
-
-            // CreateMap<GetLikedUserQuery, LikeDto>().ForMember(
-            //     dest => dest.Name, opt => opt.MapFrom(src => src.signInUserName)
-            //     );
-
-            //CreateMap<IRequest, LikeDto>();
-
             CreateMap<UserLike, LikeDto>()
             .ForMember(dest => dest.Name, opt =>
             opt.MapFrom(src => src.ByUser.UserName)
-            ).ForMember(dest => dest.Name, opt =>
+            )
+            .ForMember(dest => dest.Name, opt =>
             opt.MapFrom(src => src.ToUser.UserName)
             );
 
@@ -70,12 +38,12 @@ namespace App.Helpers
             CreateMap<UserProfile, LikeDto>().ForMember(
                 dest => dest.Name, opt => opt.MapFrom(src => src.UserName)
                 );
-           
+
 
             CreateMap<UserTransaction, TransactionDto>()
             .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
              .ForMember(dest => dest.Currency, opt => opt.MapFrom(src => src.Currency))
-              .ForMember(dest => dest.createdAt, opt => opt.MapFrom(src => src.CreatedAt));
+              .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt));
 
 
 

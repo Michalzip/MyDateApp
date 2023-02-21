@@ -1,36 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
-using Server.Models;
+
 
 namespace App.Controllers;
 
 public class AuthController : Controller
 {
 
-    private readonly IAuthRepository _authRepo;
+    private readonly IUserService _userService;
 
 
-    public AuthController(IAuthRepository authRepo)
+    public AuthController(IUserService userService)
     {
 
-        _authRepo = authRepo;
+        _userService = userService;
 
     }
 
-    [HttpPost("Register")]
+    [HttpPost("create-user")]
     public async Task<IActionResult> Register(RegisterDto user)
     {
 
-
-        var applicationUser = new ApplicationUser
-        {
-            Email = user.Email,
-            UserName = user.UserName,
-            PasswordHash = user.Password,
-        };
-
-
-        var result = await _authRepo.RegisterUser(applicationUser);
+        var result = await _userService.CreateIdentityUser(user.Email, user.UserName, user.Password);
 
         if (result.Succeeded) return Ok(result);
 
@@ -38,7 +29,7 @@ public class AuthController : Controller
 
     }
 
-    [HttpPost("Logout")]
+    [HttpPost("unauthenticate-user")]
     public async Task<ActionResult> Logout()
     {
 
@@ -48,21 +39,15 @@ public class AuthController : Controller
 
     }
 
-    [HttpPost("Login")]
+    [HttpPost("authenticate-user")]
     public async Task<IActionResult> Login(LoginDto user)
     {
 
-        var applicationUser = new ApplicationUser
-        {
+        var result = await _userService.AuthenticateIdentityUser(user.Email, user.Password);
 
-            Email = user.Email,
-            PasswordHash = user.Password
+        if (result == null) return BadRequest("NOT found Email");
 
-        };
-
-        var result = await _authRepo.LoginUser(applicationUser);
-
-        if (result.Succeeded) return Ok(result);
+        if (result.Succeeded) return Ok("user logged Successfully");
 
         return Unauthorized();
     }

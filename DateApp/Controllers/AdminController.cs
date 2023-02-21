@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DateApp.Entities;
 using DateApp.Helpers;
+using DateApp.Functions.TransactionFunctions.Queries;
 
 namespace App.Controllers
 {
@@ -11,22 +12,27 @@ namespace App.Controllers
     public class AdminController : Controller
     {
 
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
 
-        public AdminController(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
+        public AdminController(IMapper mapper, IMediator mediator)
         {
-            _unitOfWork = unitOfWork;
+
             _mapper = mapper;
+            _mediator = mediator;
         }
 
 
-        [HttpGet("GetSuccessTransactions")]
+        [HttpGet("get-success-transactions")]
         public async Task<ActionResult<PagedList<TransactionDto>>> GetSuccessTransactions([FromQuery] PaginationParams paginationParams)
         {
-            var successTransaction = _unitOfWork.TransactionRepository.GetSuccessTransactions().Result;
 
-            if (!successTransaction.Any()) return NotFound();
+            var getSuccessTransactions= new GetSuccessTransactionsQuery{};
+
+            var successTransaction = await _mediator.Send(getSuccessTransactions);
+
+
+            if (!successTransaction.Any()) return NotFound("not found success transactions");
 
             var successTransactions = _mapper.Map<List<UserTransaction>, List<TransactionDto>>(successTransaction);
 
@@ -34,7 +40,7 @@ namespace App.Controllers
                paginationParams.PageNumber,
                paginationParams.PageSize);
 
-           
+
         }
 
     }

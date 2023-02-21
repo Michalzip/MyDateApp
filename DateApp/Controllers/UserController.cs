@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using DateApp.Services;
 
 namespace App.Controllers
 {
@@ -8,23 +8,23 @@ namespace App.Controllers
     {
 
 
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IMediator _mediator;
+
+        private readonly UserProfileService _userProfileService;
         private readonly IMapper _mapper;
 
-        public UserController(IUnitOfWork unitOfWork, IMediator mediator, IMapper mapper)
+        public UserController(IMapper mapper, UserProfileService userProfileService)
         {
-            _unitOfWork = unitOfWork;
-            _mediator = mediator;
+
+            _userProfileService = userProfileService;
             _mapper = mapper;
         }
 
 
-        [HttpGet("GetUserByName")]
+        [HttpGet("get-user-by-name")]
         public async Task<ActionResult<UserProfileDto>> GetUser(string username)
         {
 
-            var user = await _unitOfWork.UserRepository.GetUser(username);
+            var user = await _userProfileService.GetUserProfile(username);
 
             if (user != null) return Ok(_mapper.Map<UserProfile, UserProfileDto>(user));
 
@@ -34,15 +34,13 @@ namespace App.Controllers
 
 
 
-        [HttpPost("CreateUser")]
-        public async Task<ActionResult<UserProfileDto>> CreateUser(UserCreateProfileDto model)
+        [HttpPost("create-user-profile")]
+        public async Task<ActionResult> CreateUserProfile(UserCreateProfileDto userData)
         {
 
-            var userProfile = await _mediator.Send(model);
+            var result = await _userProfileService.CreateUserProfile(userData);
 
-            _unitOfWork.UserRepository.AddUserProfile(userProfile);
-
-            if (await _unitOfWork.Complete()) return Ok(_mapper.Map<UserProfile, UserProfileDto>(userProfile));
+            if (result > 0) return Ok("UserProfile created successfully");
 
             return BadRequest("Failed To Create UserProfile");
 

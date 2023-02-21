@@ -1,5 +1,3 @@
-
-using DateApp.Services.Interfaces;
 using DateApp.Functions.LikeFunctions.Queries;
 using DateApp.Functions.LikeFunctions.Commands;
 
@@ -13,13 +11,13 @@ namespace DateApp.Services
             _mediator = mediator;
         }
 
-        public async Task<LikeDto> CreateLikeFromQuery(string byUser, string toUser)
+        public async Task<int> CreateLikeFromQuery(string byUser, string toUser)
         {
 
 
             var user1 = new GetUserByNameQuery
             {
-                userName = byUser
+                UserName = byUser
             };
 
 
@@ -28,10 +26,14 @@ namespace DateApp.Services
 
             var user2 = new GetUserByNameQuery
             {
-                userName = toUser
+                UserName = toUser
             };
 
+
+
             var toUserProfile = await _mediator.Send(user2);
+
+            if (toUserProfile == null) return 0;
 
             var users = new CheckExistLikeByUserNameQuery
             {
@@ -42,7 +44,7 @@ namespace DateApp.Services
 
             var exitLike = await _mediator.Send(users);
 
-            if (exitLike) return null;
+            if (exitLike) return 0;
 
             var like = new CreateLikeCommand
             {
@@ -54,18 +56,15 @@ namespace DateApp.Services
             return await _mediator.Send(like);
 
 
-
         }
 
 
 
-        public async Task<List<LikeDto>> GetLikesProfiles(string byUser)
+        public async Task<List<UserLike>> GetLikesProfiles(string byUser)
         {
 
 
-
-
-            var likesProfiles = new GetLikedUserQuery
+            var likesProfiles = new GetLikesUserQuery
             {
 
                 sourceUser = byUser
@@ -76,7 +75,7 @@ namespace DateApp.Services
         }
 
 
-        public async Task<List<LikeDto>> GetLikedProfiles(string byUser)
+        public async Task<List<UserLike>> GetLikedProfiles(string byUser)
         {
 
 
@@ -91,9 +90,6 @@ namespace DateApp.Services
 
 
         }
-
-
-
 
     }
 }

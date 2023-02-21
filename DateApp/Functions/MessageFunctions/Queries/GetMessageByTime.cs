@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DateApp.Functions.MessageFunctions.Queries
 {
-    public class GetMessageByTimeQuery : IRequest<List<MessageDto>>
+    public class GetMessageByTimeQuery : IRequest<List<UserMessage>>
     {
         public string? ByUserName { get; set; }
         public string? ToUserName { get; set; }
@@ -13,7 +8,7 @@ namespace DateApp.Functions.MessageFunctions.Queries
         public int HourTo { get; set; }
         public int Day { get; set; }
 
-        public class GetMessageByTime : IRequestHandler<GetMessageByTimeQuery, List<MessageDto>>
+        public class GetMessageByTime : IRequestHandler<GetMessageByTimeQuery, List<UserMessage>>
         {
 
             private readonly AppDbContext _context;
@@ -24,25 +19,18 @@ namespace DateApp.Functions.MessageFunctions.Queries
                 _mapper = mapper;
             }
 
-            async Task<List<MessageDto>> IRequestHandler<GetMessageByTimeQuery, List<MessageDto>>.Handle(GetMessageByTimeQuery request, CancellationToken cancellationToken)
+            async Task<List<UserMessage>> IRequestHandler<GetMessageByTimeQuery, List<UserMessage>>.Handle(GetMessageByTimeQuery request, CancellationToken cancellationToken)
             {
-                var messages = await _context.UserMessages
-              .Include(x => x.ByUser)
-              .Include(x => x.ToUser)
-              .Where(u => u.CreatedAt.Hour >= request.HourFrom && u.CreatedAt.Hour <= request.HourTo && u.CreatedAt.Day == request.Day
-              && u.ByUser.UserName == request.ByUserName && u.ToUser.UserName == request.ToUserName
-              || u.ByUser.UserName == request.ToUserName && u.ToUser.UserName == request.ByUserName
-              && u.CreatedAt.Hour >= request.HourFrom && u.CreatedAt.Hour <= request.HourTo && u.CreatedAt.Day == request.Day
-              ).ToListAsync();
+                return await _context.UserMessages
+                .Include(x => x.ByUser)
+                .Include(x => x.ToUser)
+                .Where(u => u.CreatedAt.Hour >= request.HourFrom && u.CreatedAt.Hour <= request.HourTo && u.CreatedAt.Day == request.Day
+                && u.ByUser.UserName == request.ByUserName && u.ToUser.UserName == request.ToUserName
+                || u.ByUser.UserName == request.ToUserName && u.ToUser.UserName == request.ByUserName
 
-                var messagesDto = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
-
-                return messagesDto;
-
+                ).ToListAsync();
 
             }
-
-
         }
     }
 }

@@ -1,68 +1,4 @@
 ﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
-  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
-      <Items>
-        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="App" />
-        <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Services/LikeService.cs">
-    <Files>
-      <File FileName="DateApp/Functions/UserFunctions/Queries/GetUserByName.cs" Line="32" Column="1" />
-      <File FileName="DateApp/Services/LikeService.cs" Line="41" Column="21" />
-      <File FileName="DateApp/Services/TokenService.cs" Line="1" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Api" expanded="True">
-            <Node name="Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Entities" expanded="True" />
-              <Node name="Functions" expanded="True">
-                <Node name="LikeFunctions" expanded="True">
-                  <Node name="Commands" expanded="True" />
-                  <Node name="Queries" expanded="True" />
-                </Node>
-                <Node name="UserFunctions" expanded="True">
-                  <Node name="Queries" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="MediatR" expanded="True">
-                <Node name="Queries" expanded="True" />
-              </Node>
-              <Node name="Repositories" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True">
-                <Node name="LikeService.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="Server" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="ApplicationDb" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Repository" expanded="True">
-                <Node name="interfaces" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
-    <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="21" column="1" />
@@ -71,16 +7,124 @@
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="39" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="41" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="35" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="38" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="44" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/PaypalController.cs" relfile="DateApp/Controllers/PaypalController.cs" line="40" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="27" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/TransactionRepository.cs" relfile="DateApp/Repositories/TransactionRepository.cs" line="57" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="29" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="17" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/LikeController.cs" relfile="DateApp/Controllers/LikeController.cs" line="72" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="54" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="58" column="1" />
       <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="20" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="61" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="65" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="51" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="47" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="65" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="72" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" relfile="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" line="29" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/MessageService.cs" relfile="DateApp/Services/MessageService.cs" line="95" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="12" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/DateApp/Services/TransactionService.cs" relfile="DateApp/Services/TransactionService.cs" line="24" column="1" />
+      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/TransactionController.cs" relfile="DateApp/Controllers/TransactionController.cs" line="44" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/Controllers/TransactionController.cs">
+    <Files>
+      <File FileName="DateApp/Functions/UserFunctions/Queries/GetUserByName.cs" />
+      <File FileName="DateApp/Services/LikeService.cs" />
+      <File FileName="DateApp/Services/TokenService.cs" Line="1" Column="1" />
+      <File FileName="DateApp/Controllers/LikeController.cs" Line="68" Column="28" />
+      <File FileName="Server/Program.cs" />
+      <File FileName="DateApp/Program.cs" />
+      <File FileName="Server/secret.json" />
+      <File FileName="Server/GlobalUsings.cs" />
+      <File FileName="DateApp/Api.csproj" />
+      <File FileName="DateApp/Functions/UserFunctions/Commands/CreateUser.cs" />
+      <File FileName="Server/Functions/UserFunctions/Commands/CreateUser.cs" />
+      <File FileName="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" />
+      <File FileName="Server/Services/UserService.cs" />
+      <File FileName="DateApp/Helpers/ServicesInjector.cs" />
+      <File FileName="DateApp/Controllers/UserController.cs" Line="37" Column="39" />
+      <File FileName="Server/Helpers/ServicesInjector.cs" />
+      <File FileName="Server/Repository/IdentityUserRepo.cs" />
+      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByEmail.cs" />
+      <File FileName="DateApp/Controllers/AuthController.cs" Line="41" Column="6" />
+      <File FileName="Server/Functions/UserFunctions/Commands/CreateVipUser.cs" />
+      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByName.cs" />
+      <File FileName="Server/Services/Interface/IUserService.cs" />
+      <File FileName="DateApp/Repositories/PayPalRepository.cs" />
+      <File FileName="Server/Models/ApplicationUser.cs" />
+      <File FileName="DateApp/Controllers/AdminController.cs" Line="45" Column="1" />
+      <File FileName="DateApp/Controllers/MessageController.cs" Line="30" Column="1" />
+      <File FileName="DateApp/Services/MessageService.cs" />
+      <File FileName="DateApp/Entities/UserMessage.cs" />
+      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetMessageByTime.cs" />
+      <File FileName="DateApp/Functions/MessageFunctions/Commands/DeleteMessageById.cs" />
+      <File FileName="DateApp/Functions/MessageFunctions/Commands/CreateMessage.cs" />
+      <File FileName="DateApp/Services/Interfaces/IMessageService.cs" />
+      <File FileName="DateApp/Functions/LikeFunctions/Commands/CreateLike.cs" />
+      <File FileName="DateApp/Functions/LikeFunctions/Queries/CheckExistsLike.cs" />
+      <File FileName="DateApp/Functions/LikeFunctions/Queries/GetLikedUser.cs" />
+      <File FileName="DateApp/Functions/LikeFunctions/Queries/GetLikeUser.cs" />
+      <File FileName="DateApp/Services/Interfaces/ILikeService.cs" />
+      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetMessageById.cs" />
+      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetAllMessages.cs" />
+      <File FileName="DateApp/Controllers/UserVipController.cs" Line="18" Column="2" />
+      <File FileName="DateApp/Controllers/PaypalController.cs" Line="16" Column="10" />
+      <File FileName="DateApp/Services/TransactionService.cs" Line="47" Column="1" />
+      <File FileName="DateApp/Services/Interfaces/ITransactionService.cs" Line="11" Column="29" />
+      <File FileName="DateApp/app.config" />
+      <File FileName="DateApp/Services/UserProfileService.cs" Line="1" Column="1" />
+      <File FileName="DateApp/secret.json" />
+      <File FileName="DateApp/Functions/TransactionFunctions/Queries/GetCurrentTransaction.cs" Line="14" Column="38" />
+      <File FileName="DateApp/Functions/TransactionFunctions/Queries/GetPreviousTransaction.cs" Line="24" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Api" expanded="True">
+            <Node name="Api" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Functions" expanded="True">
+                <Node name="LikeFunctions" expanded="True">
+                  <Node name="Commands" expanded="True" />
+                  <Node name="Queries" expanded="True" />
+                </Node>
+                <Node name="MessageFunctions" expanded="True">
+                  <Node name="Commands" expanded="True" />
+                  <Node name="Queries" expanded="True" />
+                </Node>
+                <Node name="TransactionFunctions" expanded="True">
+                  <Node name="Queries" expanded="True" />
+                </Node>
+                <Node name="UserFunctions" expanded="True">
+                  <Node name="Commands" expanded="True" />
+                  <Node name="Queries" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Helpers" expanded="True" />
+              <Node name="MediatR" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
+      <Items>
+        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="App" />
+        <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+    <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
