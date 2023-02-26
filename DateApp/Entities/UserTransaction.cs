@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DateApp.Entities
 {
-    public class UserTransaction 
+    public class UserTransaction
     {
 
         public int Id;
