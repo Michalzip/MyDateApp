@@ -7,10 +7,10 @@ namespace Domain.Interfaces.Repositories
 {
     public interface IRepository<T>
     {
-        void Add(T entity);
-        void Update(T entity);
-        void Remove(T entity);
-        int SaveChanges();
+        void add(T entity);
+        void update(T entity);
+        void remove(T entity);
+        int saveChanges();
 
     }
 }

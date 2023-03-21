@@ -1,40 +1,37 @@
 
-using DateApp.Functions.TransactionFunctions.Queries;
-using DateApp.Functions.TransactionFunctions.Commands;
-using Domain.Interfaces.Services;
-using Infrastructure.Services.Interfaces;
+using Application.Functions.TransactionFunctions.Queries;
+using Application.Functions.TransactionFunctions.Commands;
+using Application.Interfaces.Services;
+using Domain.Interfaces.ExternalApiServices;
 using Server.Functions.UserFunctions.Queries;
 
-namespace DateApp.Services
+namespace Application.Services
 {
     public class TransactionService : ITransactionService
     {
         private readonly IMediator _mediator;
         private readonly IPaypalService _paypalRepository;
         private readonly IUserService _userService;
-        public TransactionService(IMediator mediator, IPaypalService paypalRepository, IUserService userService)
+        private readonly IMapper _mapper;
+        public TransactionService(IMediator mediator, IPaypalService paypalRepository, IUserService userService, IMapper mapper)
         {
 
             _mediator = mediator;
             _paypalRepository = paypalRepository;
             _userService = userService;
+            _mapper = mapper;
+
         }
 
         public async Task<int> UpdatePreviousTransaction()
         {
-            var getLastTransaction = new GetLastTransactionQuery { };
 
-            var previousTransaction = await _mediator.Send(getLastTransaction);
+            var previousTransaction = await _mediator.Send(new GetLastTransactionQuery { });
 
             if (previousTransaction != null && previousTransaction.PendingConfirm == true)
             {
 
-                var setTransactionExpires = new SetTransactionExpiresCommand
-                {
-                    UserTransaction = previousTransaction
-                };
-
-                return await _mediator.Send(setTransactionExpires);
+                return await _mediator.Send(new SetTransactionExpiresCommand { });
 
             }
 
@@ -45,7 +42,7 @@ namespace DateApp.Services
         public async Task<string> CreateTransaction(string? username)
         {
 
-            var payment = _paypalRepository.CreateVipPayment();
+            var payment = _paypalRepository.CreatePayment();
 
             var transaction = new UserTransaction
             {
@@ -54,13 +51,8 @@ namespace DateApp.Services
                 Currency = payment.transactions[0].amount.currency
             };
 
-            var setTransactionPendingConfirm = new SetTransactionPandingConfirmCommand
-            {
-                UserTransaction = transaction
 
-            };
-
-            var result = await _mediator.Send(setTransactionPendingConfirm);
+            var result = await _mediator.Send(new CreateTransactionCommand { UserTransaction = transaction });
 
             if (result == 0) return null;
 
@@ -69,29 +61,22 @@ namespace DateApp.Services
 
         }
 
+        public async Task<List<TransactionDto>> GetSuccessTransactions()
+        {
+            var successTransaction = await _mediator.Send(new GetSuccessTransactionsQuery { });
+
+            return _mapper.Map<List<UserTransaction>, List<TransactionDto>>(successTransaction);
+        }
 
         public async Task<string> ConfirmTransaction(string? payerID, string? guid, string? username)
         {
-            var getCurrentTransaction = new GetLastTransactionQuery { };
 
-            var currentTransaction = await _mediator.Send(getCurrentTransaction);
-
-            var existsVipStatusQuery = new ExistsVipStatusQuery
-            {
-                UserName = username
-            };
-
-            var vipUser = await _mediator.Send(existsVipStatusQuery);
+            var vipUser = await _mediator.Send(new CheckVipStatusQuery { UserName = username });
 
             if (vipUser)
             {
-                var setTransactionFailed = new SetTransactionFailedCommand
-                {
 
-                    UserTransaction = currentTransaction
-                };
-
-                await _mediator.Send(setTransactionFailed);
+                await _mediator.Send(new SetTransactionFailedCommand { });
 
                 return "user already has vip";
 
@@ -101,13 +86,7 @@ namespace DateApp.Services
 
             if (paymentConfirm == null)
             {
-
-                var setTransactionExpires = new SetTransactionExpiresCommand
-                {
-                    UserTransaction = currentTransaction
-                };
-
-                await _mediator.Send(setTransactionExpires);
+                await _mediator.Send(new SetTransactionExpiresCommand { });
 
                 return "payments not execute, please try again..";
 
@@ -117,14 +96,7 @@ namespace DateApp.Services
 
             if (paymentConfirm.state.ToLower() != "approved")
             {
-                var setTransactionFailed = new SetTransactionFailedCommand
-                {
-
-                    UserTransaction = currentTransaction
-                };
-
-                await _mediator.Send(setTransactionFailed);
-
+                await _mediator.Send(new SetTransactionFailedCommand { });
 
                 return "Payment not approved";
 
@@ -134,13 +106,7 @@ namespace DateApp.Services
 
             if (!createVip.Succeeded) return "Vip is not created...";
 
-            var setTransactionSuccess = new SetTransactionSuccessCommand
-            {
-
-                UserTransaction = currentTransaction
-            };
-
-            var result = await _mediator.Send(setTransactionSuccess);
+            var result = await _mediator.Send(new SetTransactionSuccessCommand { });
 
             if (result >= 0) return $" user : {username} buy vip successfuly";
 

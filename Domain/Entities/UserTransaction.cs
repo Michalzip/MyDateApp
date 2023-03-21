@@ -1,7 +1,7 @@
-using Api.Entities;
+using Domain.Entities;
 
 
-namespace Api.Entities
+namespace Domain.Entities
 {
     public class UserTransaction
     {

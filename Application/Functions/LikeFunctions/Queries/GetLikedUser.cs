@@ -1,7 +1,7 @@
-using Api.Entities;
+
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.LikeFunctions.Queries
+namespace Application.Functions.LikeFunctions.Queries
 {
 
     public class GetLikedUserQuery : IRequest<List<UserLike>>
@@ -21,7 +21,7 @@ namespace DateApp.Functions.LikeFunctions.Queries
             async Task<List<UserLike>> IRequestHandler<GetLikedUserQuery, List<UserLike>>.Handle(GetLikedUserQuery request, CancellationToken cancellationToken)
             {
                 //users that liked your account.
-                return await _likeRepository.GetLikedUsers(request.ByUserName);
+                return await _likeRepository.getLikedUsers(request.ByUserName);
 
             }
         }

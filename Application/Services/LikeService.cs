@@ -1,93 +1,79 @@
-using DateApp.Functions.LikeFunctions.Queries;
-using DateApp.Functions.LikeFunctions.Commands;
-using Domain.Interfaces.Services;
+using Application.Functions.LikeFunctions.Queries;
+using Application.Functions.LikeFunctions.Commands;
+using Application.Interfaces.Services;
 
 
-namespace DateApp.Services
+namespace Application.Services
 {
     public class LikeService : ILikeService
     {
         private readonly IMediator _mediator;
-        public LikeService(IMediator mediator)
+        private readonly IMapper _mapper;
+
+        public LikeService(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
+
+        //stworzyc exceptions
+        //wywołac go tutaj
+        //np userProfileNotFOundExpections
+
+
+        //robic servicy do wszytskiego a nie wywolywac bezposrednio mediator w kontrolerze 
+
+
+        //a w kontrolerze uzyc np Error result
+        //np [ProducesResponseType(typeof(nazwa klasy np ErrorResult), StatusCodes.Status200OK)]
+        //kontrooler 
 
         public async Task<int> CreateLikeFromQuery(string byUser, string toUser)
         {
 
 
-            var user1 = new GetUserByNameQuery
-            {
-                UserName = byUser
-            };
+
+            var byUserProfile = await _mediator.Send(new GetUserByNameQuery { UserName = byUser });
+
+            var toUserProfile = await _mediator.Send(new GetUserByNameQuery { UserName = toUser });
+
+            if (toUserProfile == null) return 0; //zamiast return throw new ToUserProfileNotFoundException("User not found");
 
 
-            var byUserProfile = await _mediator.Send(user1);
-
-
-            var user2 = new GetUserByNameQuery
-            {
-                UserName = toUser
-            };
-
-
-
-            var toUserProfile = await _mediator.Send(user2);
-
-            if (toUserProfile == null) return 0;
-
-            var users = new CheckExistLikeByUserNameQuery
-            {
-
-                ByUserName = byUserProfile.UserName,
-                ToUserName = toUserProfile.UserName
-            };
-
-            var exitLike = await _mediator.Send(users);
+            var exitLike = await _mediator.Send(new CheckExistLikeByUserNameQuery { ByUserName = byUserProfile.UserName, ToUserName = toUserProfile.UserName });
 
             if (exitLike) return 0;
 
-            var like = new CreateLikeCommand
+            var like = new UserLike
             {
                 ByUser = byUserProfile,
                 ToUser = toUserProfile
-
             };
 
-            return await _mediator.Send(like);
-
+            return await _mediator.Send(new CreateLikeCommand { Like = like });
 
         }
 
 
 
-        public async Task<List<UserLike>> GetLikesProfiles(string byUser)
+        public async Task<List<LikeDto>> GetLikesProfiles(string byUser)
         {
 
+            var likeProfiles =  await _mediator.Send(new GetLikesUserQuery { ByUserName = byUser });
 
-            var likesProfiles = new GetLikesUserQuery
-            {
+            return _mapper.Map<List<UserLike>, List<LikeDto>>(likeProfiles); 
 
-                ByUserName = byUser
-            };
-
-            return await _mediator.Send(likesProfiles);
 
         }
 
 
-        public async Task<List<UserLike>> GetLikedProfiles(string byUser)
+        public async Task<List<LikeDto>> GetLikedProfiles(string byUser)
         {
 
 
-            var likedProfiles = new GetLikedUserQuery
-            {
+            var likedProfiles =  await _mediator.Send(new GetLikedUserQuery { ByUserName = byUser });
 
-                ByUserName = byUser
-            };
-
-            return await _mediator.Send(likedProfiles);
+            return _mapper.Map<List<UserLike>, List<LikeDto>>(likedProfiles);
 
 
 

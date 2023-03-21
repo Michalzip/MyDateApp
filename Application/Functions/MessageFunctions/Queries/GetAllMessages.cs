@@ -1,6 +1,6 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.MessageFunctions.Queries
+namespace Application.Functions.MessageFunctions.Queries
 {
     public class GetAllMessagesQuery : IRequest<List<UserMessage>>
     {
@@ -23,7 +23,7 @@ namespace DateApp.Functions.MessageFunctions.Queries
             async Task<List<UserMessage>> IRequestHandler<GetAllMessagesQuery, List<UserMessage>>.Handle(GetAllMessagesQuery request, CancellationToken cancellationToken)
             {
 
-                return await _messageRepository.GetAllMessages(request.ByUserName, request.ToUserName);
+                return await _messageRepository.getAllMessages(request.ByUserName, request.ToUserName);
 
 
 

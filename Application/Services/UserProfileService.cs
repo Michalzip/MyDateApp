@@ -1,6 +1,7 @@
-using DateApp.Functions.UserFunctions.Commands;
-using Domain.Interfaces.Services;
-namespace DateApp.Services
+using Application.Functions.UserFunctions.Commands;
+using Application.Interfaces.Services;
+
+namespace Application.Services
 {
     public class UserProfileService : IUserProfileService
     {
@@ -8,12 +9,16 @@ namespace DateApp.Services
         private readonly IMediator _mediator;
         private readonly IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IMapper _mapper;
 
-        public UserProfileService(IMediator mediator, IUserService userService, IHttpContextAccessor httpContextAccessor)
+        public UserProfileService(IMediator mediator, IUserService userService, IHttpContextAccessor httpContextAccessor, IMapper mapper)
         {
             _mediator = mediator;
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
+            _mapper = mapper;
+
+
 
         }
 
@@ -37,26 +42,18 @@ namespace DateApp.Services
 
             };
 
-            var createUserCommand = new CreateUserCommand
-            {
-                User = userData
-            };
 
-            return await _mediator.Send(createUserCommand);
+            return await _mediator.Send(new CreateUserCommand { User = userData });
 
         }
 
 
-        public async Task<UserProfile> GetUserProfile(string username)
+        public async Task<UserProfileDto> GetUserProfile(string username)
         {
 
-            var getUserByNameQuery = new GetUserByNameQuery
-            {
-                UserName = username
-            };
+            var userProfile =  await _mediator.Send(new GetUserByNameQuery { UserName = username });
 
-            return await _mediator.Send(getUserByNameQuery);
-
+            return _mapper.Map<UserProfile, UserProfileDto>(userProfile);
         }
 
     }

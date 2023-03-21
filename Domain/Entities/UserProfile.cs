@@ -1,5 +1,5 @@
 ﻿
-namespace Api.Entities
+namespace Domain.Entities
 {
     public class UserProfile
     {

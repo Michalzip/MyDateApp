@@ -1,6 +1,6 @@
 
-using Api.Entities;
-using App.Db;
+using Domain.Entities;
+using Infrastructure.Db;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces.Repositories;
 
@@ -14,7 +14,7 @@ namespace Infrastructure.Repositories
         {
         }
 
-        public async Task<UserProfile> GetUserProfileByName(string name)
+        public async Task<UserProfile> getUserProfileByName(string name)
         {
             return await _dbContext.UserProfiles.Where(u => u.UserName == name).FirstOrDefaultAsync();
         }

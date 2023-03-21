@@ -3,3 +3,4 @@
 app.config
 appsettings.json
 secret.json
+.todo

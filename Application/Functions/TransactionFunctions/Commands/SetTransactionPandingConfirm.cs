@@ -1,12 +1,12 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.TransactionFunctions.Commands
+namespace Application.Functions.TransactionFunctions.Commands
 {
 
     public class SetTransactionPandingConfirmCommand : IRequest<int>
     {
 
-        public UserTransaction? UserTransaction { get; set; }
+
 
         public class SetTransactionExpires : IRequestHandler<SetTransactionPandingConfirmCommand, int>
         {
@@ -22,11 +22,14 @@ namespace DateApp.Functions.TransactionFunctions.Commands
             async Task<int> IRequestHandler<SetTransactionPandingConfirmCommand, int>.Handle(SetTransactionPandingConfirmCommand request, CancellationToken cancellationToken)
             {
 
-                request.UserTransaction.PendingConfirm = true;
 
-                _transactionRepository.Update(request.UserTransaction);
+                var transaction = await _transactionRepository.getLastTransaction();
 
-                return _transactionRepository.SaveChanges();
+                transaction.PendingConfirm = true;
+
+                _transactionRepository.update(transaction);
+
+                return _transactionRepository.saveChanges();
             }
         }
 

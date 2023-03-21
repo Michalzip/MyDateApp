@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace Api.Entities
+namespace Domain.Entities
 {
-    public class UserVipPayment 
+    public class UserVipPayment
     {
         public int Id;
         public int DaysCount { get; set; }

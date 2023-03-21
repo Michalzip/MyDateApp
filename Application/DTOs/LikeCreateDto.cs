@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Api.DTOs
+namespace Application.DTOs
 {
     // public class LikeCreateDto : IRequest<LikeDto>
     // {

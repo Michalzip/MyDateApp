@@ -1,0 +1,12 @@
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/bin/Debug/net6.0/Shared.Abstraction.deps.json
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/bin/Debug/net6.0/Shared.Abstraction.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/bin/Debug/net6.0/Shared.Abstraction.pdb
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.csproj.AssemblyReference.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.AssemblyInfoInputs.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.AssemblyInfo.cs
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.csproj.CoreCompileInputs.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/refint/Shared.Abstraction.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.pdb
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/ref/Shared.Abstraction.dll

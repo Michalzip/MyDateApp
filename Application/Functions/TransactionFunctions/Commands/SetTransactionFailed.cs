@@ -1,6 +1,6 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.TransactionFunctions.Commands
+namespace Application.Functions.TransactionFunctions.Commands
 {
     public class SetTransactionFailed
     {
@@ -10,7 +10,6 @@ namespace DateApp.Functions.TransactionFunctions.Commands
     public class SetTransactionFailedCommand : IRequest<int>
     {
 
-        public UserTransaction? UserTransaction { get; set; }
 
         public class SetTransactionExpires : IRequestHandler<SetTransactionFailedCommand, int>
         {
@@ -26,11 +25,15 @@ namespace DateApp.Functions.TransactionFunctions.Commands
             async Task<int> IRequestHandler<SetTransactionFailedCommand, int>.Handle(SetTransactionFailedCommand request, CancellationToken cancellationToken)
             {
 
-                request.UserTransaction.Failed = true;
-                request.UserTransaction.PendingConfirm = false;
+                var transaction = await _transactionRepository.getLastTransaction();
 
-                _transactionRepository.Update(request.UserTransaction);
-                return _transactionRepository.SaveChanges();
+                transaction.Failed = true;
+
+                transaction.PendingConfirm = false;
+
+                _transactionRepository.update(transaction);
+
+                return _transactionRepository.saveChanges();
             }
         }
 

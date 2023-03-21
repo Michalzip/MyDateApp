@@ -1,8 +1,8 @@
-using Api.Entities;
-using App.Db;
+using Domain.Entities;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces.Repositories;
-
+using Infrastructure.Db;
 namespace Infrastructure.Repositories
 {
     public class MessageRepository : RepositoryBase<UserMessage>, IMessageRepository
@@ -11,7 +11,7 @@ namespace Infrastructure.Repositories
                : base(context)
         {
         }
-        public async Task<List<UserMessage>> GetAllMessages(string sourceName, string receiverName)
+        public async Task<List<UserMessage>> getAllMessages(string sourceName, string receiverName)
         {
             return await _dbContext.UserMessages
               .Include(x => x.ByUser)
@@ -22,7 +22,7 @@ namespace Infrastructure.Repositories
               .ToListAsync();
         }
 
-        public async Task<List<UserMessage>> GetMessagesByTime(string sourceName, string receiverName, int hourFrom, int hourTo, int day)
+        public async Task<List<UserMessage>> getMessagesByTime(string sourceName, string receiverName, int hourFrom, int hourTo, int day)
         {
             return await _dbContext.UserMessages
                  .Include(x => x.ByUser)
@@ -34,7 +34,7 @@ namespace Infrastructure.Repositories
                  ).ToListAsync();
         }
 
-        public async Task<UserMessage> GetMessageById(int id)
+        public async Task<UserMessage> getMessageById(int id)
         {
             return await _dbContext.UserMessages
                 .Include(u => u.ByUser)

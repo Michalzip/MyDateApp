@@ -1,7 +1,7 @@
 
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.TransactionFunctions.Commands
+namespace Application.Functions.TransactionFunctions.Commands
 {
     public class CreateTransactionCommand : IRequest<int>
     {
@@ -21,9 +21,11 @@ namespace DateApp.Functions.TransactionFunctions.Commands
             async Task<int> IRequestHandler<CreateTransactionCommand, int>.Handle(CreateTransactionCommand request, CancellationToken cancellationToken)
             {
 
-                _transactionRepository.Add(request.UserTransaction);
+                request.UserTransaction.PendingConfirm = true;
 
-                return _transactionRepository.SaveChanges();
+                _transactionRepository.add(request.UserTransaction);
+
+                return _transactionRepository.saveChanges();
             }
         }
 

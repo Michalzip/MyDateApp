@@ -7,20 +7,23 @@ namespace Server.Functions.UserFunctions.Queries
 
         public string? UserName { get; set; }
 
-        public class GetUserByName : IRequestHandler<GetUserByNameQuery, ApplicationUser>
+        
+    }
+
+
+    public class GetUserByName : IRequestHandler<GetUserByNameQuery, ApplicationUser>
+    {
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public GetUserByName(UserManager<ApplicationUser> userManager)
         {
-            private readonly UserManager<ApplicationUser> _userManager;
+            _userManager = userManager;
+        }
 
-            public GetUserByName(UserManager<ApplicationUser> userManager)
-            {
-                _userManager = userManager;
-            }
+        async Task<ApplicationUser> IRequestHandler<GetUserByNameQuery, ApplicationUser>.Handle(GetUserByNameQuery request, CancellationToken cancellationToken)
+        {
+            return await _userManager.FindByNameAsync(request.UserName);
 
-            async Task<ApplicationUser> IRequestHandler<GetUserByNameQuery, ApplicationUser>.Handle(GetUserByNameQuery request, CancellationToken cancellationToken)
-            {
-              return  await _userManager.FindByNameAsync(request.UserName);
-                
-            }
         }
     }
 }

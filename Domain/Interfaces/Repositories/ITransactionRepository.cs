@@ -1,10 +1,10 @@
-using Api.Entities;
+using Domain.Entities;
 
 namespace Domain.Interfaces.Repositories
 {
     public interface ITransactionRepository : IRepository<UserTransaction>
     {
-        public Task<UserTransaction> GetLastTransactionById();
-        public Task<List<UserTransaction>> GetSuccessTransactions();
+        public Task<UserTransaction> getLastTransaction();
+        public Task<List<UserTransaction>> getSuccessTransactions();
     }
 }

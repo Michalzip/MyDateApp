@@ -2,7 +2,7 @@
 
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.TransactionFunctions.Queries
+namespace Application.Functions.TransactionFunctions.Queries
 {
     public class GetLastTransactionQuery : IRequest<UserTransaction>
     {
@@ -17,7 +17,7 @@ namespace DateApp.Functions.TransactionFunctions.Queries
 
             async Task<UserTransaction> IRequestHandler<GetLastTransactionQuery, UserTransaction>.Handle(GetLastTransactionQuery request, CancellationToken cancellationToken)
             {
-                return await _transactionRepository.GetLastTransactionById();
+                return await _transactionRepository.getLastTransaction();
             }
         }
     }

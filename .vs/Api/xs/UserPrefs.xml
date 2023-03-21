@@ -1,164 +1,104 @@
-﻿<Properties StartupConfiguration="{ADC7DA31-393D-44EA-8149-F81629D151C9}|App">
-  <MonoDevelop.Ide.ItemProperties.DI FirstBuild="True" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="21" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="29" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="37" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="39" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="41" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="35" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="27" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Repositories/TransactionRepository.cs" relfile="DateApp/Repositories/TransactionRepository.cs" line="57" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="17" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/LikeController.cs" relfile="DateApp/Controllers/LikeController.cs" line="72" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="58" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/LikeService.cs" relfile="DateApp/Services/LikeService.cs" line="20" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="61" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="65" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="51" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AuthController.cs" relfile="DateApp/Controllers/AuthController.cs" line="47" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="65" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Services/UserService.cs" relfile="Server/Services/UserService.cs" line="72" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" relfile="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" line="29" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/MessageService.cs" relfile="DateApp/Services/MessageService.cs" line="95" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/AdminController.cs" relfile="DateApp/Controllers/AdminController.cs" line="12" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Services/TransactionService.cs" relfile="DateApp/Services/TransactionService.cs" line="24" column="1" />
-      <Breakpoint enabled="false" file="/Users/michal/Desktop/MyDateApp/DateApp/Controllers/TransactionController.cs" relfile="DateApp/Controllers/TransactionController.cs" line="44" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+﻿<Properties StartupConfiguration="{48AE012E-F63D-4450-B02A-74C8624CBD2E}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
     <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Functions/TransactionFunctions/Commands/CreateTransaction.cs">
+  <MonoDevelop.Ide.ItemProperties.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shared/Shared.Infrastructure/Extensions.cs">
     <Files>
-      <File FileName="DateApp/Functions/UserFunctions/Queries/GetUserByName.cs" />
-      <File FileName="DateApp/Services/LikeService.cs" />
-      <File FileName="DateApp/Services/TokenService.cs" />
-      <File FileName="DateApp/Controllers/LikeController.cs" />
-      <File FileName="Server/Program.cs" />
-      <File FileName="DateApp/Program.cs" />
-      <File FileName="Server/secret.json" />
-      <File FileName="Server/GlobalUsings.cs" />
-      <File FileName="DateApp/Functions/UserFunctions/Commands/CreateUser.cs" Line="23" Column="58" />
-      <File FileName="Server/Functions/UserFunctions/Commands/CreateUser.cs" />
-      <File FileName="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" />
-      <File FileName="Server/Services/UserService.cs" />
-      <File FileName="DateApp/Helpers/ServicesInjector.cs" />
-      <File FileName="DateApp/Controllers/UserController.cs" />
-      <File FileName="Server/Helpers/ServicesInjector.cs" />
-      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByEmail.cs" />
-      <File FileName="DateApp/Controllers/AuthController.cs" />
-      <File FileName="Server/Functions/UserFunctions/Commands/CreateVipUser.cs" />
+      <File FileName="Domain/Exceptions/UserNotFoundException.cs" />
+      <File FileName="Application/Services/LikeService.cs" />
+      <File FileName="Application/Services/TokenService.cs" />
+      <File FileName="Application/Services/TransactionService.cs" />
+      <File FileName="Application/Services/UserProfileService.cs" />
+      <File FileName="Application/Functions/LikeFunctions/Commands/CreateLike.cs" />
+      <File FileName="Infrastructure/Services/PayPalService.cs" />
+      <File FileName="Application/Functions/LikeFunctions/Queries/CheckExistsLike.cs" />
+      <File FileName="Application/Functions/LikeFunctions/Queries/GetLikedUser.cs" />
+      <File FileName="Application/Functions/LikeFunctions/Queries/GetLikeUser.cs" />
+      <File FileName="Application/Global.cs" Line="1" Column="1" />
+      <File FileName="Server/Services/UserService.cs" Line="65" Column="1" />
+      <File FileName="Application/Functions/UserFunctions/Queries/GetUserByName.cs" />
+      <File FileName="Application/Functions/UserFunctions/Commands/CreateUser.cs" />
+      <File FileName="Server/Models/ApplicationUser.cs" />
+      <File FileName="Server/Functions/UserFunctions/Commands/CreateUser.cs" Line="25" Column="1" />
       <File FileName="Server/Functions/UserFunctions/Queries/GetUserByName.cs" />
       <File FileName="Server/Services/Interface/IUserService.cs" />
-      <File FileName="DateApp/Repositories/PayPalRepository.cs" />
-      <File FileName="Server/Models/ApplicationUser.cs" />
-      <File FileName="DateApp/Controllers/AdminController.cs" />
-      <File FileName="DateApp/Controllers/MessageController.cs" />
-      <File FileName="DateApp/Services/MessageService.cs" />
-      <File FileName="DateApp/Entities/UserMessage.cs" />
-      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetMessageByTime.cs" />
-      <File FileName="DateApp/Functions/MessageFunctions/Commands/DeleteMessageById.cs" />
-      <File FileName="DateApp/Functions/MessageFunctions/Commands/CreateMessage.cs" />
-      <File FileName="DateApp/Functions/LikeFunctions/Commands/CreateLike.cs" />
-      <File FileName="DateApp/Functions/LikeFunctions/Queries/CheckExistsLike.cs" />
-      <File FileName="DateApp/Functions/LikeFunctions/Queries/GetLikedUser.cs" />
-      <File FileName="DateApp/Functions/LikeFunctions/Queries/GetLikeUser.cs" />
-      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetMessageById.cs" />
-      <File FileName="DateApp/Functions/MessageFunctions/Queries/GetAllMessages.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Controllers/UserVipController.cs" />
-      <File FileName="DateApp/Services/TransactionService.cs" />
-      <File FileName="DateApp/app.config" />
-      <File FileName="DateApp/Services/UserProfileService.cs" Line="54" Column="71" />
-      <File FileName="DateApp/secret.json" />
-      <File FileName="DateApp/Functions/TransactionFunctions/Queries/GetSuccessTransactions.cs" Line="15" Column="46" />
-      <File FileName="DateApp/Helpers/PaginationList.cs" />
-      <File FileName="DateApp/Helpers/PaginationParams.cs" />
-      <File FileName="DateApp/Helpers/AutoMapperProfiles.cs" />
-      <File FileName="Api/Program.cs" />
-      <File FileName="Api/Properties/launchSettings.json" />
-      <File FileName="DateApp/appsettings.json" />
-      <File FileName="Api/appsettings.json" />
-      <File FileName="DateApp/Properties/launchSettings.json" />
-      <File FileName="DateApp/global.json" />
-      <File FileName="DateApp/appsettings.Development.json" />
-      <File FileName="Domain/Entities/UserLike.cs" />
-      <File FileName="Domain/Entities/UserMessage.cs" />
-      <File FileName="Domain/Entities/UserProfile.cs" />
-      <File FileName="Domain/Entities/UserTransaction.cs" />
-      <File FileName="Domain/Entities/UserVipPayment.cs" />
-      <File FileName="Infrastructure/Services/PayPalService.cs" />
-      <File FileName="Infrastructure/Config/DbConfig.cs" Line="1" Column="1" />
-      <File FileName="DI/ServicesInjector.cs" Line="13" Column="20" />
-      <File FileName="Application/Services/UserProfileService.cs" Line="3" Column="11" />
-      <File FileName="Application/Services/TokenService.cs" Line="6" Column="11" />
-      <File FileName="DateApp/Functions/TransactionFunctions/Queries/GetLastTransaction.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Functions/TransactionFunctions/Commands/SetTransactionExpires.cs" Line="1" Column="1" />
-      <File FileName="DateApp/Functions/TransactionFunctions/Commands/SetTransactionFailed.cs" Line="1" Column="1" />
-      <File FileName="Domain/Interfaces/Repositories/IMessageRepository.cs" Line="3" Column="11" />
-      <File FileName="Domain/Interfaces/Repositories/ILikeRepository.cs" Line="11" Column="2" />
-      <File FileName="Domain/Interfaces/Repositories/ITransactionRepository.cs" Line="5" Column="44" />
-      <File FileName="Domain/Interfaces/Repositories/IUserProfileRepository.cs" Line="5" Column="44" />
-      <File FileName="DateApp/Policies/UserProfile/RequirementHandler.cs" Line="29" Column="1" />
-      <File FileName="Application/Functions/LikeFunctions/Commands/CreateLike.cs" Line="25" Column="16" />
-      <File FileName="Application/Functions/MessageFunctions/Commands/CreateMessage.cs" Line="16" Column="68" />
-      <File FileName="Application/Functions/MessageFunctions/Commands/DeleteMessageById.cs" Line="18" Column="15" />
-      <File FileName="Server/Functions/UserFunctions/Queries/ExistsVipStatus.cs" Line="5" Column="38" />
-      <File FileName="Application/Functions/TransactionFunctions/Commands/CreateTransaction.cs" Line="16" Column="15" />
+      <File FileName="Domain/Exceptions/UserAlreadyExistsException.cs" />
+      <File FileName="Infrastructure/Context/DbContext.cs" />
+      <File FileName="Server/Data/DbContext.cs" />
+      <File FileName="Application/Mappings/MessageProfile.cs" Line="10" Column="1" />
+      <File FileName="Application/Mappings/TransactionProfile.cs" />
+      <File FileName="Application/Mappings/UserProfile.cs" />
+      <File FileName="Application/Mappings/LikeProfile.cs" Line="19" Column="1" />
+      <File FileName="Application/Controllers/AdminController.cs" Line="1" Column="1" />
+      <File FileName="Application/Controllers/AuthController.cs" Line="30" Column="1" />
+      <File FileName="Application/Controllers/TransactionController.cs" />
+      <File FileName="Application/Controllers/UserVipController.cs" Line="1" Column="1" />
+      <File FileName="Application/Services/Interface/IMessageService.cs" />
+      <File FileName="Application/Services/Interface/ILikeService.cs" />
+      <File FileName="Application/Services/Interface/ITokenService.cs" />
+      <File FileName="Application/Services/Interface/ITransactionService.cs" />
+      <File FileName="Application/DTOs/TransactionDto.cs" />
+      <File FileName="Application/Services/Interface/IUserProfileService.cs" />
+      <File FileName="Domain/Policies/UserVipProfile/UserVipProfilePolicy.cs" Line="19" Column="14" />
+      <File FileName="Server/Functions/UserFunctions/Queries/CheckVipStatus.cs" Line="27" Column="1" />
+      <File FileName="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" />
+      <File FileName="Shared/Shared.Abstraction/Sql/ISqlConnection.cs" />
+      <File FileName="Shared/Shared.Infrastructure/Sql/SqlConnection.cs" Line="9" Column="1" />
+      <File FileName="Application/appsettings.json" />
+      <File FileName="Application/Extensions.cs" Line="24" Column="10" />
+      <File FileName="Domain/Extensions.cs" Line="19" Column="2" />
+      <File FileName="Server/Functions/UserFunctions/Commands/CreateVipUser.cs" Line="1" Column="1" />
+      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByEmail.cs" Line="18" Column="42" />
+      <File FileName="Shared/Shared.Infrastructure/Extensions.cs" Line="36" Column="39" />
+      <File FileName="Application/Controllers/LikeController.cs" NotebookId="1" />
+      <File FileName="Application/Controllers/MessageController.cs" NotebookId="1" />
+      <File FileName="Application/Controllers/UserController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Application/Services/MessageService.cs" NotebookId="1" />
+      <File FileName="Server/Program.cs" Line="46" Column="109" NotebookId="1" />
+      <File FileName="Domain/Policies/UserProfile/UserProfilePolicy.cs" Line="44" Column="1" NotebookId="1" />
+      <File FileName="Application/Program.cs" Line="63" Column="31" NotebookId="1" />
+      <File FileName="Infrastructure/Extensions.cs" Line="8" Column="39" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
-            <Node name="Api" expanded="True" />
-            <Node name="Application" expanded="True">
-              <Node name="Functions" expanded="True">
-                <Node name="LikeFunctions" expanded="True" />
-                <Node name="MessageFunctions" expanded="True">
-                  <Node name="Commands" expanded="True" />
-                </Node>
-                <Node name="TransactionFunctions" expanded="True">
-                  <Node name="Commands" expanded="True">
-                    <Node name="CreateTransaction.cs" selected="True" />
-                  </Node>
-                </Node>
+            <Node name="Shared" expanded="True">
+              <Node name="Shared.Infrastructure" expanded="True">
+                <Node name="Extensions.cs" selected="True" />
               </Node>
-              <Node name="Services" expanded="True" />
             </Node>
-            <Node name="DI" expanded="True" />
+            <Node name="Application" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Mappings" expanded="True" />
+            </Node>
             <Node name="Domain" expanded="True">
-              <Node name="Interfaces" expanded="True">
-                <Node name="Repositories" expanded="True" />
+              <Node name="Exceptions" expanded="True" />
+              <Node name="Policies" expanded="True">
+                <Node name="UserProfile" expanded="True" />
+                <Node name="UserVipProfile" expanded="True" />
               </Node>
             </Node>
             <Node name="Infrastructure" expanded="True">
-              <Node name="Config" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
-            <Node name="Server" expanded="True">
-              <Node name="Functions" expanded="True">
-                <Node name="UserFunctions" expanded="True">
-                  <Node name="Queries" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="Context" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Apii PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.Domain FirstBuild="True" />
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
       <Items>
-        <StartupItem ItemId="{ADC7DA31-393D-44EA-8149-F81629D151C9}" ItemName="Api" ConfigurationId="App" />
         <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" />
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-namespace Api.Entities
+namespace Domain.Entities
 {
-    public class UserMessage 
+    public class UserMessage
     {
         public int Id;
         public virtual UserProfile? ByUser { get; set; }

@@ -1,7 +1,7 @@
 using Domain.Interfaces.Repositories;
 
 
-namespace DateApp.Functions.TransactionFunctions.Queries
+namespace Application.Functions.TransactionFunctions.Queries
 {
     public class GetSuccessTransactionsQuery : IRequest<List<UserTransaction>>
     {
@@ -17,7 +17,7 @@ namespace DateApp.Functions.TransactionFunctions.Queries
 
             async Task<List<UserTransaction>> IRequestHandler<GetSuccessTransactionsQuery, List<UserTransaction>>.Handle(GetSuccessTransactionsQuery request, CancellationToken cancellationToken)
             {
-                return await _transactionRepository.GetSuccessTransactions();
+                return await _transactionRepository.getSuccessTransactions();
             }
         }
     }

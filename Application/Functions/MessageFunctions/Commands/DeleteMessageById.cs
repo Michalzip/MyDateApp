@@ -1,12 +1,12 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.MessageFunctions.Commands
+namespace Application.Functions.MessageFunctions.Commands
 {
 
     public class DeleteMessageByIdCommand : IRequest<int>
     {
 
-        public UserMessage? UserMessage { get; set; }
+        public int Id { get; set; }
 
         public class DeleteMessageById : IRequestHandler<DeleteMessageByIdCommand, int>
         {
@@ -23,10 +23,11 @@ namespace DateApp.Functions.MessageFunctions.Commands
             async Task<int> IRequestHandler<DeleteMessageByIdCommand, int>.Handle(DeleteMessageByIdCommand request, CancellationToken cancellationToken)
             {
 
+                var message = await _messageRepository.getMessageById(request.Id);
 
-                _messageRepository.Remove(request.UserMessage);
+                _messageRepository.remove(message);
 
-                return _messageRepository.SaveChanges();
+                return _messageRepository.saveChanges();
 
 
             }

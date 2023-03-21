@@ -11,5 +11,6 @@ namespace Server.Services.Interface
         public Task<IdentityResult> CreateIdentityUser(string email, string username, string password);
         public Task<SignInResult> AuthenticateIdentityUser(string email, string password);
         public Task<ApplicationUser> GetIdentityUser(string username);
+        public Task<bool> CheckVipStatus(string username);
     }
 }

@@ -1,20 +1,19 @@
-using Api.Entities;
+
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.LikeFunctions.Commands
+namespace Application.Functions.LikeFunctions.Commands
 {
 
 
     public class CreateLikeCommand : IRequest<int>
     {
-        public UserProfile? ByUser { get; set; }
-        public UserProfile? ToUser { get; set; }
+
+        public UserLike? Like { get; set; }
 
 
 
         public class CreateLike : IRequestHandler<CreateLikeCommand, int>
         {
-
 
 
             private readonly ILikeRepository _likeRepository;
@@ -29,16 +28,12 @@ namespace DateApp.Functions.LikeFunctions.Commands
             async Task<int> IRequestHandler<CreateLikeCommand, int>.Handle(CreateLikeCommand request, CancellationToken cancellationToken)
             {
 
+                //zapytanie do bazy danycch
+                //pobieram dwoch userow 
 
-                var like = new UserLike
-                {
-                    ByUser = request.ByUser,
-                    ToUser = request.ToUser,
-                };
+                _likeRepository.add(request.Like);
 
-                _likeRepository.Add(like);
-
-                return _likeRepository.SaveChanges();
+                return _likeRepository.saveChanges();
 
             }
 

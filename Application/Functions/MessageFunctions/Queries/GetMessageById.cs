@@ -1,6 +1,6 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.MessageFunctions.Queries
+namespace Application.Functions.MessageFunctions.Queries
 {
     public class GetMessageByIdQuery : IRequest<UserMessage>
     {
@@ -18,7 +18,7 @@ namespace DateApp.Functions.MessageFunctions.Queries
 
             async Task<UserMessage> IRequestHandler<GetMessageByIdQuery, UserMessage>.Handle(GetMessageByIdQuery request, CancellationToken cancellationToken)
             {
-                return await _messageRepository.GetMessageById(request.Id);
+                return await _messageRepository.getMessageById(request.Id);
 
 
             }

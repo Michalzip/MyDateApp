@@ -1,18 +1,22 @@
-using DateApp.Functions.MessageFunctions.Commands;
-using DateApp.Functions.MessageFunctions.Queries;
-using Domain.Interfaces.Services;
+using Application.DTOs;
+using Application.Functions.MessageFunctions.Commands;
+using Application.Functions.MessageFunctions.Queries;
+using Application.Interfaces.Services;
+using IdentityServer4.Models;
 
-namespace DateApp.Services
+namespace Application.Services
 {
 
 
     public class MessageService : IMessageService
     {
         private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        public MessageService(IMediator mediator)
+        public MessageService(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
 
@@ -20,99 +24,51 @@ namespace DateApp.Services
         public async Task<int> CreateMessageFromQuery(string byUserName, string toUserName, string message)
         {
 
-            var user1 = new GetUserByNameQuery
-            {
-                UserName = byUserName
-            };
 
+            var byUserProfile = await _mediator.Send(new GetUserByNameQuery { UserName = byUserName });
 
-            var byUserProfile = await _mediator.Send(user1);
-
-
-            var user2 = new GetUserByNameQuery
-            {
-                UserName = toUserName
-            };
-
-
-            var toUserProfile = await _mediator.Send(user2);
+            var toUserProfile = await _mediator.Send(new GetUserByNameQuery { UserName = toUserName });
 
             if (toUserProfile == null) return 0;
 
-            var userMessage = new CreateMessageCommand
+            var userMessage = new UserMessage
             {
                 ByUser = byUserProfile,
                 ToUser = toUserProfile,
                 Message = message
-
             };
 
-            return await _mediator.Send(userMessage);
+            return await _mediator.Send(new CreateMessageCommand { Message = userMessage });
 
 
         }
 
 
-        public async Task<List<UserMessage>> GetAllMessages(string byUserName, string toUserName)
+        public async Task<List<MessageDto>> GetAllMessages(string byUserName, string toUserName)
         {
 
-            var messagesQuery = new GetAllMessagesQuery
-            {
-                ByUserName = byUserName,
-                ToUserName = toUserName,
+            var messages =  await _mediator.Send(new GetAllMessagesQuery { ByUserName = byUserName, ToUserName = toUserName, });
 
-
-            };
-
-            return await _mediator.Send(messagesQuery);
-
-
-
-
+            return  _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
         }
 
 
-        public async Task<List<UserMessage>> GetMessageByTime(string byUserName, string toUserName, int hourTo, int hourFrom, int day)
+        public async Task<List<MessageDto>> GetMessageByTime(string byUserName, string toUserName, int hourTo, int hourFrom, int day)
         {
 
-            var messagesQuery = new GetMessageByTimeQuery
-            {
-                ByUserName = byUserName,
-                ToUserName = toUserName,
-                HourTo = hourTo,
-                HourFrom = hourFrom,
-                Day = day
+            var messages = await _mediator.Send(new GetMessageByTimeQuery { ByUserName = byUserName, ToUserName = toUserName, HourTo = hourTo, HourFrom = hourFrom, Day = day });
 
-            };
+            return _mapper.Map<List<UserMessage>, List<MessageDto>>(messages); 
 
-            return await _mediator.Send(messagesQuery);
 
         }
 
 
         public async Task<int> DeleteMessageById(int id)
         {
-            var idMessage = new GetMessageByIdQuery
-            {
-                Id = id
-            };
 
 
-            var message = await _mediator.Send(idMessage);
-
-            if (message == null) return 0;
-
-
-            var MessageToDelete = new DeleteMessageByIdCommand
-            {
-
-                UserMessage = message
-            };
-
-            return await _mediator.Send(MessageToDelete);
-
-
-
+            return await _mediator.Send(new DeleteMessageByIdCommand { Id = id });
 
         }
 

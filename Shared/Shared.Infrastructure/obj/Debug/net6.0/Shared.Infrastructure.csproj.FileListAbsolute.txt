@@ -1,0 +1,15 @@
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/bin/Debug/net6.0/Shared.Infrastructure.deps.json
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/bin/Debug/net6.0/Shared.Infrastructure.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/bin/Debug/net6.0/Shared.Infrastructure.pdb
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/bin/Debug/net6.0/Shared.Abstraction.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/bin/Debug/net6.0/Shared.Abstraction.pdb
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.csproj.AssemblyReference.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.AssemblyInfoInputs.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.AssemblyInfo.cs
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.csproj.CopyComplete
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/refint/Shared.Infrastructure.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/Shared.Infrastructure.pdb
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Infrastructure/obj/Debug/net6.0/ref/Shared.Infrastructure.dll

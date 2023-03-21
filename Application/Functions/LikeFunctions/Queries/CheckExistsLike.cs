@@ -1,7 +1,7 @@
-using Api.Entities;
+
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.LikeFunctions.Queries
+namespace Application.Functions.LikeFunctions.Queries
 {
 
     public class CheckExistLikeByUserNameQuery : IRequest<bool>
@@ -23,7 +23,7 @@ namespace DateApp.Functions.LikeFunctions.Queries
 
             async Task<bool> IRequestHandler<CheckExistLikeByUserNameQuery, bool>.Handle(CheckExistLikeByUserNameQuery request, CancellationToken cancellationToken)
             {
-                return await _likeRepository.ExistsLike(request.ByUserName, request.ToUserName);
+                return await _likeRepository.existsLike(request.ByUserName, request.ToUserName);
 
             }
         }

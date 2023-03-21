@@ -1,8 +1,10 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using Api.Entities;
+using Domain.Entities;
+using Domain.Interfaces;
 
-namespace App.Db
+using Domain.Interfaces.Repositories;
+namespace Infrastructure.Db
 {
     public class AppDbContext : DbContext
     {
@@ -10,7 +12,9 @@ namespace App.Db
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
+
         }
+
 
 
         public DbSet<UserProfile> UserProfiles { get; set; }
@@ -18,6 +22,7 @@ namespace App.Db
         public DbSet<UserMessage> UserMessages { get; set; }
         public DbSet<UserVipPayment> UserVipPayments { get; set; }
         public DbSet<UserTransaction> Transactions { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -1,13 +1,13 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.TransactionFunctions.Commands
+namespace Application.Functions.TransactionFunctions.Commands
 {
 
 
     public class SetTransactionSuccessCommand : IRequest<int>
     {
 
-        public UserTransaction? UserTransaction { get; set; }
+
 
         public class SetTransactionExpires : IRequestHandler<SetTransactionSuccessCommand, int>
         {
@@ -23,13 +23,15 @@ namespace DateApp.Functions.TransactionFunctions.Commands
             async Task<int> IRequestHandler<SetTransactionSuccessCommand, int>.Handle(SetTransactionSuccessCommand request, CancellationToken cancellationToken)
             {
 
-                request.UserTransaction.Success = true;
+                var transaction = await _transactionRepository.getLastTransaction();
 
-                request.UserTransaction.PendingConfirm = false;
+                transaction.Success = true;
 
-                _transactionRepository.Update(request.UserTransaction);
+                transaction.PendingConfirm = false;
 
-                return _transactionRepository.SaveChanges();
+                _transactionRepository.update(transaction);
+
+                return _transactionRepository.saveChanges();
             }
         }
 

@@ -1,15 +1,12 @@
 using Domain.Interfaces.Repositories;
 
-namespace DateApp.Functions.MessageFunctions.Commands
+namespace Application.Functions.MessageFunctions.Commands
 {
 
     public class CreateMessageCommand : IRequest<int>
     {
-        public UserProfile? ByUser { get; set; }
-        public UserProfile? ToUser { get; set; }
-        public string? Message { get; set; }
 
-
+        public UserMessage? Message { get; set; }
 
         public class CreateMessage : IRequestHandler<CreateMessageCommand, int>
         {
@@ -26,17 +23,9 @@ namespace DateApp.Functions.MessageFunctions.Commands
             async Task<int> IRequestHandler<CreateMessageCommand, int>.Handle(CreateMessageCommand request, CancellationToken cancellationToken)
             {
 
-                var message = new UserMessage
-                {
-                    ByUser = request.ByUser,
-                    ToUser = request.ToUser,
-                    Message = request.Message,
+                _messageRepository.add(request.Message);
 
-                };
-
-                _messageRepository.Add(message);
-
-                return _messageRepository.SaveChanges();
+                return _messageRepository.saveChanges();
 
 
 

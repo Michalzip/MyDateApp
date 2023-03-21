@@ -1,9 +1,10 @@
 ﻿
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Application.Interfaces.Services;
 
-using Domain.Interfaces.Services;
-namespace App.Services
+
+namespace Application.Services
 {
     public class TokenService : ITokenService
     {

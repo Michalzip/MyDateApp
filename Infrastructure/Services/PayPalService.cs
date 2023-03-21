@@ -1,7 +1,8 @@
-using Infrastructure.Services.Interfaces;
-using Infrastructure.Extensions;
+
+using Shared.Abstraction.Extensions;
 using PayPal.Api;
-using Api.Entities;
+using Domain.Entities;
+using Domain.Interfaces.ExternalApiServices;
 
 namespace Infrastructure.Services
 {
@@ -39,7 +40,7 @@ namespace Infrastructure.Services
         }
 
 
-        public Payment CreateVipPayment()
+        public Payment CreatePayment()
         {
 
 

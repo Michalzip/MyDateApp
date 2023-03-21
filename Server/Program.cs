@@ -2,25 +2,19 @@
 using Server.data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using Server.Helpers;
+using Server.Functions.UserFunctions.Commands;
+using Server.Functions.UserFunctions.Queries;
+using MediatR;
+using static Server.Functions.UserFunctions.Queries.GetUserByNameQuery;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
 
-
-
 var connectionString = builder.Configuration["ConnectionString:connectionString"];
 
-builder.Services.AddDbContext<ApplicationDbContext>(builder =>
-    builder.UseSqlServer(connectionString, sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)));
 
-
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-
+builder.Services.AddScoped<ApplicationUser>();
 
 
 builder.Host.ConfigureAppConfiguration((config =>
@@ -29,6 +23,7 @@ builder.Host.ConfigureAppConfiguration((config =>
     config.AddJsonFile("secret.json");
 
 }));
+
 
 builder.Services.AddIdentityServer()
     .AddOperationalStore(options =>
@@ -43,7 +38,6 @@ builder.Services.AddIdentityServer()
         connectionString,
         sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)));
 
-ServicesInjector.InjectServices(builder.Services);
 
 builder.Services.AddAuthorization();
 
