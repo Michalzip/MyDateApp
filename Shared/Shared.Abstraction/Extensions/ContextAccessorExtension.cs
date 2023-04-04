@@ -9,7 +9,6 @@ namespace Shared.Abstraction.Extensions
         {
             _contextAccessor = contextAccessor;
 
-
         }
 
         public void SetSession(string key, string value)

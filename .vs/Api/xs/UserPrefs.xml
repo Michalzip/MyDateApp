@@ -1,104 +1,94 @@
-﻿<Properties StartupConfiguration="{48AE012E-F63D-4450-B02A-74C8624CBD2E}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
-    <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Shared/Shared.Infrastructure/Extensions.cs">
+﻿<Properties StartupConfiguration="{0D0FAEA5-9026-4D44-AD49-4D7AA34DE8ED}|Default">
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów" />
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DateApp/DateApp.Infrastructure/Repositories/UserProfileRepository.cs">
     <Files>
-      <File FileName="Domain/Exceptions/UserNotFoundException.cs" />
-      <File FileName="Application/Services/LikeService.cs" />
-      <File FileName="Application/Services/TokenService.cs" />
-      <File FileName="Application/Services/TransactionService.cs" />
-      <File FileName="Application/Services/UserProfileService.cs" />
-      <File FileName="Application/Functions/LikeFunctions/Commands/CreateLike.cs" />
-      <File FileName="Infrastructure/Services/PayPalService.cs" />
-      <File FileName="Application/Functions/LikeFunctions/Queries/CheckExistsLike.cs" />
-      <File FileName="Application/Functions/LikeFunctions/Queries/GetLikedUser.cs" />
-      <File FileName="Application/Functions/LikeFunctions/Queries/GetLikeUser.cs" />
-      <File FileName="Application/Global.cs" Line="1" Column="1" />
-      <File FileName="Server/Services/UserService.cs" Line="65" Column="1" />
-      <File FileName="Application/Functions/UserFunctions/Queries/GetUserByName.cs" />
-      <File FileName="Application/Functions/UserFunctions/Commands/CreateUser.cs" />
-      <File FileName="Server/Models/ApplicationUser.cs" />
-      <File FileName="Server/Functions/UserFunctions/Commands/CreateUser.cs" Line="25" Column="1" />
-      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByName.cs" />
-      <File FileName="Server/Services/Interface/IUserService.cs" />
-      <File FileName="Domain/Exceptions/UserAlreadyExistsException.cs" />
-      <File FileName="Infrastructure/Context/DbContext.cs" />
-      <File FileName="Server/Data/DbContext.cs" />
-      <File FileName="Application/Mappings/MessageProfile.cs" Line="10" Column="1" />
-      <File FileName="Application/Mappings/TransactionProfile.cs" />
-      <File FileName="Application/Mappings/UserProfile.cs" />
-      <File FileName="Application/Mappings/LikeProfile.cs" Line="19" Column="1" />
-      <File FileName="Application/Controllers/AdminController.cs" Line="1" Column="1" />
-      <File FileName="Application/Controllers/AuthController.cs" Line="30" Column="1" />
-      <File FileName="Application/Controllers/TransactionController.cs" />
-      <File FileName="Application/Controllers/UserVipController.cs" Line="1" Column="1" />
-      <File FileName="Application/Services/Interface/IMessageService.cs" />
-      <File FileName="Application/Services/Interface/ILikeService.cs" />
-      <File FileName="Application/Services/Interface/ITokenService.cs" />
-      <File FileName="Application/Services/Interface/ITransactionService.cs" />
-      <File FileName="Application/DTOs/TransactionDto.cs" />
-      <File FileName="Application/Services/Interface/IUserProfileService.cs" />
-      <File FileName="Domain/Policies/UserVipProfile/UserVipProfilePolicy.cs" Line="19" Column="14" />
-      <File FileName="Server/Functions/UserFunctions/Queries/CheckVipStatus.cs" Line="27" Column="1" />
-      <File FileName="Server/Functions/UserFunctions/Commands/AuthenticateUser.cs" />
-      <File FileName="Shared/Shared.Abstraction/Sql/ISqlConnection.cs" />
-      <File FileName="Shared/Shared.Infrastructure/Sql/SqlConnection.cs" Line="9" Column="1" />
-      <File FileName="Application/appsettings.json" />
-      <File FileName="Application/Extensions.cs" Line="24" Column="10" />
-      <File FileName="Domain/Extensions.cs" Line="19" Column="2" />
-      <File FileName="Server/Functions/UserFunctions/Commands/CreateVipUser.cs" Line="1" Column="1" />
-      <File FileName="Server/Functions/UserFunctions/Queries/GetUserByEmail.cs" Line="18" Column="42" />
-      <File FileName="Shared/Shared.Infrastructure/Extensions.cs" Line="36" Column="39" />
-      <File FileName="Application/Controllers/LikeController.cs" NotebookId="1" />
-      <File FileName="Application/Controllers/MessageController.cs" NotebookId="1" />
-      <File FileName="Application/Controllers/UserController.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Application/Services/MessageService.cs" NotebookId="1" />
-      <File FileName="Server/Program.cs" Line="46" Column="109" NotebookId="1" />
-      <File FileName="Domain/Policies/UserProfile/UserProfilePolicy.cs" Line="44" Column="1" NotebookId="1" />
-      <File FileName="Application/Program.cs" Line="63" Column="31" NotebookId="1" />
-      <File FileName="Infrastructure/Extensions.cs" Line="8" Column="39" NotebookId="1" />
+      <File FileName="../../../../usr/local/share/dotnet/x64/sdk/7.0.100/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="DateApp/DateApp.Application/Global.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Application/Program.cs" Line="28" Column="1" />
+      <File FileName="IdentityServer/IdentityServer.Application/Program.cs" Line="30" Column="1" />
+      <File FileName="DateApp/DateApp.Application/Controllers/LikeController.cs" />
+      <File FileName="DateApp/DateApp.Application/Controllers/TransactionController.cs" />
+      <File FileName="DateApp/DateApp.Application/Controllers/UserVipController.cs" />
+      <File FileName="DateApp/DateApp.Application/Controllers/UserController.cs" Line="23" Column="57" />
+      <File FileName="DateApp/DateApp.Application/app.config" />
+      <File FileName="DateApp/DateApp.Application/appsettings.json" />
+      <File FileName="DateApp/DateApp.Application/secret.json" Line="15" Column="2" />
+      <File FileName="DateApp/DateApp.Application/ServiceInjector/Injector.cs" />
+      <File FileName="DateApp/DateApp.Infrastructure/Context/DbContext.cs" Line="14" Column="10" />
+      <File FileName="DateApp/DateApp.Infrastructure/Sql/DbConnection.cs" Line="17" Column="1" />
+      <File FileName="DateApp/DateApp.Application/Services/Interface/IUserProfileService.cs" Line="10" Column="37" />
+      <File FileName="DateApp/DateApp.Application/Services/UserProfileService.cs" Line="54" Column="75" />
+      <File FileName="DateApp/DateApp.Application/Functions/UserFunctions/Queries/GetUserByName.cs" Line="26" Column="48" />
+      <File FileName="DateApp/DateApp.Domain/Entities/UserProfile.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Repositories/UserProfileRepository.cs" Line="24" Column="2" />
+      <File FileName="DateApp/DateApp.Infrastructure/Repositories/TransactionRepository.cs" Line="27" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Repositories/RepositoryBase.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Repositories/MessageRepository.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Repositories/LikeRepository.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Properties/launchSettings.json" Line="16" Column="2" />
+      <File FileName="DateApp/DateApp.Infrastructure/Migrations/20230108161558_InitialCreate.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Migrations/20230202172424_MigratioV1.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Migrations/20230203143914_MigratioV3.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Migrations/20230202193344_MigratioV2.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" Line="13" Column="34" />
+      <File FileName="DateApp/DateApp.Domain/Extensions.cs" Line="1" Column="1" />
+      <File FileName="DateApp/DateApp.Domain/Constants.cs" Line="1" Column="1" />
+      <File FileName="IdentityServer/IdentityServer.Application/appsettings.json" Line="1" Column="1" />
+      <File FileName="IdentityServer/IdentityServer.Application/secret.json" Line="5" Column="2" />
+      <File FileName="Shared/Shared.Abstraction/Swagger/SwaggerConfig.cs" Line="15" Column="26" />
+      <File FileName="Shared/Shared.Abstraction/Mapper/MapperConfig.cs" Line="23" Column="2" />
+      <File FileName="IdentityServer/IdentityServer.Application/Services/Interfaces/IDentityUserService.cs" Line="9" Column="2" />
+      <File FileName="IdentityServer/IdentityServer.Application/Services/Interfaces/IAuthService.cs" Line="3" Column="34" />
+      <File FileName="IdentityServer/IdentityServer.Application/Controllers/AuthController.cs" Line="11" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Api" expanded="True">
+            <Node name="DateApp" expanded="True">
+              <Node name="DateApp.Infrastructure" expanded="True">
+                <Node name="Context" expanded="True" />
+                <Node name="Properties" expanded="True" />
+                <Node name="Repositories" expanded="True">
+                  <Node name="UserProfileRepository.cs" selected="True" />
+                </Node>
+                <Node name="Sql" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="IdentityServer" expanded="True">
+              <Node name="IdentityServer.Application" expanded="True">
+                <Node name="Controllers" expanded="True" />
+              </Node>
+            </Node>
             <Node name="Shared" expanded="True">
-              <Node name="Shared.Infrastructure" expanded="True">
-                <Node name="Extensions.cs" selected="True" />
+              <Node name="Shared.Abstraction" expanded="True">
+                <Node name="Extensions" expanded="True" />
               </Node>
-            </Node>
-            <Node name="Application" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Mappings" expanded="True" />
-            </Node>
-            <Node name="Domain" expanded="True">
-              <Node name="Exceptions" expanded="True" />
-              <Node name="Policies" expanded="True">
-                <Node name="UserProfile" expanded="True" />
-                <Node name="UserVipProfile" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Infrastructure" expanded="True">
-              <Node name="Context" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
-      <Items>
-        <StartupItem ItemId="{81DA43C5-FA1E-4BC8-B51E-F7E2FD4627F8}" ItemName="Server" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DateApp.DateApp.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../Server/IdentityService.cs" line="21" column="17" endLine="21" endColumn="30" offsetX="-1" offsetY="-1" expression="e.Message" liveUpdate="False" />
+    <Watch file="../../../DateApp/Repositories/PaymentRepository.cs" line="20" column="16" endLine="20" endColumn="49" offsetX="-1" offsetY="-1" expression="ww" liveUpdate="False" />
+    <Watch file="../../../IdentityServer/IdentityServer.Application/Program.cs" line="15" column="4" endLine="15" endColumn="73" offsetX="-1" offsetY="-1" expression="connectionString" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.IdentityServer.IdentityServer.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <DisabledProjects>
+    <String>Application/Application.csproj</String>
+    <String>Domain/Domain.csproj</String>
+    <String>Infrastructure/Infrastructure.csproj</String>
+    <String>DateApp/Application/DateApp.Application.csproj</String>
+    <String>DateApp/Domain/DateApp.Domain.csproj</String>
+    <String>DateApp/Infrastructure/DateApp.Infrastructure.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

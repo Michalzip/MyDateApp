@@ -10,3 +10,5 @@
 /Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/refint/Shared.Abstraction.dll
 /Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.pdb
 /Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/ref/Shared.Abstraction.dll
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/bin/Debug/net6.0/Shared.Abstraction.runtimeconfig.json
+/Users/michal/Desktop/MyDateApp/Shared/Shared.Abstraction/obj/Debug/net6.0/Shared.Abstraction.genruntimeconfig.cache
