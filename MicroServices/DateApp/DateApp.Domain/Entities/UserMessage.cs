@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.Json.Serialization;
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class UserMessage
     {
@@ -9,7 +7,6 @@ namespace Domain.Entities
         public virtual UserProfile? ToUser { get; set; }
         public string? Message { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-
     }
 }
 

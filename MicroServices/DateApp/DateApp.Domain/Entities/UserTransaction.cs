@@ -5,7 +5,6 @@ namespace Domain.Entities
 {
     public class UserTransaction
     {
-
         public int Id;
         public string TransactionId { get; set; }
         public string? Currency { get; set; }
@@ -17,6 +16,5 @@ namespace Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public virtual UserProfile? ByUser { get; set; }
-
     }
 }

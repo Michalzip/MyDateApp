@@ -1,48 +1,81 @@
+  <h1 align="center">Dating Api </h1>
 
+  <p align="center">
+  <h3 align="center">  Here you will find out how api looking and how you will use!</h3>
+    <br />
 
-
-<h1> Dating Api </h1>
-
-
-<h2>Information</h2>
-
-
-<p>
-<h4>Api is still under development. I will implement DDD and CQRS in the near future<h4>
+<p align="center">
+  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/WelcomePage.png" width="250" height="420" />   
+ 
+  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/SettingPanel.png" width="250" height="420" />
+  
+  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/ChatPage.png" width="250"  />
+  
+  
 </p>
 
-<p>
+<!-- ABOUT THE PROJECT -->
 
-<h4>To run the api you need to create two files in path:<h4>
+## About The Project :sunglasses:
+
+it is an application that will allow you to meet someone for a long time and who knows, maybe and forever :revolving_hearts: The application is
+designed for people who want to meet people with similar interests:smile:
+
+<br/>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+<p>The project includes two microservices that communicate with each other using RabbitMQ queues.</br>
+IdentityServer -  which is responsible for authenticating your identity and performing all types of operations on the IdentityDb </br>
+DateApp -  which handles messages, likes, user profiles, and all types of operations on the DateAppDb
+</a></p>
+
+### Prerequisites
+
+<br>RabbitMQ</br>
+
+<p>install rabbitMQ in docker</p>
+
+        docker pull rabbitmq:3-management
+        docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+
+<br>Dotnet </br>
+
+        dotnet restore
+        dotnet run
+
+<br>Docker</br>
+
+        docker-compose build
+        docker-compose up
+
+<br>create files in path:</br>
+
+```
+ +- DateApp
+    +- DateApp.Application
+       +- Configs
+          +- secret.json <- add file
+          +- app.config <- add file
 
 
-    +- DateApp
-         +- secret.json
-         +- app.config
     +- Server
-        +- secret.json
+       +- Server.Application
+          +- Configs
+             +- secret.json <- add file
 
+
+```
 
 <H4>secret.json (DateApp)</H4>
 
 ```
 {
-    "Google": {
-
-        "ClientId": "clientId",
-        "ClientSecret": "clientSecret"
-    },
-    "Paypal": {
-
-        "PaypalEnvironment": "sandbox",
-        "PayPalClientID": "paypalId",
-        "PayPalSecret": "paypalSecret"
-    },
     "ConnectionStrings": {
 
         "EntityCore": "Server=LOCAL ADRESS,PORT;Initial Catalog=DateAppDB;User Id=sa;Password=PASSWORD;Encrypt=false;",
-
-        "Identity": "Server=LOCAL ADRESS,PORT;Initial Catalog=IdentityDB;User Id=sa;Password=PASSWORD;Encrypt=false;"
     }
 }
 
@@ -59,8 +92,7 @@
 
 ```
 
-
-<H3>app.config</H3>
+<H4>app.config</H4>
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -81,22 +113,17 @@
 
 ```
 
-</p>
-
-
-
+after these steps, first enable rabbitMq in docker and wait a while before starting microservices
 
 <!-- CONTRIBUTING -->
-## Contributing
-<p>
 
-<h4>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request or repoirt it here <a href="https://github.com/Michalzip/MyDateApp/issues">link</a>. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch 
-3. Commit your Changes 
-4. Push to the Branch 
-5. Open a Pull Request </h4>
-
-</p>
+2. Create your Feature Branch
+3. Commit your Changes
+4. Push to the Branch
+5. Open a Pull Request

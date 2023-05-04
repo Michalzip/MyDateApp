@@ -15,9 +15,6 @@
 /Users/michal/Desktop/MyDateApp/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/refint/IdentityServer.Infrastructure.dll
 /Users/michal/Desktop/MyDateApp/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.pdb
 /Users/michal/Desktop/MyDateApp/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/ref/IdentityServer.Infrastructure.dll
-/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.dll
-/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/refint/IdentityServer.Infrastructure.dll
-/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.pdb
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/bin/Debug/net6.0/IdentityServer.Infrastructure.deps.json
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/bin/Debug/net6.0/IdentityServer.Infrastructure.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/bin/Debug/net6.0/IdentityServer.Infrastructure.pdb
@@ -31,4 +28,7 @@
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.AssemblyInfo.cs
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.csproj.CoreCompileInputs.cache
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.csproj.CopyComplete
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/refint/IdentityServer.Infrastructure.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/IdentityServer.Infrastructure.pdb
 /Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/obj/Debug/net6.0/ref/IdentityServer.Infrastructure.dll

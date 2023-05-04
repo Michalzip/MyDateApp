@@ -1,42 +1,33 @@
-﻿
+﻿using Microsoft.AspNetCore.Mvc;
 
-// using Microsoft.AspNetCore.Mvc;
-// using Application.Interfaces.Services;
+namespace Application.Controllers
+{
+    [Route("dateapp/[controller]")]
 
-// using Application.Functions.TransactionFunctions.Queries;
-// namespace Application.Controllers
-// {
+    [Authorize(Policy = "Admin")]
+    public class AdminController : Controller
+    {
+        private readonly ITransactionService _transactionService;
+        private readonly IMapper _mapper;
+        public AdminController(ITransactionService transactionService, IMapper mapper)
+        {
+            _mapper = mapper;
+            _transactionService = transactionService;
+        }
 
-//     [Route("dateapp/[controller]")]
-//     [Authorize(Policy = "Admin")]
-//     public class AdminController : Controller
-//     {
+        [HttpGet("get-success-transactions")]
+        public async Task<ActionResult<PagedList<TransactionDto>>> GetSuccessTransactions([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _transactionService.GetSuccessTransactions();
 
+            if (result == null) return NotFound("no transactions");
 
-//         private readonly ITransactionService _transactionService;
+            var successTransactionDto = _mapper.Map<List<UserTransaction>, List<TransactionDto>>(result);
 
-//         public AdminController(ITransactionService transactionService)
-//         {
-
-//             _transactionService = transactionService;
-
-//         }
-
-
-//         [HttpGet("get-success-transactions")]
-//         public async Task<ActionResult<PagedList<TransactionDto>>> GetSuccessTransactions([FromQuery] PaginationParams paginationParams)
-//         {
-
-//             var result = _transactionService.GetSuccessTransactions().Result;
-
-//             if (result == null) return NotFound("no transactions");
-
-//             return PagedList<TransactionDto>.ToPagedList(result,
-//                paginationParams.PageNumber,
-//                paginationParams.PageSize);
-
-//         }
-
-//     }
-// }
+            return PagedList<TransactionDto>.ToPagedList(successTransactionDto,
+               paginationParams.PageNumber,
+               paginationParams.PageSize);
+        }
+    }
+}
 

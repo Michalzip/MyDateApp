@@ -1,62 +1,49 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
-using IdentityServer.Application.Services.Interfaces;
+using IdentityServer.Domain.Interfaces.Services;
 using IdentityServer.Application.DTOs;
 using Shared.Abstraction.Extensions;
 
 namespace IdentityServer.Application.Controllers
 {
+    [Route("identityserver/[controller]")]
     public class AuthController : Controller
     {
         private readonly IAuthService _authService;
-       
 
         public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
 
-        [HttpPost("SignUp")]
+        [HttpPost("sign-up")]
         public async Task<IActionResult> SignUp(SignUpDto user)
         {
+            await _authService.SignUp(user.Email, user.UserName, user.Password);
 
-            var result = await _authService.SignUp(user.Email, user.UserName, user.Password);
-
-            if (result.Succeeded) return Ok(result);
-
-            return Unauthorized();
-
-        }
-
-        [HttpPost("Logout")]
-        public async Task<ActionResult> Logout()
-        {
-
-            //return NotFound();
-            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
-
-
-
-            return Ok("User Logout");
-
+            return Ok("user sign up Successfully");
         }
 
 
-        [HttpPost("SignIn")]
+        [HttpPost("sign-in")]
         public async Task<IActionResult> SignIn(SignInDto user)
         {
-            // var sourceUserName = User.GetUsername();
+            if (User.Identity.IsAuthenticated) return BadRequest("user already logged in.");
 
-            // Console.WriteLine("imie usera ktory sie loguje:" + sourceUserName);
+            await _authService.SignIn(user.UserName, user.Password);
 
-            var result = await _authService.SignIn(user.UserName, user.Password);
+            return Ok("user logged Successfully");
+        }
 
-            if (result == null) return BadRequest("NOT found Email");
+        [HttpPost("logout")]
+        public async Task<ActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
-            if (result.Succeeded) return Ok("user logged Successfully");
+            _authService.LogoutPublisher();
 
-            return Unauthorized();
+            return Ok("User Logout");
         }
     }
 }

@@ -2,7 +2,7 @@
 using Shared.Abstraction.Extensions;
 using PayPal.Api;
 using Domain.Entities;
-using Domain.Interfaces.ExternalApiServices;
+using Domain.Interfaces.ExternalServices;
 
 namespace Infrastructure.Services
 {
@@ -12,9 +12,7 @@ namespace Infrastructure.Services
 
         public PayPalService(ContextAccessorExtension contextAccessor)
         {
-
             _contextAccessor = contextAccessor;
-
         }
 
         private Dictionary<string, string> GetConfig()
@@ -24,8 +22,9 @@ namespace Infrastructure.Services
 
         private string GetAccessToken()
         {
-
             string accessToken = new OAuthTokenCredential(GetConfig()).GetAccessToken();
+
+            Console.WriteLine("Access Token: " + accessToken);
 
             return accessToken;
         }
@@ -39,16 +38,13 @@ namespace Infrastructure.Services
             return apiContext;
         }
 
-
         public Payment CreatePayment()
         {
-
-
             APIContext apiContext = GetAPIContext();
 
             var guidStringNumber = Convert.ToString((new Random()).Next(100000));
 
-            string? paypalUri = "https://localhost:7189/ConfirmPayment?";
+            string? paypalUri = "https://localhost:7141/dateapp/Transaction/confirm-transaction?";
 
             string redirectUrl = paypalUri + "guid=" + guidStringNumber;
 
@@ -72,7 +68,6 @@ namespace Infrastructure.Services
                 subtotal = "50"
             };
 
-
             var amount = new Amount()
             {
                 currency = "USD",
@@ -85,7 +80,6 @@ namespace Infrastructure.Services
                 cancel_url = redirectUrl + "&Cancel=true",
                 return_url = redirectUrl
             };
-
 
             var transactionList = new List<Transaction>();
 
@@ -105,9 +99,6 @@ namespace Infrastructure.Services
                 redirect_urls = redirUrls
             };
 
-
-
-
             var paymentData = payment.Create(apiContext);
 
             _contextAccessor.SetSession(guidStringNumber, paymentData.id);
@@ -126,33 +117,24 @@ namespace Infrastructure.Services
             return payment.Execute(apiContext, paymentExecution);
         }
 
-
-
         public String GetPaymentLink(Payment payment)
         {
-
             APIContext apiContext = GetAPIContext();
 
             string? paymentLink = null;
 
-
             var links = payment.links.GetEnumerator();
-
 
             while (links.MoveNext())
             {
                 if (links.Current.rel.ToLower().Trim().Equals("approval_url")) paymentLink = links.Current.href;
-
             }
 
             return paymentLink;
-
         }
-
 
         public Payment ConfirmPayment(string? PayerID, string? guid)
         {
-
             APIContext apiContext = GetAPIContext();
 
             string paymentId = _contextAccessor.GetSession(guid);
@@ -160,9 +142,6 @@ namespace Infrastructure.Services
             if (paymentId == null) return null;
 
             return ExecutePayment(apiContext, PayerID, paymentId);
-
         }
-
-
     }
 }

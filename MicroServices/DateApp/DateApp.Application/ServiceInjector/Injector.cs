@@ -1,102 +1,75 @@
 using System.Reflection;
 using Infrastructure;
-using Shared.Abstraction.Configs.Swagger;
 using Shared.Abstraction.Configs.Mapper;
-// using IdentityServer.Application.Services;
-
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-// using DateApp.Application.Auth.UserProfile;
-// using DateApp.Application.Auth.UserVipProfile;
 using DateApp.Domain.Interfaces.Messages;
-//!using DateApp.Infrastructure.Messages;
-using Microsoft.AspNetCore.Authentication.Cookies;
-// using IdentityServer.Infrastructure.Context;
-using DateApp.Infrastructure.Rpc;
-
+using DateApp.Infrastructure.Messages.Queques;
+using DateApp.Domain.Auth;
+using DateApp.Infrastructure.Messages.Rpc;
+using Shared.Jwt;
+using DateApp.Infrastructure.Middlewares;
+using Shared.Middlewares;
+using DateApp.Domain;
 namespace DateApp.Application.ServiceInjector
 {
     public static class Injector
     {
-        public static IServiceCollection Add(this IServiceCollection services, ConfigurationManager configuration)
+        public static IServiceCollection Add(this IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-            //services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.Load("IdentityServer.Application")));
-            services.AddScoped<IUserProfileService, UserProfileService>();
-            // services.AddScoped<IDentityUserService, IdentityUserService>();
-            //services.AddScoped<ICoreRabbitMqService, CoreRabbitMqService>();
-            services.AddScoped<RpcClient>();
 
-            //services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<Receiver>();
+            services.AddScoped<IRpcClient, RpcClient>();
+            services.AddScoped<IMessagePublisher, Publisher>();
+
+            services.AddScoped<IAuthorizationHandler, RequirementHandler>();
+            services.AddScoped<IAuthorizationHandler, RequirementVipHandler>();
+
+            services.AddScoped<ExceptionMiddleware>();
+            services.AddSingleton<ITokenService, TokenService>();
+
             services.AddScoped<ContextAccessorExtension>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<ILikeService, LikeService>();
-            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-            services.AddScoped<IMessageService, MessageService>();
+
+            services.AddDomainScoped();
             services.AddInfrastructureScoped();
-            //services.AddScoped<ITokenService, TokenService>();
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ETB4GNHYY2ETB4GNHYY2")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.NameIdentifier, "65968e57-9d7c-42f5-802a-16500385a1bb"));
 
+                options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfilePolicy()); policy.RequireAuthenticatedUser(); });
 
-
-
-            //     services.AddAuthentication(options =>
-            //   {
-            //       options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-            //       options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-            //       options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-            //       options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-            //   })
-            //       .AddCookie(options =>
-            //       {
-            //           options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-            //           options.SlidingExpiration = true;
-            //           options.LoginPath = "/https://localhost:7141";
-            //       })
-            //       .AddJwtBearer(options =>
-            //       {
-            //           options.Audience = options.Audience = "api1";
-            //           options.Authority = "https://localhost:7141";
-
-            //           options.TokenValidationParameters = new TokenValidationParameters
-            //           {
-            //               ValidateIssuer = true,
-            //               ValidateAudience = true,
-            //               ValidateLifetime = true,
-            //               ValidateIssuerSigningKey = true,
-            //               ValidIssuer = configuration["Jwt:Issuer"],
-            //               ValidAudience = configuration["Jwt:Audience"],
-            //               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
-            //           };
-            //       });
-
-            //     services.AddAuthorization(options =>
-            //     {
-            //         options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email, "julek@gmail.com"));
-
-            //         options.AddPolicy("UserProfile", policy => { policy.Requirements.Add(new UserProfilePolicy()); policy.RequireAuthenticatedUser(); });
-
-            //         options.AddPolicy("UserVipProfile", policy => { policy.Requirements.Add(new UserVipProfilePolicy()); policy.RequireAuthenticatedUser(); });
-            //     });
+                options.AddPolicy("UserVipProfile", policy => { policy.Requirements.Add(new UserVipProfilePolicy()); policy.RequireAuthenticatedUser(); });
+            });
 
             services.AddMapperConfig(Assembly.GetExecutingAssembly());
-            services.AddSwaggerConfig();
-
+            services.AddSwaggerGen();
 
             services.AddSession();
             services.AddControllersWithViews();
             services.AddControllers();
 
             return services;
-
         }
 
         public static IApplicationBuilder Use(this IApplicationBuilder app)
         {
-
+            app.UseMiddleware<JwtAuthenticationMiddleware>();
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseSwagger();
             app.UseSession();
             app.UseSwaggerUI(options =>
@@ -111,6 +84,7 @@ namespace DateApp.Application.ServiceInjector
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
 
             return app;
 

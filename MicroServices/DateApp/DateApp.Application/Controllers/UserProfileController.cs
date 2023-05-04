@@ -1,48 +1,42 @@
 
 using Microsoft.AspNetCore.Mvc;
-// using DateApp.Services;
-using Application.Functions.UserFunctions.Queries;
+
 namespace Application.Controllers
 {
     [Route("dateapp/[controller]")]
-    // [Authorize]
+
+    [Authorize]
     public class UserProfileController : Controller
     {
-
+        private readonly IMapper _mapper;
         private readonly IUserProfileService _userProfile;
 
-        public UserProfileController(IUserProfileService userProfile)
+        public UserProfileController(IUserProfileService userProfile, IMapper mapper)
         {
             _userProfile = userProfile;
+            _mapper = mapper;
         }
 
-
         [HttpGet("get-user-by-name")]
-        public async Task<ActionResult<UserProfileDto>> GetUser(string username)
+        public async Task<ActionResult> GetUser(string username)
         {
-            // string usernamea = ;
-            // Console.WriteLine("awdawdawdaw" + usernamea);
+            Console.WriteLine(User.GetUsername());
 
             var user = await _userProfile.GetUserProfile(username);
 
             if (user == null) return NotFound("Not Found User");
 
+            var userProfileDto = _mapper.Map<UserProfile, UserProfileDto>(user);
 
-
-            return Ok(user);
+            return Ok(userProfileDto);
         }
-
 
         [HttpPost("create-user-profile")]
         public async Task<ActionResult> CreateUserProfile(UserCreateProfileDto userData)
         {
+            await _userProfile.CreateUserProfile(userData.FirstName, userData.LastName, userData.PhotoUrl);
 
-            var result = await _userProfile.CreateUserProfile(userData.FirstName, userData.LastName, userData.PhotoUrl);
-
-            if (result > 0) return Ok("UserProfile created successfully");
-
-            return BadRequest("Failed To Create UserProfile");
-
+            return Ok("UserProfile created successfully");
         }
     }
 }

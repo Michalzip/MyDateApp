@@ -1,6 +1,5 @@
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IdentityServer.Infrastructure.Context;
 
@@ -10,7 +9,6 @@ namespace IdentityServer.Infrastructure.Sql
     {
         public static IServiceCollection DbConfigure(this IServiceCollection services, string connectionString)
         {
-
             services.AddDbContext<ApplicationDbContext>(opt =>
             {
                 opt.UseLazyLoadingProxies(true);

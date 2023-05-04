@@ -8,7 +8,6 @@ namespace Shared.Abstraction.Configs.Mapper
     {
         public static void AddMapperConfig(this IServiceCollection services, Assembly assemblyName)
         {
-
             var types = assemblyName.GetTypes();
 
             var derivedTypes = types.Where(t => t.IsSubclassOf(typeof(Profile)));
@@ -17,7 +16,6 @@ namespace Shared.Abstraction.Configs.Mapper
             {
                 services.AddAutoMapper(type);
             }
-
         }
     }
 }

@@ -1,91 +1,70 @@
-﻿// using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+namespace Application.Controllers
+{
+    [Route("dateapp/[controller]")]
+    [Authorize(Policy = "UserProfile")]
+    public class MessageController : Controller
+    {
+        private readonly IMapper _mapper;
+        private readonly IMessageService _messageService;
 
 
+        public MessageController(IMessageService messageService, IMapper mapper)
+        {
+            _messageService = messageService;
+            _mapper = mapper;
+        }
 
-// namespace Application.Controllers
-// {
-//     [Route("dateapp/[controller]")]
-//     [Authorize(Policy = "UserProfile")]
-//     public class MessageController : Controller
-//     {
+        private string? sourceUserName;
 
-//         private readonly IMessageService _messageService;
+        [HttpGet("get-messagess")]
 
+        public async Task<ActionResult<PagedList<MessageDto>>> GetMessages(string username, [FromQuery] PaginationParams paginationParams)
+        {
+            sourceUserName = User.GetUsername();
 
-//         public MessageController(IMessageService messageService)
-//         {
-//             _messageService = messageService;
-//         }
+            var messages = await _messageService.GetAllMessages(sourceUserName, username);
 
-//         private string? sourceUserName;
+            if (messages.Count == 0) return NotFound("you dont have messages with this user");
 
-//         [HttpGet("get-messagess")]
+            var messagesDto = _mapper.Map<List<UserMessage>, List<MessageDto>>(messages);
 
-//         public async Task<ActionResult<PagedList<MessageDto>>> GetMessages(string username, [FromQuery] PaginationParams paginationParams)
-//         {
-//             sourceUserName = User.GetUsername();
+            return PagedList<MessageDto>.ToPagedList(messagesDto,
+                 paginationParams.PageNumber,
+                  paginationParams.PageSize);
+        }
 
-//             var messages = await _messageService.GetAllMessages(sourceUserName, username);
+        [HttpGet("get-messagess-by-time")]
 
-//             if (messages.Count() == 0) return BadRequest("you dont have messages with this user");
+        public async Task<ActionResult<MessageDto>> GetMessagesByTime(string username, int hourFrom, int hourTo, int day)
+        {
+            var sourceUser = User.GetUsername();
 
-//             return PagedList<MessageDto>.ToPagedList(messages,
-//                  paginationParams.PageNumber,
-//                   paginationParams.PageSize);
+            var messagesByTime = await _messageService.GetMessageByTime(sourceUser, username, hourTo, hourFrom, day);
 
-//         }
+            if (messagesByTime.Count == 0) return NotFound("You have no messages with this user in the time limit");
 
+            var messagesDto = _mapper.Map<List<UserMessage>, List<MessageDto>>(messagesByTime);
 
-//         [HttpGet("get-messagess-by-time")]
+            return Ok(messagesDto);
+        }
 
-//         public async Task<ActionResult<MessageDto>> GetMessagesByTime(string username, int hourFrom, int hourTo, int day)
-//         {
+        [HttpPost("add-message")]
+        public async Task<ActionResult> AddMessages(MessageCreateDto user)
+        {
+            sourceUserName = User.GetUsername();
 
-//             var sourceUser = User.GetUsername();
+            await _messageService.CreateMessageFromQuery(sourceUserName, user.UserName, user.Message);
 
-//             var messagesByTime = await _messageService.GetMessageByTime(sourceUser, username, hourTo, hourFrom, day);
+            return Ok("Message added successfully");
+        }
 
+        [HttpDelete("delete-message")]
+        public async Task<ActionResult> DeleteMessage(int id)
+        {
+            await _messageService.DeleteMessageById(id);
 
-
-//             if (messagesByTime.Count == 0) return BadRequest("You have no messages with this user in the time limit");
-
-//             return Ok(messagesByTime);
-
-
-
-//         }
-
-//         [HttpPost("add-message")]
-
-//         public async Task<ActionResult> AddMessages(MessageCreateDto user)
-//         {
-
-
-//             sourceUserName = User.GetUsername();
-
-//             var result = await _messageService.CreateMessageFromQuery(sourceUserName, user.UserName, user.Message);
-
-//             if (result == 0) return BadRequest("Message Not Added");
-
-//             return Ok("Message added successfully");
-
-//         }
-
-
-
-//         [HttpDelete("delete-message")]
-//         public async Task<ActionResult> DeleteMessage(int id)
-//         {
-
-//             var result = await _messageService.DeleteMessageById(id);
-
-//             if (result == 0) return BadRequest("Problem Deleting the message");
-
-//             return Ok("Message Delete");
-
-//         }
-
-
-//     }
-// }
-
+            return Ok("Message Delete");
+        }
+    }
+}

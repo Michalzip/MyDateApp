@@ -1,6 +1,3 @@
-using AutoMapper;
-
-
 namespace Application.Mappings
 {
     public class UserMaperProfilee : Profile
@@ -10,22 +7,15 @@ namespace Application.Mappings
             CreateMap<UserProfile, UserProfileDto>();
 
             CreateMap<UserProfile, MessageDto>()
-
-               .ForMember(
-               dest => dest.Sender,
-               opt => opt.MapFrom(src => src.UserName)
-               )
-
-               .ForMember(
-               dest => dest.Receiver,
-               opt => opt.MapFrom(src => src.UserName)
-           );
+            .ForMember(dest => dest.Sender,
+              opt => opt.MapFrom(src => src.UserName))
+            .ForMember(dest => dest.Receiver,
+              opt => opt.MapFrom(src => src.UserName));
 
             CreateMap<UserProfile, LikeDto>()
-            .ForMember(
-                 dest => dest.Name,
-                 opt => opt.MapFrom(src => src.UserName)
-                 );
+            .ForMember(dest => dest.Name,
+              opt => opt.MapFrom(src => src.UserName));
+
         }
     }
 }

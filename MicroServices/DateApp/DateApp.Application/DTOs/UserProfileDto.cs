@@ -1,7 +1,4 @@
-﻿using System;
-using System;
-using System.ComponentModel.DataAnnotations;
-namespace Application.DTOs
+﻿namespace Application.DTOs
 {
     public class UserProfileDto
     {
@@ -9,7 +6,6 @@ namespace Application.DTOs
         public string? LastName { get; set; }
         public string? UserName { get; set; }
         public string? PhotoUrl { get; set; }
-
     }
 }
 

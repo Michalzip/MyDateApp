@@ -1,0 +1,12 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
+global using MediatR;
+global using Domain.Entities;
+global using DateApp.Domain.Interfaces.Services;
+global using Shared.Abstraction.Exceptions;
+global using Microsoft.AspNetCore.Authorization;
+global using DateApp.Domain.Functions.UserFunctions.Queries;
+global using Domain.Interfaces.Repositories;
+global using Domain.Interfaces.ExternalServices;
+global using DateApp.Domain.Services;

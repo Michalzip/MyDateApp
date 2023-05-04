@@ -1,77 +1,65 @@
-﻿// using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
+namespace Application.Controllers
+{
+    [Route("dateapp/[controller]")]
+    [Authorize(Policy = "UserProfile")]
+    public class LikeController : Controller
+    {
+        private readonly ILikeService _likeService;
+        private readonly IMapper _mapper;
 
+        public LikeController(ILikeService likeService, IMapper mapper)
+        {
+            _mapper = mapper;
+            _likeService = likeService;
+        }
 
-// namespace Application.Controllers
-// {
-//     [Route("dateapp/[controller]")]
-//     [Authorize(Policy = "UserProfile")]
-//     public class LikeController : Controller
-//     {
+        private string? sourceUserName;
 
-//         private readonly ILikeService _likeService;
+        [HttpGet("get-liked-profiles")]
+        public async Task<ActionResult<PagedList<LikeDto>>> GetLikedProfiles([FromQuery] PaginationParams paginationParams)
+        {
+            sourceUserName = User.GetUsername();
 
-//         public LikeController(ILikeService likeService)
-//         {
+            var result = await _likeService.GetLikedProfiles(sourceUserName);
 
+            if (result.Count == 0) return NotFound("you  didn't like users");
 
-//             _likeService = likeService;
-//         }
+            var likedProfilesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(result);
 
-//         private string? sourceUserName;
+            return Ok(PagedList<LikeDto>.ToPagedList(likedProfilesDto,
+                 paginationParams.PageNumber,
+                 paginationParams.PageSize));
+        }
 
+        [HttpGet("get-likes-profiles")]
+        public async Task<ActionResult<PagedList<LikeDto>>> GetLikesProfiles([FromQuery] PaginationParams paginationParams)
+        {
+            sourceUserName = User.GetUsername();
 
-//         [HttpGet("get-liked-profiles")]
-//         public async Task<ActionResult<PagedList<LikeDto>>> GetLikedProfiles([FromQuery] PaginationParams paginationParams)
-//         {
+            var result = await _likeService.GetLikesProfiles(sourceUserName);
 
-//             sourceUserName = User.GetUsername();
+            if (result.Count == 0) return NotFound("any user like your profile yet");
 
-//             var result = await _likeService.GetLikedProfiles(sourceUserName);
+            var likesProfilesDto = _mapper.Map<List<UserLike>, List<LikeDto>>(result);
 
-//             if (result.Count == 0) return NotFound("you  didn't like users");
+            return Ok(PagedList<LikeDto>.ToPagedList(likesProfilesDto,
+                 paginationParams.PageNumber,
+                 paginationParams.PageSize));
+        }
 
-//             return Ok(PagedList<LikeDto>.ToPagedList(result,
-//                  paginationParams.PageNumber,
-//                  paginationParams.PageSize));
+        [HttpPost("add-like")]
+        public async Task<ActionResult> AddLike(string username)
+        {
+            sourceUserName = User.GetUsername();
 
+            await _likeService.CreateLikeFromQuery(sourceUserName, username);
 
-//         }
-
-
-//         [HttpGet("get-likes-profiles")]
-//         public async Task<ActionResult<PagedList<LikeDto>>> GetLikesProfiles([FromQuery] PaginationParams paginationParams)
-//         {
-
-//             sourceUserName = User.GetUsername();
-
-//             var result = await _likeService.GetLikesProfiles(sourceUserName);
-
-//             if (result.Count == 0) return NotFound("any user like your profile yet");
-
-
-//             return Ok(PagedList<LikeDto>.ToPagedList(result,
-//                  paginationParams.PageNumber,
-//                  paginationParams.PageSize));
-
-//         }
-
-
-//         [HttpPost("add-like")]
-//         public async Task<ActionResult> AddLike(string toUser)
-//         {
-
-//             sourceUserName = User.GetUsername();
-
-//             var result = await _likeService.CreateLikeFromQuery(sourceUserName, toUser);
-
-//             if (result == 0) return BadRequest("u can't like user twice");
-
-//             return Ok("Like Added");
-
-//         }
-//     }
-// }
+            return Ok("Like Added");
+        }
+    }
+}
 
 
 

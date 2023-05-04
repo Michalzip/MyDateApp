@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "4Ni9TuKrshTGm9i/3T8HA1iDYi62MvQ884hM3uZw8zc=",
+  "Source": "DateApp.Infrastructure",
+  "BasePath": "_content/DateApp.Infrastructure",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Domain/DateApp.Domain.csproj",
+      "Version": 2,
+      "Source": "DateApp.Domain",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Release;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Release;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,15 @@
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/bin/Release/net6.0/IdentityServer.Domain.deps.json
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/bin/Release/net6.0/IdentityServer.Domain.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/bin/Release/net6.0/IdentityServer.Domain.pdb
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/bin/Release/net6.0/Shared.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/bin/Release/net6.0/Shared.pdb
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.csproj.AssemblyReference.cache
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.AssemblyInfoInputs.cache
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.AssemblyInfo.cs
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.csproj.CoreCompileInputs.cache
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.csproj.CopyComplete
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/refint/IdentityServer.Domain.dll
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/IdentityServer.Domain.pdb
+/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Domain/obj/Release/net6.0/ref/IdentityServer.Domain.dll

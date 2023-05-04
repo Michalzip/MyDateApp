@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7yqXIF7dsUsRHMVZ2HA1YE8CWJdAI3nCS9zwVCHbo8g=",
+  "Source": "IdentityServer.Application",
+  "BasePath": "_content/IdentityServer.Application",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

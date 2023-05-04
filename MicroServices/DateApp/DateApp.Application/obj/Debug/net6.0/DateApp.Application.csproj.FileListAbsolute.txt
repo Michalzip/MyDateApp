@@ -138,7 +138,6 @@
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/IdentityServer4.Storage.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/MediatR.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/MediatR.Contracts.dll
-/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -157,7 +156,6 @@
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.Identity.Client.dll
 /Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll

@@ -1,9 +1,8 @@
 using Domain.Interfaces.Repositories;
 using Infrastructure.Repositories;
-using Domain.Interfaces.ExternalApiServices;
+using Domain.Interfaces.ExternalServices;
 using Infrastructure.Services;
-
-
+using DateApp.Infrastructure.Middlewares;
 
 namespace Infrastructure
 {
@@ -16,7 +15,8 @@ namespace Infrastructure
             .AddScoped<IUserProfileRepository, UserProfileRepository>()
             .AddScoped<IMessageRepository, MessageRepository>()
             .AddScoped<ITransactionRepository, TransactionRepository>()
-            .AddScoped<IPaypalService, PayPalService>();
+            .AddScoped<IPaypalService, PayPalService>()
+            .AddScoped<JwtAuthenticationMiddleware>();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HPIteoy8XLnGskoWnyJkcY7Q+W3bVoee6sLWxOIRZgeCKCOUPNTnxdFlEAwtaeLDN9pa7/SN9Egzb9UQHzeloA==",
+  "dgSpecHash": "kCuv3BHDq89q4n5Vv0vjdFOMHRHIOVrWDfgWuDtAVa1/UBfAtzC3Mzxz6eNEGkFfay40v6keFA3Cs5qg+GOBbA==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Application/DateApp.Application.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,6 @@
     "/Users/michal/.nuget/packages/identityserver4.storage/4.1.2/identityserver4.storage.4.1.2.nupkg.sha512",
     "/Users/michal/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
-    "/Users/michal/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.antiforgery/2.2.0/microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -82,7 +81,7 @@
     "/Users/michal/.nuget/packages/microsoft.extensions.caching.memory/6.0.1/microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.1/microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
-    "/Users/michal/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/Users/michal/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.dependencymodel/2.1.0/microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.fileproviders.abstractions/2.2.0/microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.extensions.fileproviders.composite/2.2.0/microsoft.extensions.fileproviders.composite.2.2.0.nupkg.sha512",
@@ -228,20 +227,10 @@
   ],
   "logs": [
     {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Wykryta wersja pakietu jest poza ograniczeniami zależności: element MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 wymaga wersji MediatR (>= 11.0.0 && < 12.0.0), ale rozpoznano wersję MediatR 12.0.1.",
-      "libraryId": "MediatR",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „PayPal 1.9.1” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Package 'PayPal 1.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "PayPal",
       "targetGraphs": [
         "net6.0"

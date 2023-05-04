@@ -8,7 +8,6 @@ namespace Infrastructure.Repositories
 {
     public class UserProfileRepository : RepositoryBase<UserProfile>, IUserProfileRepository
     {
-
         public UserProfileRepository(CoreContext context)
         : base(context)
         {
@@ -18,7 +17,9 @@ namespace Infrastructure.Repositories
         {
             return await _dbContext.UserProfiles.Where(u => u.UserName == name).FirstOrDefaultAsync();
         }
-
-
+        public bool ExistsUserProfile(string id)
+        {
+            return _dbContext.UserProfiles.Any(up => up.Id == id);
+        }
     }
 }

@@ -7,12 +7,8 @@ namespace Infrastructure.Repositories
 {
     public class TransactionRepository : RepositoryBase<UserTransaction>, ITransactionRepository
     {
-
-
         public TransactionRepository(CoreContext context) : base(context)
-
         {
-
         }
 
         public async Task<UserTransaction> getLastTransaction()
@@ -22,9 +18,7 @@ namespace Infrastructure.Repositories
 
         public async Task<List<UserTransaction>> getSuccessTransactions()
         {
-            return _dbContext.Transactions.Where(u => u.Success == true).ToList();
+            return await _dbContext.Transactions.Include(x => x.ByUser).Where(u => u.Success == true).ToListAsync();
         }
-
-
     }
 }

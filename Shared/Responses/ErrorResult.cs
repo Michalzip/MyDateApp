@@ -2,37 +2,23 @@
 using Newtonsoft.Json;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Shared.Abstraction.Exceptions;
-
+using Shared.Abstraction.Exceptions.Base;
 namespace Shared.Abstraction.Responses
 {
     public class ErrorResult : JsonResult
     {
-
         public ErrorResult(ExceptionBase exception) : base(new
-        { code = exception.Code, message = exception.Message, extraData = exception.ExtraData, ok = false })
+        { code = exception.Code, statusCode = exception.StatusCode, message = exception.Message })
         {
-            Ok = false;
+            StatusCode = exception.StatusCode;
             Code = exception.Code;
             Message = exception.Message;
-            ExtraData = exception.ExtraData;
         }
-
 
         [JsonProperty("code")]
         public string Code { get; set; }
         [JsonProperty("message")]
         public string Message { get; set; }
-        [JsonProperty("extraData")]
-        public object ExtraData { get; set; }
-        [JsonProperty("ok")]
-        public bool Ok { get; set; }
-
-        [System.Text.Json.Serialization.JsonIgnore]
-        public new int? StatusCode { get; set; }
-
-        [System.Text.Json.Serialization.JsonIgnore]
-        public new string ContentType { get; set; }
     }
 }
 

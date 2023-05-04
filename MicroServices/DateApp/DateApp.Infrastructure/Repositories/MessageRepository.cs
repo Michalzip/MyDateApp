@@ -1,5 +1,4 @@
 using Domain.Entities;
-using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces.Repositories;
 using Infrastructure.Db;
@@ -41,7 +40,5 @@ namespace Infrastructure.Repositories
                 .Include(u => u.ToUser)
                 .SingleOrDefaultAsync(x => x.Id == id);
         }
-
-
     }
 }

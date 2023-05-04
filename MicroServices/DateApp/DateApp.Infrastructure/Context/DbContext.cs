@@ -1,19 +1,13 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
-using Domain.Interfaces;
 namespace Infrastructure.Db
 {
     public class CoreContext : DbContext
     {
-
         public CoreContext(DbContextOptions<CoreContext> options) : base(options)
         {
-
-
         }
-
-
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserLike> UserLikes { get; set; }
@@ -21,20 +15,15 @@ namespace Infrastructure.Db
         public DbSet<UserVipPayment> UserVipPayments { get; set; }
         public DbSet<UserTransaction> Transactions { get; set; }
 
-
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-
 
             builder.Entity<UserProfile>().HasKey(k => k.Id);
             builder.Entity<UserLike>().HasKey(K => K.Id);
             builder.Entity<UserMessage>().HasKey(k => k.Id);
             builder.Entity<UserVipPayment>().HasKey(k => k.Id);
             builder.Entity<UserTransaction>().HasKey(k => k.Id);
-
 
             builder.Entity<UserTransaction>()
                .HasOne(userBy => userBy.ByUser)
@@ -62,10 +51,6 @@ namespace Infrastructure.Db
                 .HasOne(userBy => userBy.ToUser)
                 .WithMany(userTo => userTo.ReceivedMessages)
                 .OnDelete(DeleteBehavior.Restrict);
-
-
-
-
         }
     }
 }

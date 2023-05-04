@@ -1,7 +1,4 @@
-﻿using System;
-using Shared.Models;
-
-
+﻿using Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
