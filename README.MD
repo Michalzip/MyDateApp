@@ -5,9 +5,9 @@
     <br />
 
 <p align="center">
-  <img src="https://github.com/MichalZip/MyDateApp/Images/DateApp-Screen.jpg" width="250" height="420" />   
+  <img src="https://github.com/Michalzip/MyDateApp/blob/DDD-implement/Images/DateApp-Screen.jpg" width="250" height="420" />   
  
-  <img src="https://github.com/MichalZip/MyDateApp/Images/IdentityServer-Screen.jpg" width="250" height="420" />
+  <img src="https://github.com/Michalzip/MyDateApp/blob/DDD-implement/Images/IdentityServer-Screen.jpg" width="250" height="420" />
 
 </p>
 
