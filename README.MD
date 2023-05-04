@@ -5,21 +5,17 @@
     <br />
 
 <p align="center">
-  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/WelcomePage.png" width="250" height="420" />   
+  <img src="https://github.com/MichalZip/MyDateApp/Images/DateApp-Screen.jpg" width="250" height="420" />   
  
-  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/SettingPanel.png" width="250" height="420" />
-  
-  <img src="https://github.com/Programmingisfun11/DateAppFlutter/blob/main/screens/ChatPage.png" width="250"  />
-  
-  
+  <img src="https://github.com/MichalZip/MyDateApp/Images/IdentityServer-Screen.jpg" width="250" height="420" />
+
 </p>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project :sunglasses:
 
-it is an application that will allow you to meet someone for a long time and who knows, maybe and forever :revolving_hearts: The application is
-designed for people who want to meet people with similar interests:smile:
+Thanks to our amazing dating app API, you could be lucky enough to meet your other half out of the many people on our platform :smile:
 
 <br/>
 
@@ -113,7 +109,7 @@ DateApp -  which handles messages, likes, user profiles, and all types of operat
 
 ```
 
-after these steps, first enable rabbitMq in docker and wait a while before starting microservices
+After these steps, first enable rabbitMq in docker and wait a while before starting microservices
 
 <!-- CONTRIBUTING -->
 
