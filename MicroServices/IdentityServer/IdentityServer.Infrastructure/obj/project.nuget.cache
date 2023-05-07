@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tyENFCdoXqlpnLQHTQHp9hjYVupW/dR5xUQLna8DWzraKsN+hiBTRL6x7+wGgL7NTYoJp7LRRl5C/b4fybg1Mg==",
+  "dgSpecHash": "JRP2L/bpcj6CBmuf3vlWW01Jt6NxzcFdT1yZQMAYqfq4zFM8t6pFzns7tZUeMRGJYxJzXFdY8lxyyidWGfYyIA==",
   "success": true,
   "projectFilePath": "/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/IdentityServer.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,7 @@
     "/Users/michal/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/michal/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/Users/michal/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/michal/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/paypal/1.9.1/paypal.1.9.1.nupkg.sha512",
     "/Users/michal/.nuget/packages/rabbitmq.client/6.5.0/rabbitmq.client.6.5.0.nupkg.sha512",
