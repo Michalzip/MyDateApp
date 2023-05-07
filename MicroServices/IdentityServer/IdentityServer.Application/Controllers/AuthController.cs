@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using IdentityServer.Domain.Interfaces.Services;
 using IdentityServer.Application.DTOs;
-using Shared.Abstraction.Extensions;
 
 namespace IdentityServer.Application.Controllers
 {

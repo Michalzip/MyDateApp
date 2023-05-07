@@ -1,6 +1,6 @@
 namespace Application.Mappings
 {
-    public class LikeProfile : Profile
+    internal sealed class LikeProfile : Profile
     {
         public LikeProfile()
         {

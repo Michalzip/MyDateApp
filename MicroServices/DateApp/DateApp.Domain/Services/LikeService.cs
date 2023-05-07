@@ -3,7 +3,7 @@ using DateApp.Domain.Functions.LikeFunctions.Commands;
 
 namespace DateApp.Domain.Services
 {
-    public class LikeService : ILikeService
+    internal class LikeService : ILikeService
     {
         private readonly IMediator _mediator;
 

@@ -4,7 +4,7 @@ using Domain.Interfaces.Repositories;
 using Infrastructure.Db;
 namespace Infrastructure.Repositories
 {
-    public class LikeRepository : RepositoryBase<UserLike>, ILikeRepository
+    internal class LikeRepository : RepositoryBase<UserLike>, ILikeRepository
     {
         public LikeRepository(CoreContext context)
               : base(context)

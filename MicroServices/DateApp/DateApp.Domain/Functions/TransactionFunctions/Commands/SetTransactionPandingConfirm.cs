@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.TransactionFunctions.Commands
 {
-    public class SetTransactionPandingConfirmCommand : IRequest<int>
+    internal class SetTransactionPandingConfirmCommand : IRequest<int>
     {
         public class SetTransactionExpires : IRequestHandler<SetTransactionPandingConfirmCommand, int>
         {

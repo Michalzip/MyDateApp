@@ -1,6 +1,6 @@
 namespace Application.Mappings
 {
-    public class UserMaperProfilee : Profile
+    internal sealed class UserMaperProfilee : Profile
     {
         public UserMaperProfilee()
         {

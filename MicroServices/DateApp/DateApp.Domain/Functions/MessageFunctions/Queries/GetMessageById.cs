@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.MessageFunctions.Queries
 {
-    public class GetMessageByIdQuery : IRequest<UserMessage>
+    internal class GetMessageByIdQuery : IRequest<UserMessage>
     {
         public int Id { get; set; }
 

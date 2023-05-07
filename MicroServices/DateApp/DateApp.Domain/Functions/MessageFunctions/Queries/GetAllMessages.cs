@@ -2,7 +2,7 @@ using Domain.Interfaces.Repositories;
 
 namespace DateApp.Domain.Functions.MessageFunctions.Queries
 {
-    public class GetAllMessagesQuery : IRequest<List<UserMessage>>
+    internal class GetAllMessagesQuery : IRequest<List<UserMessage>>
     {
         public string? ByUserName { get; set; }
         public string? ToUserName { get; set; }

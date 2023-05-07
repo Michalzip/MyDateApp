@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.LikeFunctions.Commands
 {
-    public class CreateLikeCommand : IRequest<int>
+    internal class CreateLikeCommand : IRequest<int>
     {
         public UserLike? Like { get; set; }
         public class CreateLike : IRequestHandler<CreateLikeCommand, int>

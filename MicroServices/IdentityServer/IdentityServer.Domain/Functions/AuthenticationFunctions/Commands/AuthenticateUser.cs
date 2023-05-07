@@ -1,7 +1,7 @@
 
 namespace IdentityServer.Domain.Functions.AuthenticationFunctions.Commands
 {
-    public class AuthenticateUserCommand : IRequest<SignInResult>
+    internal class AuthenticateUserCommand : IRequest<SignInResult>
     {
         public ApplicationUser? User { get; set; }
         public string? UserName { get; set; }

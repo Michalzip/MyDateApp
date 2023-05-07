@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.MessageFunctions.Commands
 {
-    public class DeleteMessageByIdCommand : IRequest<int>
+    internal class DeleteMessageByIdCommand : IRequest<int>
     {
         public UserMessage? Message { get; set; }
 

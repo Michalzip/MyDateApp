@@ -1,6 +1,6 @@
 ﻿namespace DateApp.Domain.Functions.UserFunctions.Queries
 {
-    public class CheckUserProfileExistenceQuery : IRequest<bool>
+    internal class CheckUserProfileExistenceQuery : IRequest<bool>
     {
         public string Id { get; set; }
     }

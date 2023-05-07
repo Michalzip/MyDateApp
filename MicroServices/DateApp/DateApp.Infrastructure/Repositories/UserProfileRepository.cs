@@ -6,7 +6,7 @@ using Domain.Interfaces.Repositories;
 
 namespace Infrastructure.Repositories
 {
-    public class UserProfileRepository : RepositoryBase<UserProfile>, IUserProfileRepository
+    internal class UserProfileRepository : RepositoryBase<UserProfile>, IUserProfileRepository
     {
         public UserProfileRepository(CoreContext context)
         : base(context)

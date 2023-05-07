@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.MessageFunctions.Queries
 {
-    public class GetMessageByTimeQuery : IRequest<List<UserMessage>>
+    internal class GetMessageByTimeQuery : IRequest<List<UserMessage>>
     {
         public string? ByUserName { get; set; }
         public string? ToUserName { get; set; }

@@ -12,7 +12,6 @@ namespace IdentityServer.Domain
             .AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()))
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IDentityUserService, IdentityUserService>();
-
         }
     }
 }

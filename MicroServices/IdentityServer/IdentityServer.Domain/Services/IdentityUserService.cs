@@ -4,7 +4,7 @@ using IdentityServer.Domain.Functions.VipFunctions.Commands;
 
 namespace IdentityServer.Application.Services
 {
-    public class IdentityUserService : IDentityUserService
+    internal class IdentityUserService : IDentityUserService
     {
         private readonly IMediator _mediator;
         public IdentityUserService(IMediator mediator)

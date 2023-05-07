@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.UserFunctions.Commands
 {
-    public class CreateUserCommand : IRequest<int>
+    internal class CreateUserCommand : IRequest<int>
     {
         public UserProfile? User { get; set; }
 

@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.TransactionFunctions.Commands
 {
-    public class SetTransactionSuccessCommand : IRequest<int>
+    internal class SetTransactionSuccessCommand : IRequest<int>
     {
         public class SetTransactionExpires : IRequestHandler<SetTransactionSuccessCommand, int>
         {

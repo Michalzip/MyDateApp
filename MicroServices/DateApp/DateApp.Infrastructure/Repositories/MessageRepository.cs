@@ -4,7 +4,7 @@ using Domain.Interfaces.Repositories;
 using Infrastructure.Db;
 namespace Infrastructure.Repositories
 {
-    public class MessageRepository : RepositoryBase<UserMessage>, IMessageRepository
+    internal class MessageRepository : RepositoryBase<UserMessage>, IMessageRepository
     {
         public MessageRepository(CoreContext context)
                : base(context)

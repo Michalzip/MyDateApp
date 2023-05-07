@@ -6,7 +6,7 @@ using Domain.Interfaces.ExternalServices;
 
 namespace Infrastructure.Services
 {
-    public class PayPalService : IPaypalService
+    internal class PayPalService : IPaypalService
     {
         private readonly ContextAccessorExtension _contextAccessor;
 

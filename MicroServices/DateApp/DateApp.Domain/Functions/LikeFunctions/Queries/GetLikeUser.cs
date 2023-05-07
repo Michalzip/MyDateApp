@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.LikeFunctions.Queries
 {
-    public class GetLikesUserQuery : IRequest<List<UserLike>>
+    internal class GetLikesUserQuery : IRequest<List<UserLike>>
     {
         public string? ByUserName { get; set; }
         public class GetLikeUser : IRequestHandler<GetLikesUserQuery, List<UserLike>>

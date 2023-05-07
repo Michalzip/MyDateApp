@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.UserFunctions.Queries
 {
-    public class GetUserByNameQuery : IRequest<UserProfile>
+    internal class GetUserByNameQuery : IRequest<UserProfile>
     {
         public string? UserName { get; set; }
     }

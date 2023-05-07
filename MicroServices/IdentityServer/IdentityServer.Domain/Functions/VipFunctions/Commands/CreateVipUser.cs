@@ -1,6 +1,6 @@
 namespace IdentityServer.Domain.Functions.VipFunctions.Commands
 {
-    public class CreateVipUserCommand : IRequest<IdentityResult>
+    internal class CreateVipUserCommand : IRequest<IdentityResult>
     {
         public ApplicationUser? User { get; set; }
 

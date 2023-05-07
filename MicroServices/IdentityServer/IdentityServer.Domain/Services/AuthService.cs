@@ -4,10 +4,9 @@ using IdentityServer.Domain.Functions.UserFunctions.Commands;
 using Shared.Abstraction.Exceptions;
 using IdentityServer.Domain.Functions.UserFunctions.Queries;
 
-
 namespace IdentityServer.Application.Services
 {
-    public class AuthService : IAuthService
+    internal class AuthService : IAuthService
     {
         private readonly IMediator _mediator;
         private readonly IMessagePublisher _publisher;

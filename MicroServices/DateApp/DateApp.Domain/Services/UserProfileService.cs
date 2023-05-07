@@ -5,7 +5,7 @@ using DateApp.Domain.Functions.UserFunctions.Commands;
 
 namespace DateApp.Domain.Services
 {
-    public class UserProfileService : IUserProfileService
+    internal class UserProfileService : IUserProfileService
     {
         private readonly IMediator _mediator;
         private readonly ITokenService _tokenService;

@@ -13,9 +13,9 @@ using Shared.Middlewares;
 using DateApp.Domain;
 namespace DateApp.Application.ServiceInjector
 {
-    public static class Injector
+    internal static class Injector
     {
-        public static IServiceCollection Add(this IServiceCollection services)
+        internal static IServiceCollection Add(this IServiceCollection services)
         {
             services.AddHttpContextAccessor();
 

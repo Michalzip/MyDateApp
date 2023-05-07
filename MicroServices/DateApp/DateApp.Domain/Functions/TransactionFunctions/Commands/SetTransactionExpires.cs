@@ -3,7 +3,7 @@ using Domain.Interfaces.Repositories;
 
 namespace DateApp.Domain.Functions.TransactionFunctions.Commands
 {
-    public class SetTransactionExpiresCommand : IRequest<int>
+    internal class SetTransactionExpiresCommand : IRequest<int>
     {
         public class SetTransactionExpires : IRequestHandler<SetTransactionExpiresCommand, int>
         {

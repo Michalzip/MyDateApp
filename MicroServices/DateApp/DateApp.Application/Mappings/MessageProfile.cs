@@ -2,7 +2,7 @@ using AutoMapper;
 
 namespace Application.Mappings
 {
-    public class MessageProfile : Profile
+    internal sealed class MessageProfile : Profile
     {
         public MessageProfile()
         {

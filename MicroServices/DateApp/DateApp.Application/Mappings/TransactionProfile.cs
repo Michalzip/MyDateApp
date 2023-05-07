@@ -1,6 +1,6 @@
 namespace Application.Mappings
 {
-    public class TransactionProfile : Profile
+    internal sealed class TransactionProfile : Profile
     {
         public TransactionProfile()
         {

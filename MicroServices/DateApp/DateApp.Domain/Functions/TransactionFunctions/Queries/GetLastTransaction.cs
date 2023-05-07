@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.TransactionFunctions.Queries
 {
-    public class GetLastTransactionQuery : IRequest<UserTransaction>
+    internal class GetLastTransactionQuery : IRequest<UserTransaction>
     {
         public class GetLastTransaction : IRequestHandler<GetLastTransactionQuery, UserTransaction>
         {

@@ -4,7 +4,7 @@ using DateApp.Domain.Functions.MessageFunctions.Queries;
 
 namespace DateApp.Domain.Services
 {
-    public class MessageService : IMessageService
+    internal class MessageService : IMessageService
     {
         private readonly IMediator _mediator;
         public MessageService(IMediator mediator)

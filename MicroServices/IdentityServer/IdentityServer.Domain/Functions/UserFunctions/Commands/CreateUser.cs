@@ -1,6 +1,6 @@
 namespace IdentityServer.Domain.Functions.UserFunctions.Commands
 {
-    public class CreateUserCommand : IRequest<IdentityResult>
+    internal class CreateUserCommand : IRequest<IdentityResult>
     {
         public String? Email { get; set; }
         public String? UserName { get; set; }

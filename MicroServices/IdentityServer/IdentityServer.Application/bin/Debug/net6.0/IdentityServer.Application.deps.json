@@ -62,7 +62,7 @@
       },
       "IdentityModel/4.4.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "13.0.1",
           "System.Text.Encodings.Web": "4.7.2"
         },
         "runtime": {
@@ -78,7 +78,7 @@
           "IdentityServer4.Storage": "4.1.2",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "3.1.0",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "lib/netcoreapp3.1/IdentityServer4.dll": {
@@ -315,7 +315,7 @@
       "Microsoft.AspNetCore.JsonPatch/2.2.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
@@ -757,7 +757,7 @@
       "Microsoft.Extensions.DependencyModel/2.1.0": {
         "dependencies": {
           "Microsoft.DotNet.PlatformAbstractions": "2.1.0",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "13.0.1",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Dynamic.Runtime": "4.3.0",
           "System.Linq": "4.3.0"
@@ -1014,18 +1014,18 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/13.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
           }
         }
       },
       "Newtonsoft.Json.Bson/1.0.1": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
@@ -1036,7 +1036,7 @@
       },
       "PayPal/1.9.1": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "lib/net451/PayPal.dll": {
@@ -2041,7 +2041,7 @@
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "13.0.1",
           "PayPal": "1.9.1",
           "RabbitMQ.Client": "6.5.0",
           "Swashbuckle.AspNetCore": "6.5.0",
@@ -2815,12 +2815,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/13.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.1": {
       "type": "package",

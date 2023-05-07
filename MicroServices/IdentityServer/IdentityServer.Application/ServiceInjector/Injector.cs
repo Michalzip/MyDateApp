@@ -1,27 +1,20 @@
 
 using IdentityServer.Domain;
-using IdentityServer.Infrastructure.Context;
 using System.Reflection;
 using Shared.Abstraction.Configs.Mapper;
 using IdentityServer.Domain.Interfaces.Messages;
 using IdentityServer.Infrastructure.Messages.Queques;
 using IdentityServer.Infrastructure.Messages.Rpc;
-using IdentityServer.Domain.Interfaces.Services;
-using IdentityServer.Application.Services;
 using Shared.Middlewares;
 using System.Security.Claims;
-
+using IdentityServer.Infrastructure;
 namespace IdentityServer.Application.ServiceInjector
 {
-    public static class Injector
+    internal static class Injector
     {
-        public static IServiceCollection Add(this IServiceCollection services)
+        internal static IServiceCollection Add(this IServiceCollection services)
         {
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.AddScoped<IMessagePublisher, Publisher>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IDentityUserService, IdentityUserService>();
-
             services.AddScoped<RpcServer>();
             services.AddScoped<UserManager<ApplicationUser>>();
             services.AddScoped<ApplicationUser>();
@@ -30,10 +23,10 @@ namespace IdentityServer.Application.ServiceInjector
 
             services.AddMapperConfig(Assembly.GetExecutingAssembly());
             services.AddDomainScoped();
+            services.AddInfrastructureScoped();
             services.AddControllersWithViews();
             services.AddControllers();
             services.AddAuthorization(options => options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.NameIdentifier, "65968e57-9d7c-42f5-802a-16500385a1bb")));
-
 
             return services;
         }

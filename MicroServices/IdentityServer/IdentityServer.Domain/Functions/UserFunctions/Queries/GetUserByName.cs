@@ -1,7 +1,7 @@
 
 namespace IdentityServer.Domain.Functions.UserFunctions.Queries
 {
-    public class GetUserByNameQuery : IRequest<ApplicationUser>
+    internal class GetUserByNameQuery : IRequest<ApplicationUser>
     {
         public string? UserName { get; set; }
     }

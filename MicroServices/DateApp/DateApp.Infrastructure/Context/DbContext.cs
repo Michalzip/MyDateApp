@@ -3,11 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 namespace Infrastructure.Db
 {
-    public class CoreContext : DbContext
+    internal class CoreContext : DbContext
     {
-        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
-        {
-        }
+        public CoreContext(DbContextOptions<CoreContext> options) : base(options) { }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserLike> UserLikes { get; set; }

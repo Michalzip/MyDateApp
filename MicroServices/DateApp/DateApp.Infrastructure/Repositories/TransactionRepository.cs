@@ -5,7 +5,7 @@ using Domain.Interfaces.Repositories;
 
 namespace Infrastructure.Repositories
 {
-    public class TransactionRepository : RepositoryBase<UserTransaction>, ITransactionRepository
+    internal class TransactionRepository : RepositoryBase<UserTransaction>, ITransactionRepository
     {
         public TransactionRepository(CoreContext context) : base(context)
         {

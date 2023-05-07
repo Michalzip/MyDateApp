@@ -2,7 +2,7 @@ using Domain.Interfaces.Repositories;
 using Infrastructure.Db;
 namespace Infrastructure.Repositories
 {
-    public class RepositoryBase<T> :
+    internal class RepositoryBase<T> :
   IRepository<T>
     {
         protected readonly CoreContext _dbContext;

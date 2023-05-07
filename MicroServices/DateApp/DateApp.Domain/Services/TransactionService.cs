@@ -5,7 +5,7 @@ using DateApp.Domain.Interfaces.Messages;
 
 namespace DateApp.Domain.Services
 {
-    public class TransactionService : ITransactionService
+    internal class TransactionService : ITransactionService
     {
         private readonly IMediator _mediator;
         private readonly IPaypalService _paypalRepository;

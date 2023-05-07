@@ -4,7 +4,7 @@ using Domain.Interfaces.Repositories;
 namespace DateApp.Domain.Functions.LikeFunctions.Queries
 {
 
-    public class GetLikedUserQuery : IRequest<List<UserLike>>
+    internal class GetLikedUserQuery : IRequest<List<UserLike>>
     {
 
         public string? ByUserName { get; set; }

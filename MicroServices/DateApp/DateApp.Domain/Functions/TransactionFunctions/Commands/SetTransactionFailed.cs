@@ -1,12 +1,10 @@
 namespace DateApp.Domain.Functions.TransactionFunctions.Commands
 {
-    public class SetTransactionFailed
-    {
-    }
+
 
     public class SetTransactionFailedCommand : IRequest<int>
     {
-        public class SetTransactionExpires : IRequestHandler<SetTransactionFailedCommand, int>
+        internal class SetTransactionExpires : IRequestHandler<SetTransactionFailedCommand, int>
         {
             private readonly ITransactionRepository _transactionRepository;
 

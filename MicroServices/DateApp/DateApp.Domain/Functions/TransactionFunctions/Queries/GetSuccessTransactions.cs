@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.TransactionFunctions.Queries
 {
-    public class GetSuccessTransactionsQuery : IRequest<List<UserTransaction>>
+    internal class GetSuccessTransactionsQuery : IRequest<List<UserTransaction>>
     {
         public class GetSuccessTransactions : IRequestHandler<GetSuccessTransactionsQuery, List<UserTransaction>>
         {

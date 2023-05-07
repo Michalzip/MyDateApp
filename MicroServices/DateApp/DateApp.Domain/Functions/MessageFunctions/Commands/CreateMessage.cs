@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.MessageFunctions.Commands
 {
-    public class CreateMessageCommand : IRequest<int>
+    internal class CreateMessageCommand : IRequest<int>
     {
         public UserMessage? Message { get; set; }
 

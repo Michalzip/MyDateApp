@@ -1,7 +1,7 @@
 
 namespace DateApp.Domain.Functions.LikeFunctions.Queries
 {
-    public class CheckExistLikeByUserNameQuery : IRequest<bool>
+    internal class CheckExistLikeByUserNameQuery : IRequest<bool>
     {
         public string? ByUserName { get; set; }
 

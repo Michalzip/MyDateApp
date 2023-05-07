@@ -1,6 +1,6 @@
 namespace DateApp.Domain.Functions.TransactionFunctions.Commands
 {
-    public class CreateTransactionCommand : IRequest<int>
+    internal class CreateTransactionCommand : IRequest<int>
     {
         public UserTransaction? UserTransaction { get; set; }
 
