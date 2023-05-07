@@ -9,9 +9,7 @@ namespace Shared.RabbitMQ
             return new ConnectionFactory()
             {
                 HostName = Environment.GetEnvironmentVariable("RABBIT_HOSTNAME") ?? "localhost",
-                Port = 5672,
-                UserName = "guest",
-                Password = "guest",
+
             };
         }
     }

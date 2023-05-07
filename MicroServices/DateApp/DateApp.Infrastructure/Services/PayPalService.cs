@@ -44,7 +44,7 @@ namespace Infrastructure.Services
 
             var guidStringNumber = Convert.ToString((new Random()).Next(100000));
 
-            string? paypalUri = "https://localhost:7141/dateapp/Transaction/confirm-transaction?";
+            string? paypalUri = "http://localhost:7141/dateapp/Transaction/confirm-transaction?";
 
             string redirectUrl = paypalUri + "guid=" + guidStringNumber;
 

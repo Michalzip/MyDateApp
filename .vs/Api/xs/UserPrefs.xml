@@ -1,75 +1,87 @@
 ﻿<Properties StartupConfiguration="{48AE012E-F63D-4450-B02A-74C8624CBD2E}|Application">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MicroServices/DateApp/DateApp.Application/ServiceInjector/Injector.cs">
+  <MonoDevelop.Ide.ItemProperties.MicroServices.IdentityServer.IdentityServer.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
+      <Items>
+        <StartupItem ItemId="{48AE012E-F63D-4450-B02A-74C8624CBD2E}" ItemName="DateApp.Application" ConfigurationId="Application" />
+        <StartupItem ItemId="{0D0FAEA5-9026-4D44-AD49-4D7AA34DE8ED}" ItemName="IdentityServer.Application" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.ItemProperties.MicroServices.DateApp.DateApp.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MicroServices/DateApp/DateApp.Application/Dockerfile">
     <Files>
       <File FileName="../../../../usr/local/share/dotnet/x64/sdk/7.0.100/Microsoft.Common.CurrentVersion.targets" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Program.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Program.cs" Line="27" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Global.cs" Line="1" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Program.cs" Line="18" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Global.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/UserCreateProfileDto.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/UserProfileDto.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/UserVipController.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/UserProfileController.cs" Line="1" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/UserVipController.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/UserProfileController.cs" />
       <File FileName="../../../../usr/local/share/dotnet/x64/sdk/7.0.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Application/ServiceInjector/Injector.cs" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Controllers/AuthController.cs" Line="49" Column="2" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Controllers/UserController.cs" Line="29" Column="58" />
+      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Controllers/AuthController.cs" />
       <File FileName="Shared/Extensions/ClaimPrincipleExtension.cs" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Infrastructure/Sql/DbConnection.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Configs/secret.json" Line="8" Column="1" />
-      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/appsettings.json" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/UserProfileRepository.cs" Line="19" Column="1" />
+      <File FileName="MicroServices/IdentityServer/IdentityServer.Infrastructure/Sql/DbConnection.cs" />
+      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Properties/launchSettings.json" />
+      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/Configs/secret.json" />
+      <File FileName="MicroServices/IdentityServer/IdentityServer.Application/appsettings.json" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/UserProfileRepository.cs" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Application/appsettings.Development.json" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/TransactionRepository.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Publisher.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" Line="1" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/TransactionRepository.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Publisher.cs" Line="32" Column="48" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" Line="18" Column="1" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Infrastructure/Messages/Queques/Publisher.cs" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Infrastructure/Messages/Queques/Receiver.cs" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Infrastructure/Messages/Rpc/RpcServer.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Auth/UserProfilePolicy.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/TransactionController.cs" Line="34" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/LikeController.cs" Line="49" Column="46" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/AdminController.cs" Line="27" Column="80" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/TransactionController.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/LikeController.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/AdminController.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Messages/Rpc/RpcClient.cs" />
-      <File FileName="Shared/Jwt/ITokenService.cs" Line="1" Column="1" />
-      <File FileName="Shared/Jwt/TokenService.cs" Line="21" Column="89" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/MessageController.cs" Line="1" Column="1" />
+      <File FileName="Shared/Jwt/ITokenService.cs" />
+      <File FileName="Shared/Jwt/TokenService.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Controllers/MessageController.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Auth/UserVipProfilePolicy.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/TransactionDto.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/LikeRepository.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/MessageRepository.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/TransactionProfile.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/LikeProfile.cs" Line="1" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/TransactionProfile.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/LikeProfile.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/LikeDto.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/MessageDto.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/DTOs/MessageCreateDto.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/UserProfile.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/MessageProfile.cs" Line="20" Column="2" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/UserProfile.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Mappings/MessageProfile.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserTransaction.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserProfile.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserMessage.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserLike.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/appsettings.json" Line="10" Column="2" />
+      <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserMessage.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Domain/Entities/UserLike.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/appsettings.json" />
       <File FileName="Shared/Responses/ErrorResult.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/ServiceInjector/Injector.cs" Line="29" Column="55" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Middlewares/JwtAuthenticationMiddleware.cs" Line="17" Column="53" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Middlewares/JwtAuthenticationMiddleware.cs" />
       <File FileName="Shared/Models/ClaimUser.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Application/appsettings.Development.json" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Properties/launchSettings.json" Line="14" Column="32" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/RepositoryBase.cs" Line="23" Column="2" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Properties/launchSettings.json" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Repositories/RepositoryBase.cs" />
       <File FileName="Shared/Middlewares/ExceptionMiddleware.cs" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Services/UserProfileService.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" Line="86" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" Line="95" Column="1" />
       <File FileName="MicroServices/DateApp/DateApp.Domain/Services/LikeService.cs" />
       <File FileName="MicroServices/IdentityServer/IdentityServer.Domain/Services/AuthService.cs" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Services/PayPalService.cs" Line="45" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Extensions.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Configs/app.config" Line="9" Column="22" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Configs/secret.json" Line="5" Column="2" />
-      <File FileName="MicroServices/DateApp/DateApp.Domain/Global.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Domain/Extensions.cs" Line="18" Column="2" />
-      <File FileName="Shared/Configs/Mapper/MapperConfig.cs" Line="1" Column="1" />
-      <File FileName="MicroServices/DateApp/DateApp.Application/Dockerfile" Line="1" Column="1" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Services/PayPalService.cs" Line="47" Column="41" />
+      <File FileName="MicroServices/DateApp/DateApp.Infrastructure/Extensions.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Configs/app.config" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Configs/secret.json" />
+      <File FileName="MicroServices/DateApp/DateApp.Domain/Global.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Domain/Extensions.cs" />
+      <File FileName="Shared/Configs/Mapper/MapperConfig.cs" />
+      <File FileName="MicroServices/DateApp/DateApp.Application/Dockerfile" Line="24" Column="49" />
+      <File FileName="Shared/RabbitMQ/RabbitMQConnectionFactory.cs" Line="9" Column="1" />
+      <File FileName="Shared/RabbitMQ/RabbitMQNamesQueues.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -78,22 +90,14 @@
             <Node name="MicroServices" expanded="True">
               <Node name="DateApp" expanded="True">
                 <Node name="DateApp.Application" expanded="True">
-                  <Node name="ServiceInjector" expanded="True">
-                    <Node name="Injector.cs" selected="True" />
-                  </Node>
-                </Node>
-                <Node name="DateApp.Domain" expanded="True">
-                  <Node name="Services" expanded="True" />
+                  <Node name="ServiceInjector" expanded="True" />
+                  <Node name="Dockerfile" selected="True" />
                 </Node>
                 <Node name="DateApp.Infrastructure" expanded="True">
-                  <Node name="Middlewares" expanded="True" />
-                  <Node name="Repositories" expanded="True" />
-                  <Node name="Services" expanded="True" />
+                  <Node name="Messages" expanded="True">
+                    <Node name="Queques" expanded="True" />
+                  </Node>
                 </Node>
-              </Node>
-              <Node name="IdentityServer" expanded="True">
-                <Node name="IdentityServer.Domain" expanded="True" />
-                <Node name="IdentityServer.Infrastructure" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -103,7 +107,24 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../MicroServices/DateApp/DateApp.Application/Services/MessageService.cs" line="31" column="16" endLine="31" endColumn="102" offsetX="-1" offsetY="-1" expression="byUserProfile" liveUpdate="False" />
+    <Watch file="../../../MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="17" column="16" endLine="17" endColumn="77" offsetX="-1" offsetY="-1" expression="factory" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>Application/Application.csproj</String>
+    <String>Domain/Domain.csproj</String>
+    <String>Infrastructure/Infrastructure.csproj</String>
+    <String>DateApp/Application/DateApp.Application.csproj</String>
+    <String>DateApp/Domain/DateApp.Domain.csproj</String>
+    <String>DateApp/Infrastructure/DateApp.Infrastructure.csproj</String>
+    <String>IdentityServer/IdentityServer.Infrastructure/IdentityServer.Infrastructure.csproj</String>
+    <String>IdentityServer/IdentityServer.Domain/IdentityServer.Domain.csproj</String>
+    <String>IdentityServer/IdentityServer.Application/IdentityServer.Application.csproj</String>
+    <String>DateApp/DateApp.Infrastructure/DateApp.Infrastructure.csproj</String>
+    <String>DateApp/DateApp.Application/DateApp.Application.csproj</String>
+    <String>DateApp/DateApp.Domain/DateApp.Domain.csproj</String>
+    <String>Shared/Shared.Abstraction/Shared.Abstraction.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/IdentityServer/IdentityServer.Infrastructure/Messages/IdentityRabbitMqService.cs" relfile="MicroServices/IdentityServer/IdentityServer.Infrastructure/Messages/IdentityRabbitMqService.cs" line="43" column="1" />
@@ -142,33 +163,17 @@
       <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" relfile="MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" line="60" column="1" />
       <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" relfile="MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" line="62" column="1" />
       <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" relfile="MicroServices/DateApp/DateApp.Domain/Services/TransactionService.cs" line="58" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="32" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="37" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="40" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="50" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="54" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="52" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Publisher.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Publisher.cs" line="15" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="17" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="18" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" relfile="MicroServices/DateApp/DateApp.Infrastructure/Messages/Queques/Receiver.cs" line="19" column="1" />
+      <Breakpoint file="/Users/michal/Desktop/MyDateApp/Shared/RabbitMQ/RabbitMQConnectionFactory.cs" relfile="Shared/RabbitMQ/RabbitMQConnectionFactory.cs" line="10" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <Debugger.DebugSourceFolders />
-  <MonoDevelop.Ide.ItemProperties.MicroServices.IdentityServer.IdentityServer.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations>
-    <MultiItemSolutionRunConfiguration Id="Wiele projektów" Name="Wiele projektów">
-      <Items>
-        <StartupItem ItemId="{48AE012E-F63D-4450-B02A-74C8624CBD2E}" ItemName="DateApp.Application" ConfigurationId="Application" />
-        <StartupItem ItemId="{0D0FAEA5-9026-4D44-AD49-4D7AA34DE8ED}" ItemName="IdentityServer.Application" ConfigurationId="Default" />
-      </Items>
-    </MultiItemSolutionRunConfiguration>
-  </MultiItemStartupConfigurations>
-  <MonoDevelop.Ide.ItemProperties.MicroServices.DateApp.DateApp.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <DisabledProjects>
-    <String>Application/Application.csproj</String>
-    <String>Domain/Domain.csproj</String>
-    <String>Infrastructure/Infrastructure.csproj</String>
-    <String>DateApp/Application/DateApp.Application.csproj</String>
-    <String>DateApp/Domain/DateApp.Domain.csproj</String>
-    <String>DateApp/Infrastructure/DateApp.Infrastructure.csproj</String>
-    <String>IdentityServer/IdentityServer.Infrastructure/IdentityServer.Infrastructure.csproj</String>
-    <String>IdentityServer/IdentityServer.Domain/IdentityServer.Domain.csproj</String>
-    <String>IdentityServer/IdentityServer.Application/IdentityServer.Application.csproj</String>
-    <String>DateApp/DateApp.Infrastructure/DateApp.Infrastructure.csproj</String>
-    <String>DateApp/DateApp.Application/DateApp.Application.csproj</String>
-    <String>DateApp/DateApp.Domain/DateApp.Domain.csproj</String>
-    <String>Shared/Shared.Abstraction/Shared.Abstraction.csproj</String>
-  </DisabledProjects>
 </Properties>
